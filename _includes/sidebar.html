@@ -1,0 +1,73 @@
+<aside class="site-sidebar">
+  {%- if page.url == "/" -%}
+  {%- assign sb_now = site.time | date: "%s" | plus: 0 -%}
+  {%- assign sb_najave = site.posts | where_exp: "p", "p.event_date" | sort: "event_date" -%}
+  {%- capture sb_items -%}
+    {%- for p in sb_najave -%}
+      {%- assign sb_s = p.event_date | date: "%s" | plus: 0 -%}
+      {%- if p.event_end -%}{%- assign sb_e = p.event_end | date: "%s" | plus: 0 -%}{%- else -%}{%- assign sb_e = sb_s | plus: 10800 -%}{%- endif -%}
+      {%- if sb_e < sb_now -%}{%- continue -%}{%- endif %}
+      <li data-event-end="{{ sb_e }}" data-hide-when-past>
+        <span class="latest-time"><time datetime="{{ p.event_date | date_to_xmlschema }}">{{ p.event_date | date: "%-d. %-m. u %H:%M" }}</time></span>
+        <a href="{{ p.url | relative_url }}">{{ p.title }}</a>
+      </li>
+    {%- endfor -%}
+  {%- endcapture -%}
+  {%- assign sb_items = sb_items | strip -%}
+  {%- if sb_items != "" %}
+  <div class="sidebar-box upcoming" data-event-list data-hide-if-empty>
+    <h3>Nadolazeći događaji</h3>
+    <ol class="latest-list">
+      {{ sb_items }}
+    </ol>
+    <p class="sidebar-more"><a href="{{ '/dogadaji/' | relative_url }}">Svi događaji →</a></p>
+  </div>
+  {%- endif -%}
+  {%- endif %}
+  <div class="sidebar-box latest">
+    <h3>Najnovije</h3>
+    <ol class="latest-list">
+      {%- for p in site.posts limit: 8 %}
+      <li{% if p.url == page.url %} class="current"{% endif %}>
+        <span class="latest-time">{% include datum.html date=p.date show_time=p.show_time short=true %}</span>
+        <a href="{{ p.url | relative_url }}">{{ p.title }}</a>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+  <div class="sidebar-box">
+    <h3>Mjesta</h3>
+    <ul class="cat-list">
+      {%- for k in site.data.kategorije.lokacije %}
+      {%- include kat-broj.html name=k.name %}{% assign n = kat_n %}
+      <li><a href="{{ '/kategorije/' | relative_url }}#{{ k.slug }}">{{ k.name }}</a> <span class="count">{{ n }}</span></li>
+      {%- endfor %}
+    </ul>
+  </div>
+  <div class="sidebar-box">
+    <h3>Vrste</h3>
+    <ul class="cat-list">
+      {%- for k in site.data.kategorije.vrste %}
+      {%- include kat-broj.html name=k.name %}{% assign n = kat_n %}
+      <li><a href="{{ '/kategorije/' | relative_url }}#{{ k.slug }}">{{ k.name }}</a> <span class="count">{{ n }}</span></li>
+      {%- endfor %}
+    </ul>
+    <p class="sidebar-more"><a href="{{ '/kategorije/' | relative_url }}">Sve kategorije →</a></p>
+  </div>
+  {%- if site.data.kategorije.serijali %}
+  <div class="sidebar-box">
+    <h3>Serijali</h3>
+    <ul class="cat-list">
+      {%- for k in site.data.kategorije.serijali %}
+      {%- include kat-broj.html name=k.name %}
+      <li><a href="{{ '/kategorije/' | relative_url }}#{{ k.slug }}">{{ k.name }}</a> <span class="count">{{ kat_n }}</span></li>
+      {%- endfor %}
+    </ul>
+  </div>
+  {%- endif %}
+  <div class="sidebar-box">
+    <h3>O blogu</h3>
+    <p>Osobni blog o ljepoti, životu, povijesti i događajima na otoku Krku. Pišem o onome što vidim, čujem i doživim na otoku.</p>
+    {% if page.url == '/' %}<div class="ad-placeholder">Prostor za oglas</div>{% endif %}
+  </div>
+</aside>

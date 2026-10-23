@@ -1,0 +1,64 @@
+---
+layout: default
+---
+
+{%- assign b_loc = site.data.kategorije.lokacije | where: "name", page.location | first -%}
+{%- assign b_type = site.data.kategorije.vrste | where: "name", page.type | first -%}
+<nav class="breadcrumbs" aria-label="Putanja">
+  <a href="{{ '/' | relative_url }}">Naslovnica</a>
+  {%- if b_loc %}<span class="bc-sep">›</span><a href="{{ '/' | relative_url }}?kategorija={{ b_loc.slug }}">{{ b_loc.name }}</a>{% endif -%}
+  {%- if b_type %}<span class="bc-sep">›</span><a href="{{ '/' | relative_url }}?kategorija={% if b_loc %}{{ b_loc.slug }},{% endif %}{{ b_type.slug }}">{{ b_type.name }}</a>{% endif -%}
+  <span class="bc-sep">›</span><span class="bc-current" aria-current="page">{{ page.title | truncate: 45 }}</span>
+</nav>
+
+<article class="post">
+  <header class="post-header">
+    {% include oznake.html post=page %}
+    <h1>{{ page.title }}</h1>
+    <div class="meta">
+      {% include datum.html date=page.date show_time=page.show_time %} · {{ site.author.name | default: "Moj Otok Krk" }}
+    </div>
+    {% if page.event_date %}{% include dogadaj-info.html post=page note=true %}{% endif %}
+    {%- assign lede = page.excerpt | strip_html | strip -%}
+    {%- assign first_para = content | split: '</p>' | first | strip_html | strip -%}
+    {% if lede != "" and lede != first_para %}<p class="lede">{{ lede }}</p>{% endif %}
+  </header>
+
+  {% if page.image %}
+  <figure class="post-figure">
+    <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title | escape }}" class="post-image">
+    {% if page.image_credit %}<figcaption>{{ page.image_credit | markdownify | remove: '<p>' | remove: '</p>' | strip }}</figcaption>{% endif %}
+  </figure>
+  {% endif %}
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  {% if page.source %}
+    <p class="source"><em>Izvor: {{ page.source }}</em></p>
+  {% endif %}
+</article>
+
+<section class="comments">
+  <h2>Komentari</h2>
+  {%- if site.giscus.repo_id and site.giscus.repo_id != "" %}
+  <script src="https://giscus.app/client.js"
+          data-repo="{{ site.giscus.repo }}"
+          data-repo-id="{{ site.giscus.repo_id }}"
+          data-category="{{ site.giscus.category }}"
+          data-category-id="{{ site.giscus.category_id }}"
+          data-mapping="pathname"
+          data-strict="0"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="bottom"
+          data-theme="light"
+          data-lang="hr"
+          crossorigin="anonymous"
+          async>
+  </script>
+  {%- else %}
+  <p class="comments-placeholder">Komentari će uskoro biti uključeni.</p>
+  {%- endif %}
+</section>

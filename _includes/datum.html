@@ -1,0 +1,20 @@
+{%- comment -%}
+Datum (i vrijeme) objave. Poziv: {% include datum.html date=post.date show_time=post.show_time short=true %}
+Vrijeme se ne prikazuje ako je show_time: false ili ako je vrijeme točno 00:00:00 (članak bez stvarnog vremena objave).
+{%- endcomment -%}
+{%- assign d_hms = include.date | date: "%H:%M:%S" -%}
+{%- assign d_time = true -%}
+{%- if include.show_time == false or d_hms == "00:00:00" -%}{%- assign d_time = false -%}{%- endif -%}
+{%- if include.short -%}
+{%- if d_time -%}
+<time datetime="{{ include.date | date_to_xmlschema }}" data-short>{{ include.date | date: "%d. %m. u %H:%M" }}</time>
+{%- else -%}
+<time datetime="{{ include.date | date: "%Y-%m-%d" }}">{{ include.date | date: "%d. %m." }}</time>
+{%- endif -%}
+{%- else -%}
+{%- if d_time -%}
+<time datetime="{{ include.date | date_to_xmlschema }}">{{ include.date | date: "%d. %m. %Y. u %H:%M" }}</time>
+{%- else -%}
+<time datetime="{{ include.date | date: "%Y-%m-%d" }}">{{ include.date | date: "%d. %m. %Y." }}</time>
+{%- endif -%}
+{%- endif -%}

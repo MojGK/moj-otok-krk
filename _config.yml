@@ -1,0 +1,41 @@
+title: Moj Otok Krk
+description: Osobni blog o ljepoti, životu, povijesti i događajima na otoku Krku
+baseurl: "/moj-otok-krk"
+url: "https://mojgk.github.io"
+theme: null
+markdown: kramdown
+permalink: /:title/
+timezone: Europe/Zagreb
+lang: hr
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+
+# Navigation
+nav:
+  - title: Početna
+    url: /
+  - title: Događaji
+    url: /dogadaji/
+  - title: Povijest
+    url: /povijest/
+  - title: Kategorije
+    url: /kategorije/
+  - title: Pretraga
+    url: /pretraga/
+
+# Author
+author:
+  name: Moj Otok Krk
+  bio: Osobni blog o ljepoti, životu i pričama otoka Krka.
+
+# Komentari (giscus). Ostavi prazno dok se ne postavi giscus za ovaj repozitorij;
+# tada se umjesto komentara prikazuje kratka napomena.
+giscus:
+  repo: ""
+  repo_id: ""
+  category: ""
+  category_id: ""

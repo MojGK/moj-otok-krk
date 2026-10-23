@@ -1,0 +1,13 @@
+{%- comment -%} Oznake (lokacija + vrsta) za članak. Poziv: {% include oznake.html post=post %} {%- endcomment -%}
+{%- assign o_post = include.post | default: page -%}
+{%- assign o_loc = site.data.kategorije.lokacije | where: "name", o_post.location | first -%}
+{%- assign o_type = site.data.kategorije.vrste | where: "name", o_post.type | first -%}
+{%- assign o_ser = nil -%}
+{%- for o_s in site.data.kategorije.serijali -%}{%- if o_post.categories contains o_s.name -%}{%- assign o_ser = o_s -%}{%- endif -%}{%- endfor -%}
+{%- if o_loc or o_type or o_ser -%}
+<div class="tags">
+  {%- if o_loc %}<a class="tag tag-location" href="{{ '/kategorije/' | relative_url }}#{{ o_loc.slug }}">📍 {{ o_loc.name }}</a>{% endif -%}
+  {%- if o_type %}<a class="tag tag-type" href="{{ '/kategorije/' | relative_url }}#{{ o_type.slug }}">{{ o_type.name }}</a>{% endif -%}
+  {%- if o_ser %}<a class="tag tag-series" href="{{ '/kategorije/' | relative_url }}#{{ o_ser.slug }}">{{ o_ser.name }}</a>{% endif -%}
+</div>
+{%- endif -%}

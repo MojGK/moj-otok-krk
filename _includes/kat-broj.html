@@ -1,0 +1,9 @@
+{%- comment -%}
+Broji članke u kategoriji. Poziv: {% include kat-broj.html name=k.name %} → rezultat u varijabli kat_n.
+Članak je u kategoriji ako mu je location ili type jednak nazivu ili ako categories sadrži naziv
+(tako npr. članak s type: Povijest i categories: [Vrbnik, Povijest, Zanimljivosti] ulazi i u Povijest i u Zanimljivosti).
+{%- endcomment -%}
+{%- assign kat_n = 0 -%}
+{%- for kp in site.posts -%}
+{%- if kp.location == include.name or kp.type == include.name or kp.categories contains include.name -%}{%- assign kat_n = kat_n | plus: 1 -%}{%- endif -%}
+{%- endfor -%}

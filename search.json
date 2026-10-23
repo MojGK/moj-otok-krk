@@ -1,0 +1,25 @@
+---
+layout: null
+permalink: /search.json
+sitemap: false
+---
+[
+{%- for post in site.posts -%}
+{%- assign s_loc = site.data.kategorije.lokacije | where: "name", post.location | first -%}
+{%- assign s_type = site.data.kategorije.vrste | where: "name", post.type | first -%}
+{
+  "title": {{ post.title | jsonify }},
+  "url": {{ post.url | relative_url | jsonify }},
+  "date": {{ post.date | date_to_xmlschema | jsonify }},
+  {%- assign hms = post.date | date: "%H:%M:%S" %}
+  "date_text": {% if post.show_time == false or hms == "00:00:00" %}{{ post.date | date: "%d. %m. %Y." | jsonify }}{% else %}{{ post.date | date: "%d. %m. %Y. u %H:%M" | jsonify }}{% endif %},
+  "excerpt": {{ post.excerpt | default: post.description | strip_html | strip_newlines | strip | jsonify }},
+  "location": {{ post.location | jsonify }},
+  "location_slug": {{ s_loc.slug | jsonify }},
+  "type": {{ post.type | jsonify }},
+  "type_slug": {{ s_type.slug | jsonify }},
+  "categories": {{ post.categories | jsonify }},
+  "image": {% if post.image %}{{ post.image | relative_url | jsonify }}{% else %}null{% endif %}
+}{% unless forloop.last %},{% endunless %}
+{%- endfor -%}
+]

@@ -1,0 +1,10 @@
+{%- comment -%}
+Svi slugovi kategorija (mjesta, vrste, serijali) kojima članak pripada, odvojeni razmakom.
+Poziv: {% include kat-slugovi.html post=post %}
+{%- endcomment -%}
+{%- assign ks_post = include.post -%}
+{%- assign ks_out = "" -%}
+{%- for ks_k in site.data.kategorije.lokacije -%}{%- if ks_post.location == ks_k.name or ks_post.categories contains ks_k.name -%}{%- assign ks_out = ks_out | append: " " | append: ks_k.slug -%}{%- endif -%}{%- endfor -%}
+{%- for ks_k in site.data.kategorije.vrste -%}{%- if ks_post.type == ks_k.name or ks_post.categories contains ks_k.name -%}{%- assign ks_out = ks_out | append: " " | append: ks_k.slug -%}{%- endif -%}{%- endfor -%}
+{%- for ks_k in site.data.kategorije.serijali -%}{%- if ks_post.categories contains ks_k.name -%}{%- assign ks_out = ks_out | append: " " | append: ks_k.slug -%}{%- endif -%}{%- endfor -%}
+{{- ks_out | strip -}}

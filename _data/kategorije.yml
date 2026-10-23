@@ -1,0 +1,43 @@
+# Popis kategorija portala Moj Otok Krk.
+# Novu kategoriju dodaj ovdje (name = točan naziv koji se piše u front matter, slug = sidro/filter bez dijakritika).
+# U članku koristi:
+#   location: Baška
+#   type: Povijest
+#   categories: [Baška, Povijest]
+
+lokacije:
+  - name: Krk
+    slug: krk
+  - name: Malinska
+    slug: malinska
+  - name: Njivice
+    slug: njivice
+  - name: Šilo
+    slug: silo
+  - name: Punat
+    slug: punat
+  - name: Dobrinj
+    slug: dobrinj
+  - name: Vrbnik
+    slug: vrbnik
+  - name: Baška
+    slug: baska
+  # cijeli otok (članci koji se ne odnose na jedno mjesto)
+  - name: Otok Krk
+    slug: otok-krk
+
+vrste:
+  - name: Događanja
+    slug: dogadanja
+  - name: Povijest
+    slug: povijest
+  - name: Zanimljivosti
+    slug: zanimljivosti
+
+# Serijali – tematske serije članaka (neobavezno). Članak je u serijalu ako mu `categories` sadrži točan naziv, npr.
+#   categories: [Baška, Povijest, NAZIV SERIJALA]
+# Primjer:
+# serijali:
+#   - name: POVIJEST KRKA
+#     slug: povijest-krka
+#     opis: Serijal o povijesti otoka Krka.

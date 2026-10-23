@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 | escape }}">
+  <meta name="theme-color" content="#0a4f7a">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="{{ '/' | relative_url }}" class="logo">
+        <span class="logo-icon">⛵</span>
+        <div>
+          <div class="site-title">MOJ OTOK KRK</div>
+          <p class="tagline">Osobni blog · Događaji · Povijest · Priče s otoka</p>
+        </div>
+      </a>
+      <form class="search" action="{{ '/pretraga/' | relative_url }}" method="get" role="search" autocomplete="off">
+        <label for="search-input" class="visually-hidden">Pretraži članke</label>
+        <input id="search-input" type="search" name="q" placeholder="Pretraži članke…" aria-autocomplete="list" aria-controls="search-results">
+        <button type="submit" aria-label="Traži">🔍</button>
+        <div id="search-results" class="search-results" role="listbox" hidden></div>
+      </form>
+    </div>
+    <div class="nav-bar">
+      <div class="container">
+        <nav class="main-nav">
+          {% for item in site.nav %}
+            {%- assign nav_cur = false -%}
+            {%- if page.url == item.url -%}{%- assign nav_cur = true -%}{%- endif -%}
+            {%- if item.url == "/dogadaji/" and page.event_date -%}{%- assign nav_cur = true -%}{%- endif -%}
+            {%- if item.url == "/povijest/" and page.layout == "post" -%}{%- if page.type == "Povijest" or page.categories contains "Povijest" -%}{%- assign nav_cur = true -%}{%- endif -%}{%- endif %}
+            <a href="{{ item.url | relative_url }}"{% if nav_cur %} class="current"{% if page.url == item.url %} aria-current="page"{% endif %}{% endif %}>{{ item.title }}</a>
+          {% endfor %}
+        </nav>
+      </div>
+    </div>
+    <div class="cat-bar">
+      <div class="container cat-bar-inner">
+        {% for k in site.data.kategorije.lokacije %}<a href="{{ '/' | relative_url }}#{{ k.slug }}" class="cat-link loc">{{ k.name }}</a>{% endfor %}
+        <span class="cat-sep" aria-hidden="true">|</span>
+        {% for k in site.data.kategorije.vrste %}<a href="{{ '/' | relative_url }}#{{ k.slug }}" class="cat-link">{{ k.name }}</a>{% endfor %}
+        {% if site.data.kategorije.serijali %}<span class="cat-sep" aria-hidden="true">|</span>
+        {% for k in site.data.kategorije.serijali %}<a href="{{ '/' | relative_url }}#{{ k.slug }}" class="cat-link series">{{ k.name }}</a>{% endfor %}{% endif %}
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    {% if page.layout == 'post' or page.sidebar %}
+    <div class="with-sidebar">
+      <div class="main-col">
+        {{ content }}
+      </div>
+      {% include sidebar.html %}
+    </div>
+    {% else %}
+    {{ content }}
+    {% endif %}
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; {{ 'now' | date: '%Y' }} Moj Otok Krk · Osobni blog</p>
+    </div>
+  </footer>
+  <script>window.SITE_BASE = {{ site.baseurl | jsonify }};</script>
+  <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
+</body>
+</html>
