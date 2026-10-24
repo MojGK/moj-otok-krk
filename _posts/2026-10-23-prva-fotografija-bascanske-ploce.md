@@ -9,7 +9,6 @@ excerpt: Prvi pokušaj snimanja u tamnoj kapelici nije uspio. Tek kad je Ivan St
 image: /assets/images/bascanska-ploca-standl-1869.jpg
 image_alt: "Stara crno-bijela fotografija Bašćanske ploče s glagoljskim natpisom"
 image_credit: "Bašćanska ploča, fotografija Ivana Standla iz 1869. (javno dobro), preuzeto s [croatianhistory.net](https://www.croatianhistory.net/etf/basska_s.html); smanjeno"
-featured: true
 source: "[Hrvatska enciklopedija – Bašćanska ploča](https://www.enciklopedija.hr/clanak/bascanska-ploca); D. Žubrinić, [Bašćanska ploča prema Standlovoj fotografiji iz 1869.](https://www.croatianhistory.net/etf/basska_s.html); M. Smokvina, [Ivan Standl – prvi fotograf Bašćanske ploče](https://www.croatianhistory.net/glagoljica/edu/bploca2/smokvina-ivan_standl.pdf), zbornik „900 godina Bašćanske ploče”, Baška 2000.; [otok-krk.org](https://otok-krk.org/krk/predavanje-o-prvoj-fotografiji-bascanske-ploce-i-radionica-cijanotipije-u-jurandvoru)"
 ---
 
