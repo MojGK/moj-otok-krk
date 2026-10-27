@@ -9,7 +9,7 @@ excerpt: Od antičkog ljetnikovca i benediktinske opatije do franjevačkog samos
 image: /assets/images/kosljun-franjevacki-samostan.jpg
 image_alt: "Franjevački samostan na otočiću Košljunu"
 image_credit: "Foto: Oleg Sidorenko, [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/), preko [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Ko%C5%A1ljun_islet,_Franciscan_monastery.jpg)"
-source: "[Franjevački samostan Košljun – Povijest i znamenitosti](https://www.kosljun.hr/povijest-i-znamenitosti-kosljuna/); [Franjevačka kustodija sv. Jeronima – Košljun](https://ofm-sv-jeronim.hr/samostani/kosljun/); [Hrčak – „Priopćenja“ (o opatu Dominiku)](https://hrcak.srce.hr/file/144440); [Hrčak – „Vrela“ (o buli Nikole V.)](https://hrcak.srce.hr/file/115282)"
+source: "[Franjevački samostan Košljun – Povijest i znamenitosti](https://www.kosljun.hr/povijest-i-znamenitosti-kosljuna/); [Franjevačka kustodija sv. Jeronima – Košljun](https://ofm-sv-jeronim.hr/samostani/kosljun/); [V. Brusić, „Dolazak franjevaca na Košljun“, Bogoslovska smotra 1932.](https://hrcak.srce.hr/44118); [V. Brusić, „Crkva sv. Marije od Navještenja na Košljunu“, Bogoslovska smotra 1933.](https://hrcak.srce.hr/44987); [„Bula »Ad decorem« pape Nikole V. – »magna charta« franjevačkog Košljuna“, Croatica Christiana periodica](https://hrcak.srce.hr/98066)"
 ---
 
 Od antičkog ljetnikovca i benediktinske opatije do franjevačkog samostana s najstarijom knjižnicom na otoku – kratka povijest Košljuna, otočića u Puntarskoj dragi.
@@ -24,13 +24,13 @@ Otočić je bio nastanjen još u antici, kada je na njemu sagrađen **utvrđeni 
 
 Prema samostanskoj povijesti, od **9. stoljeća** na Košljunu djeluje **glagoljaška benediktinska opatija sv. Marije**. Imala je trobrodnu romaničku crkvu, čiji su **temelji pronađeni ispod današnje samostanske crkve**. (Franjevačka kustodija sv. Jeronima na svojim stranicama početak opatije stavlja u 12. stoljeće, pa točan datum ostavljam povjesničarima.)
 
-Posljednji benediktinski opat bio je **Dominik**. Po povijesnim izvorima objavljenima na Hrčku, on se posljednji put spominje 1432. (možda 1435.), a sigurno je umro prije svibnja 1438., kada se mletačka vlada već zauzimala za novog opata. Samostan je nakon njegove smrti ostao napušten.
+Posljednji poznati benediktinski opat bio je **Dominik**, koji je umro **oko 1438.** Rad o papinskoj buli iz 1447. objavljen u časopisu *Croatica Christiana periodica* to precizira: Dominik se posljednji put spominje 1432. (možda 1435.), a sigurno je umro prije 16. svibnja 1438., kada se mletačka vlada već zauzimala za novog opata. Nakon njegove smrti samostan je ostao napušten.
 
 ## Dolazak franjevaca 1447.
 
 Na molbu vlasnika otoka, krčkih knezova **Martina i Ivana Frankopana**, papa **Nikola V.** godine **1447.** dopustio je da u napušteni samostan dođu **franjevci opservanti iz Krka**. Franjevci su na Košljunu ostali do danas, a samostan je od davnina i kuća novicijata.
 
-Donacijom **Ivana Frankopana i njegove kćeri Marije Katarine** stara je benediktinska crkva povećana i obnovljena te posvećena **Navještenju Marijinu**.
+Donacijom **Ivana Frankopana i njegove kćeri Marije Katarine** stara je benediktinska crkva povećana i obnovljena te posvećena **Navještenju Marijinu**. Kako piše povjesničar Vladislav Brusić, knez Ivan je u oporuci iz 1452. odredio da se samostanu u roku od deset godina isplati 1000 zlatnih dukata za gradnju i uzdržavanje crkve.
 
 ## Što se krije u crkvi
 
@@ -47,4 +47,4 @@ Od **1894. do 1927.** samostan je bio i kolegij s **nižom gimnazijom** – prem
 
 Ako još niste bili, ne žurite kad stignete – Košljun je mjesto koje se obilazi polako.
 
-*Izvori: službene stranice Franjevačkog samostana Košljun, Franjevačka kustodija sv. Jeronima i radovi o buli Nikole V. i opatu Dominiku dostupni na portalu Hrčak.*
+*Izvori: službene stranice Franjevačkog samostana Košljun, Franjevačka kustodija sv. Jeronima, članci Vladislava Brusića u Bogoslovskoj smotri (1932. i 1933.) i rad o buli Nikole V. u Croatici Christiani periodici, svi dostupni na portalu Hrčak.*
