@@ -49,6 +49,7 @@ type: Događanja
 categories: [Punat, Događanja]
 event_date: 2026-10-30 20:00:00 +0100   # početak događaja (obavezno za najavu)
 event_end: 2026-10-30 22:00:00 +0100    # kraj (neobavezno)
+event_time_unknown: true                # neobavezno: sat još nije objavljen (event_date 00:00, event_end 23:59)
 event_place: Riva, Punat                 # mjesto (neobavezno)
 excerpt: ...
 source: "[Naziv izvora](https://...)"

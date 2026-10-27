@@ -8,7 +8,7 @@
       {%- if p.event_end -%}{%- assign sb_e = p.event_end | date: "%s" | plus: 0 -%}{%- else -%}{%- assign sb_e = sb_s | plus: 10800 -%}{%- endif -%}
       {%- if sb_e < sb_now -%}{%- continue -%}{%- endif %}
       <li data-event-end="{{ sb_e }}" data-hide-when-past>
-        <span class="latest-time"><time datetime="{{ p.event_date | date_to_xmlschema }}">{{ p.event_date | date: "%-d. %-m. u %H:%M" }}</time></span>
+        <span class="latest-time"><time datetime="{{ p.event_date | date_to_xmlschema }}">{% if p.event_time_unknown %}{{ p.event_date | date: "%-d. %-m." }}{% else %}{{ p.event_date | date: "%-d. %-m. u %H:%M" }}{% endif %}</time></span>
         <a href="{{ p.url | relative_url }}">{{ p.title }}</a>
       </li>
     {%- endfor -%}
