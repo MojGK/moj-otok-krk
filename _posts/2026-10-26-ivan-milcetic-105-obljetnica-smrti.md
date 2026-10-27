@@ -1,6 +1,4 @@
 ---
-# NACRT – objaviti 26. 10. 2026. (105. obljetnica smrti).
-# Pri objavi: premjesti u _posts/ i postavi `date` na stvarno vrijeme objave (zimsko vrijeme, +0100).
 layout: post
 title: "Ivan Milčetić – 105 godina od smrti krčkog filologa i folklorista"
 date: 2026-10-26 09:00:00 +0100
