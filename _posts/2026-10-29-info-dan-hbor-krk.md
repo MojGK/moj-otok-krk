@@ -17,7 +17,7 @@ source: "[HBOR](https://www.hbor.hr/info-dan-hbor-a-u-krku-petak-30-10-2026/2816
 
 U petak, 30. listopada, od 10 do 14 sati, poduzetnici s Krka mogu u prostorijama LAG-a „Kvarnerski otoci” razgovarati s HBOR-om o kreditima i novim programima iz NPOO-a. Razgovori traju 30 minuta, prijava je obavezna.
 
-Ako imate poslovnu ideju ili planirate ulaganje, a ne znate odakle krenuti s financiranjem, ovo je zgodna prilika da sve pitate licem u lice, bez putovanja u Rijeku. Razgovarat ćete s **Vesnom Bartolović Stančić**, voditeljicom HBOR-ova Područnog ureda za Primorje i Gorski kotar.
+Ako imate poslovnu ideju ili planirate ulaganje, a ne znate odakle krenuti s financiranjem, ovo je zgodna prilika da sve pitate licem u lice, ovdje na otoku. Razgovarat ćete s **Vesnom Bartolović Stančić**, voditeljicom HBOR-ova Područnog ureda za Primorje i Gorski kotar.
 
 ## O čemu se razgovara
 
