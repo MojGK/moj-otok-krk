@@ -9,7 +9,7 @@ event_date: 2026-11-06 18:00:00 +0100
 event_place: Mala vijećnica, Krk
 excerpt: Udruga Žene za otok 6. studenoga u 18 sati u Maloj vijećnici u Krku vodi otvoren razgovor o ženskom zdravlju s doc. dr. sc. Lanom Glavan, a 13. studenoga slijedi edukacija Ivane Predovan o snimanju reelsa. Besplatno, uz prijavu.
 image: /assets/images/zene-za-otok-predavanje.jpg
-image_alt: "Publika na jednom od ranijih predavanja u dvorani"
+image_alt: "Publika na predavanju u dvorani (ilustracija iz objave)"
 image_credit: "Foto: via [Bodulija.net](https://bodulija.net/zene-za-otok-u-studenome-donose-razgovor-o-zenskom-zdravlju-i-edukaciju-o-snimanju-reelsa/)"
 source: "[Bodulija.net](https://bodulija.net/zene-za-otok-u-studenome-donose-razgovor-o-zenskom-zdravlju-i-edukaciju-o-snimanju-reelsa/)"
 ---
