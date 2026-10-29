@@ -8,7 +8,7 @@ categories: [Krk, Zanimljivosti]
 excerpt: Karatisti Karate kluba Krk Croatia na Prvenstvu Hrvatske za mlađe uzraste osvojili su 1 zlato, 8 srebra i 8 bronci. Zlato je osvojio Matej Mrakovčić, a od devet finala samo je jedno završilo pobjedom.
 image: /assets/images/karate-krk-prvenstvo-hrvatske.jpg
 image_alt: "Mlade karatistice s medaljama na Prvenstvu Hrvatske"
-image_credit: "Foto: KK Krk Croatia, preuzeto s [otok-krk.org](https://otok-krk.org/krk/karate-klub-krk-croatia-zakljucio-prvenstvo-hrvatske-s-nizom-odlicja-i-jasnim-ciljem-za-naprijed)"
+image_credit: "Foto: via [otok-krk.org](https://otok-krk.org/krk/karate-klub-krk-croatia-zakljucio-prvenstvo-hrvatske-s-nizom-odlicja-i-jasnim-ciljem-za-naprijed)"
 source: "[Općina Malinska-Dubašnica – 1. dan](https://www.malinska.hr/2026/10/24/prvi-dan-prvenstva-hrvatske-za-mlade-uzraste-i-prvo-zlato-koje-ide-za-krk/); [Općina Malinska-Dubašnica – 2. dan](https://www.malinska.hr/2026/10/27/borba-do-posljednje-kapi-znoja-kk-krk-croatia-zakljucio-prvenstvo-hrvatske-s-nizom-odlicja-i-jasnim-ciljem-za-naprijed/); [otok-krk.org](https://otok-krk.org/krk/karate-klub-krk-croatia-zakljucio-prvenstvo-hrvatske-s-nizom-odlicja-i-jasnim-ciljem-za-naprijed)"
 ---
 

@@ -23,7 +23,7 @@ Novi list navodi dva različita razdoblja, pa ih ne treba miješati:
 - **u četiri mjeseca požarne sezone:** **12 požara** otvorenog prostora, izgorjelo **4.267 m²**;
 - **od početka godine do 31. srpnja:** ukupno **25 požara**, izgorjelo **16.157 m²**, odnosno nešto više od 1,6 hektara.
 
-Članak ne navodi točne datume požarne sezone, pa se ta dva podatka ne mogu izravno uspoređivati ni zbrajati – dio požara iz sezone sigurno je i u brojci do 31. srpnja, a veći dio paljevina, čini se, bio je prije ljeta.
+Članak ne navodi točne datume požarne sezone, a razdoblja se preklapaju, pa se ta dva podatka ne mogu izravno uspoređivati ni zbrajati.
 
 Za usporedbu, prema podacima Hrvatske vatrogasne zajednice, u Hrvatskoj je **samo do 10. kolovoza** bilo **5.575 požara** otvorenog prostora – gotovo **13 posto više** nego lani – a opožareno je **9.646 hektara**, čak 75 posto više nego u istom razdoblju prošle godine.
 
