@@ -17,7 +17,7 @@ source: "[Novi list](https://www.novilist.hr/rijeka-regija/otoci/halloween-party
 
 U subotu, 31. listopada, od 18:30 do 21:30, Kamp Omišalj završava petu OMI HALLOWEEN manifestaciju zabavom uz bazen, s DJ-em, izborom najbolje maske i vatrometom. Najbolja maska osvaja vikend u premium mobilnoj kućici.
 
-Ako vaši mali (ili veliki) čudovišta traže gdje se u subotu navečer zabaviti, Omišalj je ove godine pravo mjesto. OMI HALLOWEEN traje **od 23. listopada do 1. studenoga**, a subotnja zabava uz bazen vrhunac je tog programa.
+Ako vaša mala (ili velika) čudovišta traže gdje se u subotu navečer zabaviti, Omišalj je ove godine pravo mjesto. OMI HALLOWEEN traje **od 23. listopada do 1. studenoga**, a subotnja zabava uz bazen vrhunac je tog programa.
 
 ## Što vas čeka u subotu
 
