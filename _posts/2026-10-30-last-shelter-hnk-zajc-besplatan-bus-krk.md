@@ -10,7 +10,7 @@ event_place: Polazak s Autobusnog kolodvora Krk; predstava u HNK Ivana pl. Zajca
 excerpt: U subotu, 14. studenoga, autobus u 16:30 vozi besplatno iz Krka na plesnu predstavu „Last Shelter” Sergea Aiméa Coulibalyja u HNK Ivana pl. Zajca (početak u 18 sati). Prvo kupite ulaznicu, zatim rezervirajte mjesto u autobusu.
 image: /assets/images/last-shelter-hnk-zajc.jpg
 image_alt: "Dvoje plesača u zagrljaju na obali, plakat predstave „Posljednje utočište”"
-image_credit: "Foto: HNK Ivana pl. Zajca, preuzeto s [Centra za kulturu Grada Krka](https://www.kulturakrk.net/novosti/besplatan-prijevoz-iz-krka-na-plesnu-predstavu-last-shelter-u-hnk-ivana-pl-zajca-14-studenoga/)"
+image_credit: "Foto: [Centar za kulturu Grada Krka](https://www.kulturakrk.net/novosti/besplatan-prijevoz-iz-krka-na-plesnu-predstavu-last-shelter-u-hnk-ivana-pl-zajca-14-studenoga/)"
 source: "[Grad Krk](https://www.grad-krk.hr/besplatan-prijevoz-iz-krka-na-plesnu-predstavu-last-shelter-u-hnk-ivana-pl-zajca); [Centar za kulturu Grada Krka](https://www.kulturakrk.net/novosti/besplatan-prijevoz-iz-krka-na-plesnu-predstavu-last-shelter-u-hnk-ivana-pl-zajca-14-studenoga/)"
 ---
 
