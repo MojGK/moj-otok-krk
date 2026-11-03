@@ -14,7 +14,7 @@ source: "[TZ Omišalj – Njivice](https://visit-omisalj-njivice.hr/povijest-i-k
 
 Na drugoj strani Omišaljskog zaljeva leže ostaci rimskog grada Fulfinuma i bazilike iz 5. stoljeća koja je sačuvana gotovo do krova. Ovo je kratka priča o mjestu koje Omišljani zovu jednostavno Mirine, ruševine.
 
-Kad se spustite u uvalu Sepen podno Omišlja i iz borova se pojave visoki kameni zidovi bazilike, teško je ne zastati. Nedavno sam pisao o tome kako je [Fulfinum Mirine predstavljen u Anconi]({{ '/archaeodigit-zavrsna-konferencija-ancona-omisalj/' | relative_url }}) u sklopu projekta ARCHAEODIGIT. Ovaj put bih se vratio korak unatrag, do same povijesti tog mjesta.
+Kad se spustite u uvalu Sepen podno Omišlja i ugledate visoke kamene zidove bazilike, teško je ne zastati. Nedavno sam pisao o tome kako je [Fulfinum Mirine predstavljen u Anconi]({{ '/archaeodigit-zavrsna-konferencija-ancona-omisalj/' | relative_url }}) u sklopu projekta ARCHAEODIGIT. Ovaj put bih se vratio korak unatrag, do same povijesti tog mjesta.
 
 ## Rimski grad niknuo na praznom
 
