@@ -27,4 +27,6 @@ Studeni u Malinskoj ove godine opet donosi **Mjesec smijeha** u Hotelu Malin –
 - **Ulaznica 20 €** (Entrio i recepcija hotela)
 - nakon predstave druženje uz glazbu i DJ-a u Whisky & Wine Roomu Muileann
 
-Sljedeća komedija iz istog ciklusa je [„Vojni rok”]({{ '/vojni-rok-hotel-malin/' | relative_url }}), 13. studenog.
+Sljedeće komedije iz istog ciklusa su [„Vojni rok”]({{ '/vojni-rok-hotel-malin/' | relative_url }}) 13. studenog i [„Tražim muža”]({{ '/trazim-muza-hotel-malin/' | relative_url }}) 20. studenog.
+
+*Ažurirano 3. 11. 2026.: dodana je poveznica na treću komediju ciklusa.*
