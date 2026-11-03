@@ -35,3 +35,5 @@ Tko želi vidjeti gdje će naši vatrogasci odsad biti smješteni – i usput im
 *Izvori: Općina Malinska-Dubašnica (27. 10. 2026. i 30. 6. 2026.) i Bodulija.net (najava otvorenja). Fotografija prikazuje garažu doma nakon završetka radova.*
 
 *Ispravak 28. 10.: u prvoj verziji ove najave pozivao sam čitatelje da dođu na otvorenje u petak. Prema objavi Općine od 27. 10., svečano otvorenje nije javno, pa sam najavu maknuo s popisa javnih događaja i uputio na Dane otvorenih vrata (2.–15. 11.).*
+
+*Ažurirano 3. 11. 2026.: dom je svečano otvoren 30. listopada. Pročitajte [izvještaj s otvorenja]({{ '/vatrogasni-dom-malinska-svecano-otvoren/' | relative_url }}). Prema izvještajima Općine i Bodulije, svečanosti su, uz domaćine, nazočili državna tajnica Zrinka Raguž, glavni vatrogasni zapovjednik Slavko Tucaković i zamjenik župana Toni Štimac. Predsjednik Sabora i župan, koji su bili najavljeni, u izvještajima se ne spominju.*
