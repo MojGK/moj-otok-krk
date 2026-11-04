@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Kako snimiti reel koji ljudi pogledaju do kraja – edukacija Ivane Predovan u Krku"
-date: 2026-11-04 08:20:00 +0100
+date: 2026-11-04 08:10:00 +0100
 location: Krk
 type: Događanja
 categories: [Krk, Događanja]

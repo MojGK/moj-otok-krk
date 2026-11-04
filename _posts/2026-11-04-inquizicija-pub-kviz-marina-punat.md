@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Inquizicija pub kviz u Restoranu Marina u Puntu"
-date: 2026-11-04 08:21:00 +0100
+date: 2026-11-04 08:11:00 +0100
 location: Punat
 type: Događanja
 categories: [Punat, Događanja]
