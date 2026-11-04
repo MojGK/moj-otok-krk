@@ -11,12 +11,12 @@ excerpt: Udruga Žene za otok 6. studenoga u 18 sati u Maloj vijećnici u Krku v
 image: /assets/images/zene-za-otok-predavanje.jpg
 image_alt: "Publika na predavanju u dvorani (ilustracija iz objave)"
 image_credit: "Foto: via [Bodulija.net](https://bodulija.net/zene-za-otok-u-studenome-donose-razgovor-o-zenskom-zdravlju-i-edukaciju-o-snimanju-reelsa/)"
-source: "[Bodulija.net](https://bodulija.net/zene-za-otok-u-studenome-donose-razgovor-o-zenskom-zdravlju-i-edukaciju-o-snimanju-reelsa/)"
+source: "[Grad Krk](https://www.grad-krk.hr/u-goste-stizu-ginekologinja-i-strucnjakinja-za-drustvene-mreze-udruga-zene-za-otok-poziva-na-predavanja-o-zenskom-zdravlju-i-edukaciju-izrade-reelsa); [Bodulija.net](https://bodulija.net/zene-za-otok-u-studenome-donose-razgovor-o-zenskom-zdravlju-i-edukaciju-o-snimanju-reelsa/)"
 ---
 
 Udruga Žene za otok 6. studenoga u 18 sati u Maloj vijećnici u Krku vodi otvoren razgovor o ženskom zdravlju s doc. dr. sc. Lanom Glavan, a 13. studenoga slijedi edukacija Ivane Predovan o snimanju reelsa. Besplatno, uz prijavu.
 
-Prošlo predavanje Udruge o odgoju popunilo se do zadnjeg mjesta, pa ne bih odgađao prijavu.
+**Novo (4. 11.):** prema Gradu Krku, za prvo predavanje (6. 11.) **mjesta su popunjena**. Za edukaciju o reelsima 13. 11. sada se znaju vrijeme i mjesto, a detalje sam izdvojio u [posebnu objavu]({{ '/kako-snimiti-reel-zene-za-otok/' | relative_url }}).
 
 ## 6. 11.: Jako ženska ćakula – razgovor s ginekologinjom
 
@@ -24,12 +24,15 @@ Gošća je **doc. dr. sc. Lana Glavan**, specijalistica ginekologije i opstetric
 
 - **Kada:** petak, **6. studenoga 2026.**, u **18 sati**
 - **Gdje:** **Mala vijećnica**, Krk
+- **Mjesta su popunjena** (Grad Krk, 3. 11.)
 
 ## 13. 11.: Kako snimiti reel koji ljudi pogledaju do kraja
 
 Praktičnu edukaciju vodi **Ivana Predovan**. Naučit ćete kako pronaći ideju za reel, privući pažnju u prve tri sekunde, snimiti dobar video samo mobitelom i napisati popratni tekst, a bit će riječi i o statistici objava i organizaciji rada. Svi sudionici dobivaju praktični podsjetnik za buduća snimanja. Namijenjeno je poduzetnicama, obrtnicima, iznajmljivačima, udrugama i svima koji žele bolje komunicirati na mrežama.
 
-- **Kada:** petak, **13. studenoga 2026.** – **točno vrijeme i mjesto još nisu objavljeni** (izvor kaže samo „na Krku”)
+- **Kada:** petak, **13. studenoga 2026.**, u **17 sati**
+- **Gdje:** **Mala vijećnica**, Krk
+- Više: [Kako snimiti reel koji ljudi pogledaju do kraja]({{ '/kako-snimiti-reel-zene-za-otok/' | relative_url }})
 
 ## Prijava
 
@@ -37,4 +40,6 @@ Oba su događanja **besplatna**, ali zbog ograničenog broja mjesta **prijava je
 
 „Pozivamo sve zainteresirane da nam se pridruže, postave pitanja, steknu nova znanja i iskoriste priliku za druženje i povezivanje”, poručuju iz Udruge.
 
-*Izvor: Bodulija.net (28. 10. 2026.). Kad se objave vrijeme i mjesto edukacije 13. 11., dopunit ću objavu.*
+*Izvori: Bodulija.net (28. 10. 2026.), Grad Krk (3. 11. 2026.).*
+
+*Ažurirano 4. 11. 2026.: mjesta za 6. 11. su popunjena; dodani vrijeme i mjesto edukacije 13. 11. (17 h, Mala vijećnica).*
