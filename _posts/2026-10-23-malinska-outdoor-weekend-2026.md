@@ -12,7 +12,7 @@ excerpt: Peti Malinska Outdoor Weekend 7. i 8. studenog donosi sedmi Malinska Tr
 image: /assets/images/malinska-trail-mow-2026.jpg
 image_alt: "Dvoje trkača na uskoj stazi uz more u Malinskoj"
 image_credit: "Foto: [Malinska Outdoor Weekend / TZO Malinska-Dubašnica](https://www.mow.hr/)"
-source: "[MOW – program](https://www.mow.hr/program.html); [MOW – trail](https://www.mow.hr/trail-tr269anje.html), [pješačenje](https://www.mow.hr/pjescarona269enje.html), [biciklizam](https://www.mow.hr/biciklizam.html); [Bodulija.net](https://bodulija.net/trail-hike-i-bike-u-tijeku-su-prijave-za-malinska-outdoor-weekend/); [Visit Malinska](https://www.visitmalinska.com/hr/); [otok-krk.org](https://otok-krk.org/krk/malinska-outdoor-weekend-2026)"
+source: "[Bodulija.net – oznake staze](https://bodulija.net/netko-uporno-skida-oznake-za-malinska-outdoor-weekend-nemojte-to-raditi/); [MOW – program](https://www.mow.hr/program.html); [MOW – trail](https://www.mow.hr/trail-tr269anje.html), [pješačenje](https://www.mow.hr/pjescarona269enje.html), [biciklizam](https://www.mow.hr/biciklizam.html); [Bodulija.net](https://bodulija.net/trail-hike-i-bike-u-tijeku-su-prijave-za-malinska-outdoor-weekend/); [Visit Malinska](https://www.visitmalinska.com/hr/); [otok-krk.org](https://otok-krk.org/krk/malinska-outdoor-weekend-2026)"
 ---
 
 Peti Malinska Outdoor Weekend 7. i 8. studenog donosi sedmi Malinska Trail (14 i 24 km), vođeni Hike od 12,5 km i nedjeljne biciklističke ture od 18 i 32 km, uz besplatne programe za djecu.
@@ -50,6 +50,12 @@ Okupljanje i prijave u **9:30** na rivi, na trgu pored interpretacijskog centra 
 
 Prijave i sve detalje o rutama naći ćete na [mow.hr](https://www.mow.hr/).
 
+## Molba: ne skidajte oznake staze
+
+Organizatori iz **AK Rika** preko Bodulije (4. 11.) mole građane da **ne skidaju oznake** Malinska Traila. Trakice su, kažu, već u dva navrata skinute – isto se dogodilo i lani uoči starta. Nakon utrke stazu će, kao i uvijek, očistiti. Bez oznaka se sudionici lako izgube, pa molim: ostavite trakice na miru do kraja vikenda.
+
 *Ažurirano 3. 11. 2026.: kad sam prvi put pisao, satnica još nije bila objavljena. Sada sam dodao službeni program s vremenima i limitima, rutu i kotizaciju Hikea, paket Hike & Bike, dječji poligon i novu fotografiju.*
 
 *Izvori: mow.hr (program, trail, pješačenje, biciklizam), Bodulija.net, Visit Malinska.*
+
+*Ažurirano 5. 11. 2026.: dodana molba AK Rike da se ne skidaju oznake staze (Bodulija, 4. 11.).*
