@@ -1,0 +1,24 @@
+{%- comment -%}
+Zaseban blok ZAPOSLENJE na naslovnici: do 2 aktualna oglasa iz _data/poslovi.yml (prvo oni s izdvojeno: true,
+pa ostali po roku). Istekli se ne prikazuju (pri izradi; u pregledniku ih skriva JS u istaknuti-oglasi.html).
+{%- endcomment -%}
+{%- include zivi-popis.html lista=site.data.poslovi.oglasi polje="rok" -%}
+{%- assign zb_akt = zp_lista -%}
+{%- assign zb_izd = zb_akt | where: "izdvojeno", true -%}
+{%- assign zb_ost = zb_akt | where_exp: "o", "o.izdvojeno != true" -%}
+{%- assign zb_lista = zb_izd | concat: zb_ost -%}
+<section class="zaposlenje-blok" id="zaposlenje-blok" aria-labelledby="zaposlenje-blok-naslov">
+  <div class="zb-head">
+    <h2 id="zaposlenje-blok-naslov"><span aria-hidden="true">💼</span> Zaposlenje</h2>
+    <a class="zb-all" href="{{ '/zaposlenje/' | relative_url }}">Svi oglasi →</a>
+  </div>
+  {%- if zb_akt.size > 0 %}
+    {% include istaknuti-oglasi.html oglasi=zb_lista limit=2 %}
+    <a class="zb-post" href="{{ '/zaposlenje/' | relative_url }}">
+      <span class="zb-post-label">{{ zb_akt.size }} aktualnih oglasa u otoku Krku{% if site.data.poslovi.azurirano %} · ažurirano {{ site.data.poslovi.azurirano | date: "%-d. %-m." }}{% endif %}</span>
+      <span class="zb-post-title">Pogledaj sve oglase za posao s rokovima prijave</span>
+    </a>
+  {%- else %}
+    <p class="zb-empty">Trenutno nema aktualnih oglasa. <a href="{{ '/zaposlenje/' | relative_url }}">Arhiva pregleda →</a></p>
+  {%- endif %}
+</section>

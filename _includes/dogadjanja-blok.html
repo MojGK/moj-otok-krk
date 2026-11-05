@@ -1,0 +1,44 @@
+{%- comment -%}
+Zaseban blok DOGAĐANJA na naslovnici: do 3 nadolazeća događaja iz _data/dogadjanja.yml, najbliži prvi.
+Prošli se izbacuju pri izradi stranice, a u pregledniku ih skriva JS (GitHub Pages gradi stranicu pri pushu i jednom dnevno).
+{%- endcomment -%}
+{%- include zivi-popis.html lista=site.data.dogadjanja.dogadjaji polje="datum" -%}
+{%- assign db_lista = zp_lista -%}
+{%- assign db_dani = "ned,pon,uto,sri,čet,pet,sub" | split: "," -%}
+<section class="zaposlenje-blok dogadjanja-blok" id="dogadjanja-blok" aria-labelledby="dogadjanja-blok-naslov">
+  <div class="zb-head">
+    <h2 id="dogadjanja-blok-naslov"><span aria-hidden="true">📅</span> Događanja</h2>
+    <a class="zb-all" href="{{ '/dogadaji/' | relative_url }}">Svi događaji →</a>
+  </div>
+  {%- if db_lista.size > 0 %}
+  <div class="job-highlights" data-dog-blok>
+    <ul class="job-hl-list">
+    {%- for d in db_lista limit: 8 %}
+      {%- assign d_kraj = d.datum_do | default: d.datum | date: "%Y-%m-%d" -%}
+      {%- assign d_wi = d.datum | date: "%w" | plus: 0 -%}
+      {%- assign d_link = d.link | default: "/dogadaji/" -%}
+      <li class="job-hl" data-do="{{ d_kraj }}"{% if forloop.index > 3 %} hidden{% endif %}>
+        <a class="job-hl-link" href="{% if d_link contains '://' %}{{ d_link }}{% else %}{{ d_link | relative_url }}{% endif %}"{% if d_link contains '://' %} target="_blank" rel="noopener"{% endif %}>
+          <span class="job-hl-pos">{{ d.naziv }}</span>
+          <span class="job-hl-meta"><span class="job-hl-rok">📅 {{ db_dani[d_wi] }} {{ d.datum | date: "%-d. %-m." }}{% if d.datum_do %} – {{ d.datum_do | date: "%-d. %-m." }}{% endif %}</span>{% if d.vrijeme %}<span>🕒 {{ d.vrijeme }}</span>{% endif %}<span>📍 {{ d.grad | default: d.mjesto }}</span></span>
+        </a>
+      </li>
+    {%- endfor %}
+    </ul>
+  </div>
+  <a class="zb-post" href="{{ '/kalendar/' | relative_url }}">
+    <span class="zb-post-label">{{ db_lista.size }} nadolazećih događanja{% if site.data.dogadjanja.azurirano %} · ažurirano {{ site.data.dogadjanja.azurirano | date: "%-d. %-m." }}{% endif %}</span>
+    <span class="zb-post-title">Kalendar događanja u otoku Krku</span>
+  </a>
+  <script>
+  (function () {
+    var box = document.querySelector('[data-dog-blok]'); if (!box) return;
+    var d = new Date(), t = d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2), n = 0;
+    box.querySelectorAll('[data-do]').forEach(function (li) { var ok = li.getAttribute('data-do') >= t && n < 3; li.hidden = !ok; if (ok) n++; });
+    if (!n) box.hidden = true;
+  })();
+  </script>
+  {%- else %}
+  <p class="zb-empty">Trenutno nema najavljenih događaja. <a href="{{ '/kategorije/dogadanja/' | relative_url }}">Prošla događanja →</a></p>
+  {%- endif %}
+</section>

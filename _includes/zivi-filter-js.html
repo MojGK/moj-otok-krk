@@ -1,0 +1,30 @@
+{%- comment -%} Filter po mjestu i poruka „nema stavki” za žive popise (oglasi-lista / dogadjaji-lista sa zivo=true). Uključiti jednom, na kraju stranice. {%- endcomment -%}
+<script>
+(function () {
+  document.querySelectorAll('.zivi-popis').forEach(function (list) {
+    var f = list.previousElementSibling;
+    if (f && !f.hasAttribute('data-zivi-filter')) f = null;
+    var empty = list.parentNode.querySelector('[data-zivi-prazno]');
+    function items() { return list.querySelectorAll('li[data-grad]'); }
+    function refresh(grad) {
+      var vis = 0;
+      items().forEach(function (li) { li.hidden = !!grad && li.getAttribute('data-grad') !== grad; if (!li.hidden) vis++; });
+      if (empty) empty.hidden = vis > 0;
+    }
+    if (f) {
+      var have = {};
+      items().forEach(function (li) { have[li.getAttribute('data-grad')] = 1; });
+      f.querySelectorAll('[data-grad]').forEach(function (b) {
+        var g = b.getAttribute('data-grad');
+        if (g && !have[g]) { b.remove(); return; }
+        b.addEventListener('click', function () {
+          f.querySelectorAll('.filter-btn').forEach(function (x) { x.classList.toggle('active', x === b); x.setAttribute('aria-pressed', x === b); });
+          refresh(g);
+        });
+      });
+      if (f.querySelectorAll('[data-grad]').length < 3) f.hidden = true;
+    }
+    refresh('');
+  });
+})();
+</script>

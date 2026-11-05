@@ -1,0 +1,155 @@
+# DOGAĐANJA – živi popis generiran iz članaka s event_date (nadolazeći).
+# Upute: _data/README-zaposlenje-dogadjanja.md
+azurirano: 2026-11-05
+dogadjaji:
+  - naziv: Radionica izrade straničnika za umirovljenike u Gradskoj knjižnici Krk
+...
+    datum: 2026-11-06
+    datum_do: 2026-11-06
+    vrijeme: "09:00"
+    mjesto: Gradska knjižnica Krk
+...
+    grad: Krk
+...
+    opis: U petak, 6. studenog, od 9 do 11 sati umirovljenici s Marijom Bašić u knjižnici u
+  Krku izrađuju straničnike za knjige. Najviše šest polaznika, prijave su obavezne.
+...
+    link: /radionica-stranicnika-umirovljenici-knjiznica-krk/
+  - naziv: 'Žene za otok u studenome: „Jako ženska ćakula” s ginekologinjom i radionica snimanja
+  reelsa'
+    datum: 2026-11-06
+    vrijeme: "18:00"
+    mjesto: Mala vijećnica, Krk
+...
+    grad: Krk
+...
+    opis: Udruga Žene za otok 6. studenoga u 18 sati u Maloj vijećnici u Krku vodi otvoren razgovor
+  o ženskom zdravlju s doc. dr. sc. Lanom Glavan, a 13. studenoga slijedi edukacija
+  Ivane Pr
+...
+    link: /zene-za-otok-zenska-cakula-reels/
+  - naziv: Komedija „Skliske vježbe” otvara Mjesec smijeha u Hotelu Malin
+...
+    datum: 2026-11-06
+    vrijeme: "19:30"
+    mjesto: Hotel Malin, Malinska
+...
+    grad: Malinska
+...
+    opis: Irena Grdinić i Mario Lipovšek Battifiaca u petak, 6. studenog, u 19.30 vraćaju se
+  u Hotel Malin kao bračni par Đurđa i Franko. Ulaznice su 20 €.
+...
+    link: /skliske-vjezbe-hotel-malin/
+  - naziv: 'Malinska Outdoor Weekend: trail, hiking i bicikl 7. i 8. studenog'
+    datum: 2026-11-07
+    datum_do: 2026-11-08
+    vrijeme: "09:00"
+    mjesto: Hotel Malin (subota) i riva kod DUBoaka (nedjelja), Malinska
+...
+    grad: Malinska
+...
+    opis: 'Peti Malinska Outdoor Weekend 7. i 8. studenog donosi sedmi Malinska Trail (14 i
+  24 km), vođeni Hike od 12,5 km i nedjeljne biciklističke ture od 18 i 32 km, uz
+  besplatne programe '
+    link: /malinska-outdoor-weekend-2026/
+  - naziv: Predavanje o Göbekli Tepeu u Gradskoj knjižnici Krk
+...
+    datum: 2026-11-10
+    vrijeme: "18:00"
+    mjesto: Gradska knjižnica Krk, Kvarnerska ulica
+...
+    grad: Krk
+...
+    opis: U utorak, 10. studenog, u 18 sati Anera Banovec u Gradskoj knjižnici Krk govori o
+  Göbekli Tepeu, jednom od najstarijih poznatih monumentalnih nalazišta na svijetu.
+  Ulaz je slobodan
+...
+    link: /gobekli-tepe-predavanje-krk/
+  - naziv: Inquizicija pub kviz u Restoranu Marina u Puntu
+...
+    datum: 2026-11-12
+    vrijeme: "19:00"
+    mjesto: Restoran Marina (Puntica), Punat
+...
+    grad: Punat
+...
+    opis: U četvrtak, 12. studenoga, u 19 sati u Restoranu Marina u Puntu igra se Inquizicija
+  pub kviz općeg znanja. Ekipe od dvoje do petero, sudjelovanje besplatno, uz prijavu.
+...
+    link: /inquizicija-pub-kviz-marina-punat/
+  - naziv: Kako snimiti reel koji ljudi pogledaju do kraja – edukacija Ivane Predovan u Krku
+...
+    datum: 2026-11-13
+    vrijeme: "17:00"
+    mjesto: Mala vijećnica, Krk
+...
+    grad: Krk
+...
+    opis: Udruga Žene za otok u petak, 13. studenoga, u 17 sati u Maloj vijećnici u Krku organizira
+  besplatnu edukaciju Ivane Predovan o snimanju reelsa. Prijava je obavezna.
+...
+    link: /kako-snimiti-reel-zene-za-otok/
+  - naziv: Komedija „Vojni rok” u Hotelu Malin
+...
+    datum: 2026-11-13
+    vrijeme: "19:30"
+    mjesto: Hotel Malin, Malinska
+...
+    grad: Malinska
+...
+    opis: Strogi narednik Kukavica i ročnik Krešica u petak, 13. studenog, u 19.30 dolaze u
+  Hotel Malin – komedija u kojoj publika glasanjem sudjeluje u radnji. Ulaznice 17
+  €.
+...
+    link: /vojni-rok-hotel-malin/
+  - naziv: Besplatnim autobusom iz Krka na plesnu predstavu „Last Shelter” u HNK Zajc, 14. studenoga
+...
+    datum: 2026-11-14
+    vrijeme: "16:30"
+    mjesto: Polazak s Autobusnog kolodvora Krk; predstava u HNK Ivana pl. Zajca, Rijeka
+...
+    grad: Krk
+...
+    opis: U subotu, 14. studenoga, autobus u 16:30 vozi besplatno iz Krka na plesnu predstavu
+  „Last Shelter” Sergea Aiméa Coulibalyja u HNK Ivana pl. Zajca (početak u 18 sati).
+  Prvo kupite u
+...
+    link: /last-shelter-hnk-zajc-besplatan-bus-krk/
+  - naziv: „Tražim muža” s Jelicom Brestovac zatvara Mjesec smijeha u Hotelu Malin
+...
+    datum: 2026-11-20
+    vrijeme: "19:30"
+    mjesto: Hotel Malin, Malinska
+...
+    grad: Malinska
+...
+    opis: U petak, 20. studenog, u 19.30 Jelica Brestovac komedijom „Tražim muža” zatvara ovogodišnji
+  Mjesec smijeha u Hotelu Malin. Nakon predstave slijedi druženje uz DJ-a.
+...
+    link: /trazim-muza-hotel-malin/
+  - naziv: 'STRUKON – Dan poduzetništva u Puntu 3.0: 27. studenoga u Marini Punat'
+    datum: 2026-11-27
+    vrijeme: "09:00"
+    mjesto: Marina Punat
+...
+    grad: Punat
+...
+    opis: Osma strukovna konferencija STRUKON održat će se u petak, 27. studenoga od 9 sati
+  u Marini Punat – o Zakonu o strancima, transparentnosti plaća, Fiskalizaciji 2.0,
+  porezima za 2027
+...
+    link: /strukon-dan-poduzetnistva-punat-2026/
+  - naziv: Perpetuum Jazzile stiže na Advent u Malinskoj, 16. prosinca u Bogovićima
+...
+    datum: 2026-12-16
+    datum_do: 2026-12-16
+    vrijeme: "20:00"
+    mjesto: Školska sportska dvorana, Bogovići, Malinska
+...
+    grad: Malinska
+...
+    opis: Svjetski poznata vokalna skupina Perpetuum Jazzile nastupit će u srijedu, 16. prosinca
+  u 20 sati, u školskoj sportskoj dvorani u Bogovićima. Ulaznice su na Eventimu te
+  na Petrolovi
+...
+    link: /perpetuum-jazzile-advent-malinska/

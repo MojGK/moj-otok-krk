@@ -1,18 +1,19 @@
 {%- comment -%}
 Podaci o najavljenom događaju (event_date, event_end, event_place). Poziv: {% include dogadaj-info.html post=post %}
-event_time_unknown: true → umjesto sata piše „točno vrijeme još nije objavljeno“.
+Ako je vrijeme event_date 00:00, ispisuje se „vrijeme još nije objavljeno“ (događaj tada vrijedi do kraja dana; event_end ne treba).
 Događaj je „prošao“ kad prođe event_end, a ako ga nema, 3 sata nakon event_date (JS u site.js to provjerava u pregledniku).
 {%- endcomment -%}
 {%- assign e_post = include.post -%}
 {%- if e_post.event_date -%}
 {%- assign e_start = e_post.event_date | date: "%s" | plus: 0 -%}
-{%- if e_post.event_end -%}{%- assign e_end = e_post.event_end | date: "%s" | plus: 0 -%}{%- else -%}{%- assign e_end = e_start | plus: 10800 -%}{%- endif -%}
+{%- assign e_hm0 = e_post.event_date | date: "%H:%M" -%}
+{%- if e_post.event_end -%}{%- assign e_end = e_post.event_end | date: "%s" | plus: 0 -%}{%- elsif e_hm0 == "00:00" -%}{%- assign e_end = e_start | plus: 86400 -%}{%- else -%}{%- assign e_end = e_start | plus: 10800 -%}{%- endif -%}
 {%- assign e_dani = "nedjelja,ponedjeljak,utorak,srijeda,četvrtak,petak,subota" | split: "," -%}
 {%- assign e_wi = e_post.event_date | date: "%w" | plus: 0 -%}
 {%- assign e_d1 = e_post.event_date | date: "%Y-%m-%d" -%}
 <div class="event-info{% if include.compact %} compact{% endif %}" data-event-end="{{ e_end }}">
-  <span class="event-when">📅 <time datetime="{{ e_post.event_date | date_to_xmlschema }}">{{ e_dani[e_wi] }}, {{ e_post.event_date | date: "%-d. %-m. %Y." }}</time> · 🕔 {% if e_post.event_time_unknown %}točno vrijeme još nije objavljeno{% else %}{{ e_post.event_date | date: "%H:%M" }}
-  {%- if e_post.event_end -%}{%- assign e_d2 = e_post.event_end | date: "%Y-%m-%d" -%}–{% if e_d2 != e_d1 %}{{ e_post.event_end | date: "%-d. %-m. %Y. %H:%M" }}{% else %}{{ e_post.event_end | date: "%H:%M" }}{% endif %}{%- endif -%}{% endif %}
+  <span class="event-when">📅 <time datetime="{{ e_post.event_date | date_to_xmlschema }}">{{ e_dani[e_wi] }}, {{ e_post.event_date | date: "%-d. %-m. %Y." }}</time> · 🕔 {% assign e_hm = e_post.event_date | date: "%H:%M" %}{% if e_hm == "00:00" %}vrijeme još nije objavljeno{% else %}{{ e_hm }}{% endif %}
+  {%- if e_post.event_end -%}{%- assign e_d2 = e_post.event_end | date: "%Y-%m-%d" -%}–{% if e_d2 != e_d1 %}{{ e_post.event_end | date: "%-d. %-m. %Y. %H:%M" }}{% else %}{{ e_post.event_end | date: "%H:%M" }}{% endif %}{%- endif -%}
   </span>
   {%- if e_post.event_place %}<span class="event-place"> · 📍 {{ e_post.event_place }}</span>{% endif %}
   {%- if include.note %}<span class="event-past-note" hidden>Ovaj događaj je prošao.</span>{% endif %}

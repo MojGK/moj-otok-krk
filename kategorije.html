@@ -1,0 +1,37 @@
+---
+layout: default
+title: Kategorije
+permalink: /kategorije/
+---
+{%- comment -%}
+Pregled kategorija (donji izbornik „Kategorije”): pločice mjesta, vrsta i serijala s brojem članaka i najnovijim naslovom.
+Svaka pločica vodi na /kategorije/<slug>/ (layout kategorija, prvih 10 + „VIŠE”). Pločica ima id=<slug>, pa stare
+poveznice /kategorije/#<slug> preko assets/js/kategorije.js otvaraju stranicu te kategorije.
+{%- endcomment -%}
+<div class="categories-page kat-hub">
+  <h1>Kategorije</h1>
+  <p class="intro">Odaberi mjesto ili vrstu vijesti. Na svakoj stranici je prvih 10 članaka, a gumb <strong>VIŠE</strong> otvara sljedećih 10.</p>
+  {%- assign grupe = "lokacije,vrste,serijali" | split: "," -%}
+  {%- for g in grupe -%}
+  {%- unless site.data.kategorije[g] -%}{%- continue -%}{%- endunless -%}
+  <section class="kat-grupa" aria-labelledby="kg-{{ g }}">
+    <h2 id="kg-{{ g }}">{% if g == "lokacije" %}📍 Po mjestima{% elsif g == "vrste" %}🗂️ Po vrsti{% else %}📚 Serijali{% endif %}</h2>
+    <div class="kat-tiles">
+    {%- for k in site.data.kategorije[g] -%}
+      {%- include kat-broj.html name=k.name -%}
+      {%- assign kh_url = "/kategorije/" | append: k.slug | append: "/" -%}
+      {%- if k.slug == "zaposlenje" -%}{%- assign kh_url = "/zaposlenje/" -%}{%- endif -%}
+      {%- assign kh_page = site.pages | where: "url", kh_url | first -%}
+      {%- unless kh_page -%}{%- assign kh_url = "/?kategorija=" | append: k.slug -%}{%- endunless -%}
+      {%- assign kh_zadnji = nil -%}
+      {%- for p in site.posts -%}{%- if p.location == k.name or p.type == k.name or p.categories contains k.name -%}{%- assign kh_zadnji = p -%}{%- break -%}{%- endif -%}{%- endfor %}
+      <a class="kat-tile{% if kat_n == 0 %} is-empty{% endif %}" id="{{ k.slug }}" href="{{ kh_url | relative_url }}">
+        <span class="kt-top"><span class="kt-name">{% if g == "vrste" %}<span class="kt-dot t-{{ k.slug }}" aria-hidden="true"></span>{% endif %}{{ k.name }}</span><span class="kt-count">{{ kat_n }} <small>{% include broj-clanaka.html n=kat_n %}</small></span></span>
+        {%- if kh_zadnji %}<span class="kt-latest">{{ kh_zadnji.title | truncate: 80 }}</span>{% else %}<span class="kt-latest">Još nema članaka.</span>{% endif %}
+        <span class="kt-arrow" aria-hidden="true">›</span>
+      </a>
+    {%- endfor %}
+    </div>
+  </section>
+  {%- endfor %}
+</div>

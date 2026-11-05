@@ -1,0 +1,8 @@
+{%- comment -%}
+Brojač posjeta GoatCounter (bez kolačića). Uključuje se samo ako je u _config.yml postavljeno
+  goatcounter: <kod>      → skripta šalje na https://<kod>.goatcounter.com/count
+Prazno ili zakomentirano = ništa se ne učitava.
+{%- endcomment -%}
+{%- if site.goatcounter and site.goatcounter != "" -%}
+<script data-goatcounter="https://{{ site.goatcounter }}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+{%- endif -%}

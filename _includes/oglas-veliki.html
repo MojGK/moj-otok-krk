@@ -1,0 +1,46 @@
+{%- comment -%}
+Veliki oglas u bočnoj traci (okvir s logom, opisom, kontaktom i gumbom).
+Poziv: {% include oglas-veliki.html id="goring" %} prikazuje točno taj oglas.
+Bez id-a (bočna traka): na naslovnici prikazuje velike oglase koji NISU u gornjem banneru (banner: false),
+jer je gornji banner već na stranici; na ostalim stranicama jedan veliki oglas, izmjenično po stranici
+(da se bočna traka ne pretrpa). Veliki oglas = active: true i bez mali: true.
+{%- endcomment -%}
+{%- assign ov_lista = "" | split: "" -%}
+{%- for ov_par in site.data.oglasi -%}
+  {%- assign ov_o = ov_par[1] -%}
+  {%- unless ov_o.active -%}{%- continue -%}{%- endunless -%}
+  {%- if ov_o.mali -%}{%- continue -%}{%- endif -%}
+  {%- if include.id -%}
+    {%- if ov_par[0] == include.id -%}{%- assign ov_lista = ov_lista | push: ov_o -%}{%- endif -%}
+  {%- elsif page.url == '/' -%}
+    {%- if ov_o.banner == false -%}{%- assign ov_lista = ov_lista | push: ov_o -%}{%- endif -%}
+  {%- else -%}
+    {%- assign ov_lista = ov_lista | push: ov_o -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- if include.id == nil and page.url != '/' and ov_lista.size > 1 -%}
+  {%- assign ov_i = page.url | size | modulo: ov_lista.size -%}
+  {%- assign ov_lista = ov_lista | slice: ov_i, 1 -%}
+{%- endif -%}
+{%- for oglas in ov_lista %}
+<div class="sidebar-box oglas{% if oglas.foto %} oglas-s-fotom{% endif %}{% if page.url == '/' and include.id == nil %} sb-naslovnica{% endif %}" role="complementary" aria-label="Oglas: {{ oglas.name }}">
+  <span class="oglas-tag">Oglas</span>
+  {%- if oglas.foto %}
+  <a class="oglas-foto"{% if oglas.url %} href="{{ oglas.url }}" target="_blank" rel="sponsored noopener"{% endif %} tabindex="-1"><img src="{{ oglas.foto | relative_url }}" alt="{{ oglas.foto_alt }}" width="800" height="533" loading="lazy"></a>
+  {%- endif %}
+  <a class="oglas-logo{% if oglas.logo_sirok %} sirok{% endif %}"{% if oglas.url %} href="{{ oglas.url }}" target="_blank" rel="sponsored noopener"{% endif %}>
+    <img src="{{ oglas.logo | relative_url }}" alt="{{ oglas.logo_alt }}"{% if oglas.logo_sirok %} width="480" height="236"{% else %} width="120" height="136"{% endif %} loading="lazy">
+  </a>
+  <p class="oglas-name">{{ oglas.name }}{% if oglas.place %} <span>· {{ oglas.place }}</span>{% endif %}</p>
+  <p class="oglas-desc">{{ oglas.description }}</p>
+  {%- if oglas.slogan %}<p class="oglas-slogan">{{ oglas.slogan }}</p>{% endif %}
+  {%- if oglas.phone or oglas.email %}
+  <p class="oglas-contact">
+    {%- if oglas.phone %}<a href="tel:{{ oglas.phone | remove: ' ' }}">{{ oglas.phone }}</a>{% endif %}
+    {%- if oglas.phone and oglas.email %}<br>{% endif %}
+    {%- if oglas.email %}<a href="mailto:{{ oglas.email }}">{{ oglas.email }}</a>{% endif %}
+  </p>
+  {%- endif %}
+  {%- if oglas.url %}<a class="oglas-btn" href="{{ oglas.url }}" target="_blank" rel="sponsored noopener">{{ oglas.button | default: "Posjetite stranicu" }} →</a>{% endif -%}
+</div>
+{%- endfor -%}

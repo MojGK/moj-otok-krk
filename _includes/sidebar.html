@@ -1,14 +1,15 @@
 <aside class="site-sidebar">
+  {% include vrijeme-krk.html %}
   {%- if page.url == "/" -%}
   {%- assign sb_now = site.time | date: "%s" | plus: 0 -%}
   {%- assign sb_najave = site.posts | where_exp: "p", "p.event_date" | sort: "event_date" -%}
   {%- capture sb_items -%}
     {%- for p in sb_najave -%}
       {%- assign sb_s = p.event_date | date: "%s" | plus: 0 -%}
-      {%- if p.event_end -%}{%- assign sb_e = p.event_end | date: "%s" | plus: 0 -%}{%- else -%}{%- assign sb_e = sb_s | plus: 10800 -%}{%- endif -%}
+      {%- if p.event_end -%}{%- assign sb_e = p.event_end | date: "%s" | plus: 0 -%}{%- else -%}{%- assign sb_hm0 = p.event_date | date: "%H:%M" -%}{%- if sb_hm0 == "00:00" -%}{%- assign sb_e = sb_s | plus: 86400 -%}{%- else -%}{%- assign sb_e = sb_s | plus: 10800 -%}{%- endif -%}{%- endif -%}
       {%- if sb_e < sb_now -%}{%- continue -%}{%- endif %}
       <li data-event-end="{{ sb_e }}" data-hide-when-past>
-        <span class="latest-time"><time datetime="{{ p.event_date | date_to_xmlschema }}">{% if p.event_time_unknown %}{{ p.event_date | date: "%-d. %-m." }}{% else %}{{ p.event_date | date: "%-d. %-m. u %H:%M" }}{% endif %}</time></span>
+        <span class="latest-time"><time datetime="{{ p.event_date | date_to_xmlschema }}">{% assign sb_hm = p.event_date | date: "%H:%M" %}{% if sb_hm == "00:00" %}{{ p.event_date | date: "%-d. %-m." }}{% else %}{{ p.event_date | date: "%-d. %-m. u %H:%M" }}{% endif %}</time></span>
         <a href="{{ p.url | relative_url }}">{{ p.title }}</a>
       </li>
     {%- endfor -%}
@@ -27,10 +28,11 @@
   <div class="sidebar-box latest">
     <h3>Najnovije</h3>
     <ol class="latest-list">
-      {%- for p in site.posts limit: 8 %}
+      {%- assign sb_vijesti = site.posts | where_exp: "p", "p.type != 'Zaposlenje'" -%}
+      {%- for p in sb_vijesti limit: 8 %}
       <li{% if p.url == page.url %} class="current"{% endif %}>
         <span class="latest-time">{% include datum.html date=p.date show_time=p.show_time short=true %}</span>
-        <a href="{{ p.url | relative_url }}">{{ p.title }}</a>
+        <a href="{{ p.url | relative_url }}">{% if p.prijelomna %}<span class="sb-prijelomno"{% if p.prijelomna_do %} data-prijelomna-do="{{ p.prijelomna_do | date: '%s' }}"{% endif %}>⚠ PRIJELOMNO</span> {% endif %}{{ p.title }}</a>
       </li>
       {%- endfor %}
     </ol>
@@ -66,8 +68,7 @@
   </div>
   {%- endif %}
   <div class="sidebar-box">
-    <h3>O blogu</h3>
-    <p>Osobni blog o ljepoti, životu, povijesti i događajima na otoku Krku. Pišem o onome što vidim, čujem i doživim na otoku.</p>
-    {% if page.url == '/' %}<div class="ad-placeholder">Prostor za oglas</div>{% endif %}
+    <h3>O portalu</h3>
+    <p><strong>{{ site.title }}</strong> – lokalni portal otoka Krka. Vijesti, događanja i priče s cijelog otoka.</p>
   </div>
 </aside>

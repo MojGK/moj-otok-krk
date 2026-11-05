@@ -98,7 +98,7 @@
         var r = search(posts, q);
         var html = r.slice(0, 7).map(function (p) {
           return '<a class="sr-item" role="option" href="' + esc(p.url) + '">' +
-            (p.image ? '<img src="' + esc(p.image) + '" alt="" loading="lazy">' : '') +
+            (p.image ? '<img src="' + esc(p.image) + '"' + (p.image_position ? ' style="object-position:' + esc(p.image_position) + '"' : '') + ' alt="" loading="lazy">' : '') +
             '<span class="sr-text"><span class="sr-title">' + highlight(p.title, q) + '</span>' +
             '<span class="sr-meta">' + esc(p.date_text) + (p.location ? ' · ' + esc(p.location) : '') + '</span></span></a>';
         }).join('');
@@ -144,7 +144,7 @@
         : 'Nema rezultata za „' + esc(q) + '“. Pokušaj s drugim pojmom ili pregledaj <a href="' + BASE + '/kategorije/">kategorije</a>.';
       list.innerHTML = r.map(function (p) {
         return '<li class="search-hit">' +
-          (p.image ? '<a href="' + esc(p.url) + '" class="hit-thumb"><img src="' + esc(p.image) + '" alt="" loading="lazy"></a>' : '') +
+          (p.image ? '<a href="' + esc(p.url) + '" class="hit-thumb"><img src="' + esc(p.image) + '"' + (p.image_position ? ' style="object-position:' + esc(p.image_position) + '"' : '') + ' alt="" loading="lazy"></a>' : '') +
           '<div class="hit-body">' + badges(p) +
           '<h3><a href="' + esc(p.url) + '">' + highlight(p.title, q) + '</a></h3>' +
           '<div class="meta">' + esc(p.date_text) + '</div>' +

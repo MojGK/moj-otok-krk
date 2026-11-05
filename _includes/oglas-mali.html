@@ -1,0 +1,33 @@
+{%- comment -%}
+Mali oglas (kompaktna traka): logo lijevo, naziv · mjesto, kratka rečenica, oznaka „Oglas“.
+Prikazuje sve oglase iz _data/oglasi.yml s active: true i mali: true.
+Poziv: {% include oglas-mali.html %} (bočna traka) ili {% include oglas-mali.html iza="sport" %} (mobilna naslovnica, samo oglasi s mobilno_iza: sport).
+Parametar klasa= dodaje CSS klasu (npr. "sb-naslovnica").
+Bočna traka: oglasi bez `sidebar` (ili sidebar: gore) idu ispod velikog oglasa; oni sa sidebar: dolje
+prikazuju se pozivom {% include oglas-mali.html mjesto="dolje" %} (niže u traci).
+S iza= se prikazuju i VELIKI oglasi (bez mali: true) s tim mobilno_iza – kao banner (oglas-banner.html id=…).
+{%- endcomment -%}
+{%- for om_par in site.data.oglasi -%}
+  {%- assign om = om_par[1] -%}
+  {%- unless om.active -%}{%- continue -%}{%- endunless -%}
+  {%- if include.iza -%}
+    {%- if om.mobilno_iza != include.iza -%}{%- continue -%}{%- endif -%}
+    {%- unless om.mali -%}{%- assign om_id = om_par[0] -%}{%- include oglas-banner.html id=om_id klasa="ad-banner-blok" -%}{%- continue -%}{%- endunless -%}
+  {%- else -%}
+    {%- unless om.mali -%}{%- continue -%}{%- endunless -%}
+    {%- assign om_mj = om.sidebar | default: "gore" -%}
+    {%- assign om_tr = include.mjesto | default: "gore" -%}
+    {%- if om_mj != om_tr -%}{%- continue -%}{%- endif -%}
+  {%- endif %}
+<aside class="oglas-mali{% if include.klasa %} {{ include.klasa }}{% endif %}" aria-label="Oglas: {{ om.name }}">
+  <a class="om-link" href="{{ om.url }}" target="_blank" rel="noopener sponsored">
+    <img class="om-logo" src="{{ om.logo | relative_url }}" alt="{{ om.logo_alt | default: om.name }}" width="56" height="56" loading="lazy">
+    <span class="om-body">
+      <span class="om-name">{{ om.name }}{% if om.place %} <span>· {{ om.place }}</span>{% endif %}</span>
+      {%- if om.text %}<span class="om-text">{{ om.text }}</span>{% endif %}
+    </span>
+    <span class="om-arrow" aria-hidden="true">›</span>
+  </a>
+  <span class="om-tag">Oglas</span>
+</aside>
+{%- endfor -%}

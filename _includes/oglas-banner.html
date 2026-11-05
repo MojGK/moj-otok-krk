@@ -1,0 +1,44 @@
+{%- comment -%}
+Vodoravni oglasni banner (naslovnica). Bez parametra prikazuje prvi oglas iz _data/oglasi.yml koji ima
+active: true i banner različit od false. Ako takvog nema, prikazuje se placeholder „Ovdje može biti vaš oglas“.
+S id="breza" prikazuje točno taj oglas (npr. veliki oglas među mobilnim blokovima, preko oglas-mali.html);
+klasa= dodaje CSS klasu. Ako oglas ima foto, na mobitelu se prikazuje kao traka na vrhu bannera.
+{%- endcomment -%}
+{%- assign bn = nil -%}
+{%- for bn_par in site.data.oglasi -%}
+  {%- assign bn_o = bn_par[1] -%}
+  {%- if include.id -%}
+    {%- if bn_par[0] == include.id and bn_o.active -%}{%- assign bn = bn_o -%}{%- break -%}{%- endif -%}
+  {%- elsif bn_o.active and bn_o.banner != false -%}{%- assign bn = bn_o -%}{%- break -%}{%- endif -%}
+{%- endfor -%}
+{%- if bn %}
+<aside class="ad-banner{% if bn.foto %} ad-banner-s-fotom{% endif %}{% if include.klasa %} {{ include.klasa }}{% endif %}" aria-label="Oglas: {{ bn.name }}">
+  <span class="oglas-tag">Oglas</span>
+  {%- if bn.foto %}
+  <a class="ad-banner-foto"{% if bn.url %} href="{{ bn.url }}" target="_blank" rel="sponsored noopener"{% endif %} tabindex="-1" aria-hidden="true"><img src="{{ bn.foto | relative_url }}" alt="" width="800" height="533" loading="lazy"></a>
+  {%- endif %}
+  {%- if bn.logo %}
+  <a class="ad-banner-logo{% if bn.logo_sirok %} sirok{% endif %}"{% if bn.url %} href="{{ bn.url }}" target="_blank" rel="sponsored noopener"{% endif %} tabindex="-1" aria-hidden="true"><img src="{{ bn.logo | relative_url }}" alt=""{% if bn.logo_sirok %} width="480" height="236"{% else %} width="72" height="82"{% endif %} loading="lazy"></a>
+  {%- endif %}
+  <div class="ad-banner-text">
+    <p class="ad-banner-name">{{ bn.name }}{% if bn.place %} <span>· {{ bn.place }}</span>{% endif %}</p>
+    <p class="ad-banner-desc">{{ bn.banner_text | default: bn.description }}</p>
+    {%- if bn.phone or bn.email %}
+    <p class="ad-banner-contact">
+      {%- if bn.phone %}<a href="tel:{{ bn.phone | remove: ' ' }}">📞 {{ bn.phone }}</a>{% endif -%}
+      {%- if bn.email %}<a href="mailto:{{ bn.email }}">✉️ {{ bn.email }}</a>{% endif -%}
+    </p>
+    {%- endif %}
+  </div>
+  {%- if bn.url %}<a class="oglas-btn ad-banner-btn" href="{{ bn.url }}" target="_blank" rel="sponsored noopener">{{ bn.button | default: "Posjetite stranicu" }} →</a>{% endif -%}
+</aside>
+{%- else %}
+<aside class="ad-banner ad-banner-empty" aria-label="Oglasni prostor">
+  <span class="oglas-tag">Oglas</span>
+  <div class="ad-banner-text">
+    <p class="ad-banner-name">Ovdje može biti vaš oglas</p>
+    <p class="ad-banner-desc">Predstavite svoju tvrtku, obrt ili događaj čitateljima iz cijelog otoka Krka.</p>
+  </div>
+  {%- if site.oglasi_kontakt %}<a class="oglas-btn ad-banner-btn" href="mailto:{{ site.oglasi_kontakt }}">Javite nam se →</a>{% endif %}
+</aside>
+{%- endif -%}

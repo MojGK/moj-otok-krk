@@ -1,0 +1,132 @@
+{%- comment -%}
+  Anketa (poll) za objave. Koristi se iz front mattera:
+    anketa:
+      id: kratki-jedinstveni-id   # 3–50 znakova: slova, brojke, - _
+      pitanje: "Pitanje?"
+      opcije:
+        - "Prvi odgovor"
+        - "Drugi odgovor"
+  U tekstu objave: include anketa.html (Liquid include tag) na željenom mjestu.
+  Glasovi se broje anonimno preko besplatnih javnih brojača bez prijave (servis i rezerva
+  u _config.yml pod `ankete:`), bez kolačića i oglasnih trackera. Ako glavni servis ne
+  odgovori u roku (timeout_ms), koristi se rezerva. Ponovljeno glasanje s istog preglednika
+  sprječava se preko localStorage (pamti se i servis kod kojeg je glas zabilježen).
+{%- endcomment -%}
+{%- assign a = include.anketa | default: page.anketa -%}
+{%- if a and a.pitanje and a.opcije -%}
+{%- assign a_id = a.id | default: page.slug | slugify -%}
+{%- assign a_cfg = site.ankete -%}
+<section class="anketa" data-anketa="{{ a_id }}" aria-labelledby="anketa-{{ a_id }}-q">
+  <span class="anketa-tag">Anketa</span>
+  <h3 id="anketa-{{ a_id }}-q" class="anketa-q">{{ a.pitanje }}</h3>
+  <ol class="anketa-opcije">
+    {%- for o in a.opcije %}
+    <li data-i="{{ forloop.index }}">
+      <button type="button" class="anketa-btn" disabled>{{ o }}</button>
+      <div class="anketa-rez" hidden>
+        <span class="anketa-label">{{ o }}</span>
+        <span class="anketa-bar"><span style="width:0%"></span></span>
+        <span class="anketa-pct">0 %</span>
+      </div>
+    </li>
+    {%- endfor %}
+  </ol>
+  <p class="anketa-info" aria-live="polite">Učitavam anketu…</p>
+  <noscript><p class="anketa-info">Za glasanje je potreban JavaScript.</p></noscript>
+</section>
+<script>
+(function () {
+  var box = document.querySelector('.anketa[data-anketa="{{ a_id }}"]');
+  if (!box || box.dataset.ready) return; box.dataset.ready = '1';
+  var SERVISI = [{% if a_cfg.servis.get %}
+    { naziv: {{ a_cfg.servis.naziv | default: "servis" | jsonify }}, get: {{ a_cfg.servis.get | jsonify }}, hit: {{ a_cfg.servis.hit | jsonify }}, timeout: {{ a_cfg.servis.timeout_ms | default: a_cfg.timeout_ms | default: 4000 }} }{% else %}
+    { naziv: 'countapi', get: 'https://countapi.mileshilliard.com/api/v1/get/mojgk-{kljuc}', hit: 'https://countapi.mileshilliard.com/api/v1/hit/mojgk-{kljuc}', timeout: 4000 }{% endif %}
+    {%- if a_cfg.rezerva.get %},
+    { naziv: {{ a_cfg.rezerva.naziv | default: "rezerva" | jsonify }}, get: {{ a_cfg.rezerva.get | jsonify }}, hit: {{ a_cfg.rezerva.hit | jsonify }}, timeout: {{ a_cfg.rezerva.timeout_ms | default: a_cfg.timeout_ms | default: 4000 }} }
+    {%- endif %}
+  ];
+  var NEDOSTUPNO = 'Glasanje trenutno nije dostupno, pokušajte kasnije.';
+  var id = box.dataset.anketa;
+  var items = box.querySelectorAll('.anketa-opcije li'), info = box.querySelector('.anketa-info');
+  var store = 'anketa:' + id, voted = null, votedSrv = null;
+  try { voted = localStorage.getItem(store); votedSrv = localStorage.getItem(store + ':servis'); } catch (e) {}
+  function url(s, op, i) { return s[op].replace('{kljuc}', encodeURIComponent(id + '-o' + i)); }
+  function req(u, ms) {
+    var ctl = window.AbortController ? new AbortController() : null;
+    var t = setTimeout(function () { if (ctl) ctl.abort(); }, ms);
+    return Promise.race([
+      fetch(u, { cache: 'no-store', signal: ctl ? ctl.signal : undefined }),
+      new Promise(function (_, rej) { setTimeout(function () { rej(new Error('timeout')); }, ms + 100); })
+    ]).then(function (r) {
+      clearTimeout(t);
+      if (r.status === 404) return 0;   // brojač još ne postoji = 0 glasova
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json().then(function (j) { var v = Number(j && j.value); if (isNaN(v)) throw new Error('bad'); return v; });
+    }, function (e) { clearTimeout(t); throw e; });
+  }
+  // isprobaj servise redom: fn(servis) mora vratiti Promise; vraća {s, v} prvog koji uspije
+  function redom(list, fn) {
+    var k = 0;
+    function next() {
+      if (k >= list.length) return Promise.reject(new Error('svi servisi nedostupni'));
+      var s = list[k++];
+      return fn(s).then(function (v) { return { s: s, v: v }; }, next);
+    }
+    return next();
+  }
+  function poredak(prvi) {
+    if (!prvi) return SERVISI.slice();
+    return SERVISI.filter(function (s) { return s.naziv === prvi; }).concat(SERVISI.filter(function (s) { return s.naziv !== prvi; }));
+  }
+  function load(s) {
+    return Promise.all(Array.prototype.map.call(items, function (li) { return req(url(s, 'get', li.dataset.i), s.timeout); }));
+  }
+  function show(counts) {
+    var total = counts.reduce(function (s, n) { return s + n; }, 0);
+    items.forEach(function (li, k) {
+      var n = counts[k], pct = total ? Math.round(n * 100 / total) : 0;
+      li.querySelector('.anketa-btn').hidden = true;
+      var r = li.querySelector('.anketa-rez'); r.hidden = false;
+      r.querySelector('.anketa-bar span').style.width = pct + '%';
+      r.querySelector('.anketa-pct').textContent = pct + ' % (' + n + ')';
+      li.classList.toggle('moj-glas', String(k + 1) === voted);
+    });
+    info.textContent = 'Ukupno glasova: ' + total + (voted ? '. Hvala na glasu!' : '');
+    box.classList.remove('anketa-greska');
+  }
+  function greska(msg) { info.textContent = msg; box.classList.add('anketa-greska'); }
+  function setBtns(on) { items.forEach(function (x) { x.querySelector('.anketa-btn').disabled = !on; }); }
+
+  if (voted) {
+    redom(poredak(votedSrv), load).then(function (r) { show(r.v); }).catch(function () {
+      greska('Hvala na glasu! Rezultati trenutno nisu dostupni, pokušajte kasnije.');
+    });
+    return;
+  }
+  var radi = null; // servis koji je odgovorio pri učitavanju
+  items.forEach(function (li) {
+    var b = li.querySelector('.anketa-btn');
+    b.addEventListener('click', function () {
+      setBtns(false);
+      info.textContent = 'Šaljem glas…';
+      box.classList.remove('anketa-greska');
+      redom(poredak(radi && radi.naziv), function (s) { return req(url(s, 'hit', li.dataset.i), s.timeout).then(function () { return s; }); })
+        .then(function (r) {
+          var s = r.s;
+          voted = li.dataset.i;
+          try { localStorage.setItem(store, voted); localStorage.setItem(store + ':servis', s.naziv); } catch (e) {}
+          return load(s).then(show, function () { greska('Hvala na glasu! Rezultati trenutno nisu dostupni.'); });
+        }, function () { setBtns(true); greska(NEDOSTUPNO); });
+    });
+  });
+  // provjera dostupnosti prije glasanja (jedan zahtjev po servisu)
+  redom(SERVISI, function (s) { return req(url(s, 'get', 1), s.timeout); }).then(function (r) {
+    radi = r.s; setBtns(true);
+    info.textContent = 'Odaberite odgovor. Glasanje je anonimno, bez prijave.';
+  }, function () {
+    setBtns(true); // korisnik može pokušati ponovno; klik opet prolazi sve servise
+    greska(NEDOSTUPNO);
+  });
+})();
+</script>
+{%- endif -%}

@@ -1,0 +1,4 @@
+{%- comment -%} src za sličicu kartice: /assets/images/x.jpg → /assets/images/thumbs/x.jpg (480 px). Ako sličica ne postoji, preglednik učita original (onerror). Poziv: <img {% include thumb.html img=post.image %} ...> {%- endcomment -%}
+{%- assign th_i = include.img | append: "" -%}{%- assign th_rest = th_i | remove_first: "/assets/images/" -%}
+{%- assign th_slash = th_rest | split: "/" | size -%}
+{%- if th_i != th_rest and th_slash == 1 -%}src="{{ th_i | replace_first: '/assets/images/', '/assets/images/thumbs/' | relative_url }}" onerror="this.onerror=null;this.src='{{ th_i | relative_url }}'"{%- else -%}src="{{ th_i | relative_url }}"{%- endif -%}

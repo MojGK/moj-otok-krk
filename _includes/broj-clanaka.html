@@ -1,0 +1,7 @@
+{%- comment -%} "1 članak", "3 članka", "12 članaka". Poziv: {% include broj-clanaka.html n=5 %} {%- endcomment -%}
+{%- assign bc_n = include.n | plus: 0 -%}{%- assign bc_10 = bc_n | modulo: 10 -%}{%- assign bc_100 = bc_n | modulo: 100 -%}
+{%- assign bc_r = "članaka" -%}
+{%- if bc_100 < 11 or bc_100 > 14 -%}
+  {%- if bc_10 == 1 -%}{%- assign bc_r = "članak" -%}{%- elsif bc_10 >= 2 and bc_10 <= 4 -%}{%- assign bc_r = "članka" -%}{%- endif -%}
+{%- endif -%}
+{{- bc_r -}}

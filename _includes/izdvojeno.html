@@ -1,0 +1,81 @@
+{%- comment -%}
+Rubrika "Izdvojeno" na naslovnici: 1 udarna vijest + 4 članka, svaki iz drugog mjesta.
+Poziv: {% include izdvojeno.html lead=lead %}  → ostavlja varijablu izd_urls ("|url|url|...")
+Udarna = najnoviji članak s `istaknuto: true` (osim hero članka), inače najnoviji članak koji nije hero.
+Grupe mjesta su u _data/kategorije.yml (izdvojeno_grupe).
+{%- endcomment -%}
+{%- assign izd_lead = include.lead -%}
+{%- comment -%} Zaposlenje je zasebna rubrika i ne ulazi u Izdvojeno {%- endcomment -%}
+{%- assign izd_posts = site.posts | where_exp: "p", "p.type != 'Zaposlenje'" -%}
+{%- assign izd_udarna = nil -%}
+{%- assign izd_flag = false -%}
+{%- for p in izd_posts -%}
+  {%- if p.istaknuto == true and p.url != izd_lead.url -%}{%- assign izd_udarna = p -%}{%- assign izd_flag = true -%}{%- break -%}{%- endif -%}
+{%- endfor -%}
+{%- unless izd_udarna -%}
+  {%- for p in izd_posts -%}{%- if p.url != izd_lead.url -%}{%- assign izd_udarna = p -%}{%- break -%}{%- endif -%}{%- endfor -%}
+{%- endunless -%}
+{%- assign izd_urls = "|" | append: izd_udarna.url | append: "|" -%}
+{%- assign izd_used = "|" | append: izd_udarna.location | append: "|" -%}
+{%- assign izd_n = 0 -%}
+{%- for g in site.data.kategorije.izdvojeno_grupe -%}
+  {%- if izd_n >= 4 -%}{%- break -%}{%- endif -%}
+  {%- for p in izd_posts -%}
+    {%- assign k_loc = "|" | append: p.location | append: "|" -%}
+    {%- assign k_url = "|" | append: p.url | append: "|" -%}
+    {%- if p.url == izd_lead.url or izd_urls contains k_url or izd_used contains k_loc -%}{%- continue -%}{%- endif -%}
+    {%- if g contains p.location -%}
+      {%- assign izd_urls = izd_urls | append: p.url | append: "|" -%}
+      {%- assign izd_used = izd_used | append: p.location | append: "|" -%}
+      {%- assign izd_n = izd_n | plus: 1 -%}
+      {%- break -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endfor -%}
+{%- comment -%} rezerva: najnoviji članci iz još neiskorištenih mjesta {%- endcomment -%}
+{%- if izd_n < 4 -%}
+  {%- for p in izd_posts -%}
+    {%- if izd_n >= 4 -%}{%- break -%}{%- endif -%}
+    {%- assign k_loc = "|" | append: p.location | append: "|" -%}
+    {%- assign k_url = "|" | append: p.url | append: "|" -%}
+    {%- if p.url == izd_lead.url or izd_urls contains k_url or izd_used contains k_loc -%}{%- continue -%}{%- endif -%}
+    {%- assign izd_urls = izd_urls | append: p.url | append: "|" -%}
+    {%- assign izd_used = izd_used | append: p.location | append: "|" -%}
+    {%- assign izd_n = izd_n | plus: 1 -%}
+  {%- endfor -%}
+{%- endif -%}
+{%- assign izd_list = izd_urls | split: "|" -%}
+<section class="izdvojeno" id="izdvojeno" aria-labelledby="izdvojeno-naslov">
+  <h2 class="section-title" id="izdvojeno-naslov">Izdvojeno</h2>
+  <div class="izd-grid">
+  {%- for u in izd_list -%}
+    {%- if u == "" -%}{%- continue -%}{%- endif -%}
+    {%- assign p = site.posts | where: "url", u | first -%}
+    {%- assign i_loc = site.data.kategorije.lokacije | where: "name", p.location | first -%}
+    {%- assign i_type = site.data.kategorije.vrste | where: "name", p.type | first -%}
+    {%- if p.url == izd_udarna.url %}
+    <article class="izd-card izd-udarna" data-location="{{ i_loc.slug }}">
+      <a href="{{ p.url | relative_url }}" class="izd-link{% unless p.image %} no-img{% endunless %}">
+        {% if p.image %}<img src="{{ p.image | relative_url }}"{% if p.image_position %} style="object-position: {{ p.image_position }}"{% endif %} alt="{{ p.image_alt | default: p.title | escape }}" loading="lazy">{% else %}<span class="card-ph">🌊</span>{% endif %}
+        <span class="izd-overlay">
+          <span class="card-badges">{% include prijelomna-oznaka.html post=p %}<span class="card-badge udarno">⚡ Udarno</span>{% if i_type %}<span class="card-badge t-{{ i_type.slug }}">{{ i_type.name }}</span>{% endif %}</span>
+          <span class="izd-title">{{ p.title }}</span>
+          <span class="izd-meta">{% if i_loc %}<span>📍 {{ i_loc.name }}</span>{% endif %}<span>{% include datum.html date=p.date show_time=p.show_time %}</span></span>
+        </span>
+      </a>
+    </article>
+    {%- else %}
+    <article class="izd-card izd-mala" data-location="{{ i_loc.slug }}">
+      <a href="{{ p.url | relative_url }}" class="izd-link">
+        <span class="izd-thumb{% unless p.image %} no-img{% endunless %}">{% if p.image %}<img {% include thumb.html img=p.image %}{% if p.image_position %} style="object-position: {{ p.image_position }}"{% endif %} alt="" loading="lazy">{% else %}<span class="card-ph">🌊</span>{% endif %}</span>
+        <span class="izd-body">
+          {% if p.prijelomna %}<span class="izd-prijelomna">{% include prijelomna-oznaka.html post=p %}</span>{% endif %}<span class="izd-kicker">{% if i_loc %}📍 {{ i_loc.name }}{% endif %}{% if i_type %} · <span class="izd-type t-{{ i_type.slug }}">{{ i_type.name }}</span>{% endif %}</span>
+          <span class="izd-title">{{ p.title }}</span>
+          <span class="izd-date">{% include datum.html date=p.date show_time=p.show_time short=true %}</span>
+        </span>
+      </a>
+    </article>
+    {%- endif -%}
+  {%- endfor %}
+  </div>
+</section>

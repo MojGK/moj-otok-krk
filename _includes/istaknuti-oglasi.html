@@ -1,0 +1,42 @@
+{%- comment -%}
+Izdvojeni oglasi za posao iz front mattera članka vrste Zaposlenje:
+  istaknuti_oglasi:
+    - pozicija: "Viši referent / viša referentica (pripravnik)"
+      poslodavac: "Hrvatski zavod za mirovinsko osiguranje"
+      mjesto: Krk
+      rok: 2026-11-02          # GGGG-MM-DD (ili tekst, npr. "do popune")
+      link: https://...
+      opis: "neobavezno, jedna kratka rečenica"
+Poziv: {% include istaknuti-oglasi.html post=post naslov="Izdvojeni oglasi" limit=2 %}
+Ili iz živog popisa (_data/poslovi.yml): {% include istaknuti-oglasi.html oglasi=popis limit=2 %} – link je `link`, inače prvi `izvori`.
+Oglasi kojima je rok prošao skrivaju se u pregledniku (JS u site.js / ovdje).
+{%- endcomment -%}
+{%- assign io_post = include.post -%}
+{%- assign io_limit = include.limit | default: 2 -%}
+<div class="job-highlights" data-job-list>
+  {% if include.naslov %}<p class="job-hl-title"><span aria-hidden="true">💼</span> {{ include.naslov }}</p>{% endif %}
+  <ul class="job-hl-list">
+  {%- assign io_lista = include.oglasi | default: io_post.istaknuti_oglasi -%}
+  {%- for o in io_lista limit: io_limit %}
+    {%- assign o_rok = o.rok | append: "" -%}
+    {%- assign o_is_date = false -%}{%- if o_rok.size == 10 and o_rok contains "-" -%}{%- assign o_is_date = true -%}{%- endif %}
+    <li class="job-hl"{% if o_is_date %} data-rok="{{ o_rok }}"{% endif %}>
+      <a class="job-hl-link" href="{{ o.link | default: o.izvori.first.url }}" target="_blank" rel="noopener">
+        <span class="job-hl-pos">{{ o.pozicija }}</span>
+        <span class="job-hl-emp">{{ o.poslodavac }}</span>
+        <span class="job-hl-meta"><span>📍 {{ o.mjesto }}</span><span class="job-hl-rok">⏳ Rok: {% if o_is_date %}{{ o.rok | date: "%-d. %-m. %Y." }}{% else %}{{ o.rok }}{% endif %}</span></span>
+        {% if o.opis %}<span class="job-hl-desc">{{ o.opis }}</span>{% endif %}
+        <span class="job-hl-cta">Izvorni oglas <span aria-hidden="true">↗</span></span>
+      </a>
+    </li>
+  {%- endfor %}
+  </ul>
+</div>
+<script>
+(function () {
+  var s = document.currentScript, box = s && s.previousElementSibling;
+  if (!box) return;
+  var d = new Date(), t = d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
+  box.querySelectorAll('[data-rok]').forEach(function (li) { if (li.getAttribute('data-rok') < t) li.classList.add('isteklo'); });
+})();
+</script>

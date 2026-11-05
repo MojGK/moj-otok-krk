@@ -6,8 +6,8 @@
 {%- for o_s in site.data.kategorije.serijali -%}{%- if o_post.categories contains o_s.name -%}{%- assign o_ser = o_s -%}{%- endif -%}{%- endfor -%}
 {%- if o_loc or o_type or o_ser -%}
 <div class="tags">
-  {%- if o_loc %}<a class="tag tag-location" href="{{ '/kategorije/' | relative_url }}#{{ o_loc.slug }}">📍 {{ o_loc.name }}</a>{% endif -%}
-  {%- if o_type %}<a class="tag tag-type" href="{{ '/kategorije/' | relative_url }}#{{ o_type.slug }}">{{ o_type.name }}</a>{% endif -%}
-  {%- if o_ser %}<a class="tag tag-series" href="{{ '/kategorije/' | relative_url }}#{{ o_ser.slug }}">{{ o_ser.name }}</a>{% endif -%}
+  {%- if o_loc %}<a class="tag tag-location" href="{{ '/kategorije/' | append: o_loc.slug | append: '/' | relative_url }}">📍 {{ o_loc.name }}</a>{% endif -%}
+  {%- if o_type %}<a class="tag tag-type t-{{ o_type.slug }}" href="{% if o_type.slug == 'zaposlenje' %}{{ '/zaposlenje/' | relative_url }}{% else %}{{ '/kategorije/' | append: o_type.slug | append: '/' | relative_url }}{% endif %}">{{ o_type.name }}</a>{% endif -%}
+  {%- if o_ser %}<a class="tag tag-series" href="{{ '/kategorije/' | append: o_ser.slug | append: '/' | relative_url }}">{{ o_ser.name }}</a>{% endif -%}
 </div>
 {%- endif -%}

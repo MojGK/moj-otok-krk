@@ -1,0 +1,72 @@
+{%- comment -%}
+Popis oglasa za posao kao kartice (članci vrste Zaposlenje). Podaci iz front mattera:
+  oglasi:
+    - poslodavac: "Lokve d.o.o."             # obavezno (istaknuto na vrhu kartice)
+      pozicija: "Radnik / radnica u pilani"  # obavezno (podebljano)
+      broj: 1                                # neobavezno – broj traženih radnika
+      vrsta: "neodređeno, puno radno vrijeme" # neobavezno – vrsta ugovora / uvjeti
+      mjesto: Lokve                          # obavezno
+      rok: 2026-11-15                        # GGGG-MM-DD ili tekst u navodnicima ("do popune")
+      oznaka: "*"                            # neobavezno – oznaka fusnote uz rok
+      opis: "Kratka rečenica."               # neobavezno
+      izvori:                                # barem jedan; prvi je gumb „Više / prijava”
+        - naziv: HZZ
+          url: https://burzarada.hzz.hr/...
+Poziv u tekstu članka: {% include oglasi-lista.html %}  (ili oglasi=page.drugi_popis)
+Oglasi s prošlim rokom u pregledniku se označe kao „Rok istekao” (ne brišu se).
+Živi popis (stranica /zaposlenje/): {% include oglasi-lista.html oglasi=site.data.poslovi.oglasi zivo=true %}
+  – istekli se izbacuju pri izradi i skrivaju u pregledniku, poredano po roku, uz filter po mjestu.
+{%- endcomment -%}
+{%- assign ol_oglasi = include.oglasi | default: page.oglasi -%}
+{%- if include.zivo -%}{%- include zivi-popis.html lista=ol_oglasi polje="rok" -%}{%- assign ol_oglasi = zp_lista -%}{%- endif -%}
+{%- if include.zivo and zp_gradovi.size > 1 %}
+<div class="filters zivi-filter" data-zivi-filter role="group" aria-label="Filtriraj po mjestu">
+  <button type="button" class="filter-btn active" data-grad="">Sva mjesta</button>
+  {%- for g in zp_gradovi %}<button type="button" class="filter-btn" data-grad="{{ g | escape }}">{{ g }}</button>{% endfor %}
+</div>
+{%- endif -%}
+{%- if ol_oglasi and ol_oglasi.size > 0 %}
+<ul class="oglasi-lista{% if include.zivo %} zivi-popis{% endif %}" data-oglasi-lista>
+{%- for o in ol_oglasi %}
+  {%- assign o_rok = o.rok | append: "" -%}
+  {%- assign o_is_date = false -%}{%- if o_rok.size == 10 and o_rok contains "-" -%}{%- assign o_is_date = true -%}{%- endif %}
+  <li class="oglas-k"{% if o_is_date %} data-rok="{{ o_rok }}"{% endif %} data-grad="{{ o.grad | default: o.mjesto | escape }}">
+    <p class="ok-posl">{{ o.poslodavac }}</p>
+    <p class="ok-poz">{{ o.pozicija }}</p>
+    <ul class="ok-det">
+      <li><span class="ok-lbl">📍 Mjesto</span> <span class="ok-val">{{ o.mjesto }}</span></li>
+      <li class="ok-rok"><span class="ok-lbl">⏳ Rok prijave</span> <span class="ok-val">{% if o_is_date %}{{ o.rok | date: "%-d. %-m. %Y." }}{% else %}{{ o.rok }}{% endif %}{% if o.oznaka %}<sup class="ok-ozn">{{ o.oznaka }}</sup>{% endif %}</span></li>
+      {%- if o.broj %}<li><span class="ok-lbl">👤 Broj radnika</span> <span class="ok-val">{{ o.broj }}</span></li>{% endif %}
+      {%- if o.vrsta %}<li><span class="ok-lbl">📄 Ugovor / uvjeti</span> <span class="ok-val">{{ o.vrsta }}</span></li>{% endif %}
+    </ul>
+    {%- if o.opis %}<p class="ok-opis">{{ o.opis }}</p>{% endif %}
+    {%- if o.izvori %}
+    <p class="ok-linkovi">
+      {%- for iz in o.izvori %}
+      {%- if forloop.first %}<a class="ok-btn" href="{{ iz.url }}" target="_blank" rel="noopener">Više / prijava <span class="ok-izv">({{ iz.naziv }})</span> <span aria-hidden="true">↗</span></a>
+      {%- else %}<a class="ok-alt" href="{{ iz.url }}" target="_blank" rel="noopener">{{ iz.naziv }} <span aria-hidden="true">↗</span></a>{% endif %}
+      {%- endfor %}
+    </p>
+    {%- endif %}
+  </li>
+{%- endfor %}
+</ul>
+<script>
+(function () {
+  var s = document.currentScript, box = s && s.previousElementSibling;
+  if (!box) return;
+  var d = new Date(), t = d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
+  box.querySelectorAll('[data-rok]').forEach(function (li) {
+    if (li.getAttribute('data-rok') < t) {
+      if (box.classList.contains('zivi-popis')) { li.remove(); return; }
+      li.classList.add('isteklo');
+      var r = li.querySelector('.ok-rok .ok-val');
+      if (r) r.insertAdjacentHTML('beforeend', ' <span class="ok-ist">Rok istekao</span>');
+    }
+  });
+})();
+</script>
+{%- endif %}
+{%- if include.zivo %}
+<p class="no-results" data-zivi-prazno{% if ol_oglasi.size > 0 %} hidden{% endif %}>{{ include.prazno | default: "Trenutno nema aktualnih oglasa." }}</p>
+{%- endif %}

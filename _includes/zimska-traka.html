@@ -1,0 +1,33 @@
+{%- comment -%}
+Zimska traka na vrhu naslovnice (studeni – ožujak). Provjera datuma: pri izradi (Liquid, stranica se gradi svaki dan u 05:00)
+i u pregledniku (JS skriva traku izvan sezone). Ceste: HAK stanje na cestama. Vrijeme: isti izvor kao widget u bočnoj traci
+(Open-Meteo, Krk, bez ključa i kolačića); bez odgovora ostaje samo poveznica.
+{%- endcomment -%}
+{%- assign zt_mj = site.time | date: "%-m" | plus: 0 -%}
+{%- if zt_mj >= 11 or zt_mj <= 3 -%}
+<aside class="zimska-traka" id="zimska-traka" aria-label="Zimski uvjeti">
+  <a class="zt-ceste" href="https://www.hak.hr/info/stanje-na-cestama/" target="_blank" rel="noopener">🛣️ <strong>D102 / D104</strong> <span class="zt-dugo">· stanje na cestama</span> <span class="zt-izvor">(HAK)</span> →</a>
+  <a class="zt-vrijeme" href="#vrijeme-krk" data-zt-vrijeme>🌡️ <strong>Krk</strong> <span data-zt-tekst>prognoza</span></a>
+</aside>
+<script>
+(function () {
+  var bar = document.getElementById('zimska-traka');
+  if (!bar) return;
+  var m = new Date().getMonth() + 1;
+  if (m > 3 && m < 11) { bar.parentNode.removeChild(bar); return; }
+  var out = bar.querySelector('[data-zt-tekst]');
+  var W = {0:'☀️',1:'🌤️',2:'⛅',3:'☁️',45:'🌫️',48:'🌫️',51:'🌦️',53:'🌦️',55:'🌧️',56:'🌧️',57:'🌧️',61:'🌦️',63:'🌧️',65:'🌧️',66:'🧊',67:'🧊',71:'🌨️',73:'🌨️',75:'❄️',77:'🌨️',80:'🌦️',81:'🌧️',82:'⛈️',85:'🌨️',86:'❄️',95:'⛈️',96:'⛈️',99:'⛈️'};
+  var ctl = window.AbortController ? new AbortController() : null;
+  setTimeout(function () { if (ctl) ctl.abort(); }, 8000);
+  fetch('https://api.open-meteo.com/v1/forecast?latitude=45.026&longitude=14.575&current=temperature_2m,weather_code&daily=temperature_2m_max,temperature_2m_min,snowfall_sum&timezone=Europe/Zagreb&forecast_days=1', ctl ? { signal: ctl.signal } : {})
+    .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+    .then(function (d) {
+      var c = d.current, dl = d.daily; if (!c || !dl) return;
+      var s = (W[c.weather_code] || '') + ' ' + Math.round(c.temperature_2m) + '°C · danas ' +
+        Math.round(dl.temperature_2m_min[0]) + '/' + Math.round(dl.temperature_2m_max[0]) + '°';
+      if (dl.snowfall_sum && dl.snowfall_sum[0] >= 0.5) s += ' · snijeg ~' + Math.round(dl.snowfall_sum[0]) + ' cm';
+      out.textContent = s;
+    }).catch(function () {});
+})();
+</script>
+{%- endif -%}

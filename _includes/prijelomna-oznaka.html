@@ -1,0 +1,2 @@
+{%- comment -%} Crvena oznaka za članak s `prijelomna: true`. Poziv: {% include prijelomna-oznaka.html post=p %} (vel="velika" za stranicu članka) {%- endcomment -%}
+{%- if include.post.prijelomna == true -%}<span class="card-badge prijelomno{% if include.vel %} prijelomno-{{ include.vel }}{% endif %}"{% if include.post.prijelomna_do %} data-prijelomna-do="{{ include.post.prijelomna_do | date: '%s' }}"{% endif %}><span aria-hidden="true">⚠</span> Prijelomna vijest</span>{%- endif -%}

@@ -1,0 +1,30 @@
+{%- comment -%}
+Pomoćni include za žive popise (_data/poslovi.yml, _data/dogadjanja.yml).
+Ulaz: lista=<popis>, polje="rok" (oglasi) ili "datum" (događaji; tada se gleda i datum_do).
+Izlaz (varijable): zp_lista = stavke bez isteklih (rok/kraj prije danas pri izradi stranice), poredane po datumu;
+stavke bez datuma (npr. rok "do popune") idu na kraj. zp_gradovi = popis mjesta za filter (grad, inače mjesto).
+{%- endcomment -%}
+{%- assign zp_danas = site.time | date: "%Y%m%d" | plus: 0 -%}
+{%- assign zp_keys = "" | split: "" -%}
+{%- for s in include.lista -%}
+  {%- if include.polje == "datum" -%}{%- assign zp_v = s.datum_do | default: s.datum | append: "" -%}{%- assign zp_v0 = s.datum | append: "" -%}{%- else -%}{%- assign zp_v = s.rok | append: "" -%}{%- assign zp_v0 = zp_v -%}{%- endif -%}
+  {%- if zp_v.size == 10 and zp_v contains "-" -%}
+    {%- assign zp_n = zp_v | date: "%Y%m%d" | plus: 0 -%}
+    {%- if zp_n < zp_danas -%}{%- continue -%}{%- endif -%}
+    {%- assign zp_k = zp_v0 | date: "%Y%m%d" -%}
+  {%- else -%}{%- assign zp_k = "99999999" -%}{%- endif -%}
+  {%- assign zp_i = forloop.index0 | plus: 10000 -%}
+  {%- assign zp_k = zp_k | append: "#" | append: zp_i -%}{%- assign zp_keys = zp_keys | push: zp_k -%}
+{%- endfor -%}
+{%- assign zp_keys = zp_keys | sort -%}
+{%- assign zp_lista = "" | split: "" -%}
+{%- assign zp_g = "" -%}
+{%- for k in zp_keys -%}
+  {%- assign zp_i = k | split: "#" | last | minus: 10000 -%}
+  {%- assign zp_s = include.lista[zp_i] -%}
+  {%- assign zp_lista = zp_lista | push: zp_s -%}
+  {%- assign zp_gr = zp_s.grad | default: zp_s.mjesto -%}
+  {%- assign zp_gq = "|" | append: zp_gr | append: "|" -%}
+  {%- unless zp_g contains zp_gq -%}{%- assign zp_g = zp_g | append: zp_gq -%}{%- endunless -%}
+{%- endfor -%}
+{%- assign zp_gradovi = zp_g | replace: "||", "|" | remove_first: "|" | split: "|" | sort -%}

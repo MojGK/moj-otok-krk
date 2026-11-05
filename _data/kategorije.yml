@@ -1,9 +1,4 @@
-# Popis kategorija portala Moj Otok Krk.
-# Novu kategoriju dodaj ovdje (name = točan naziv koji se piše u front matter, slug = sidro/filter bez dijakritika).
-# U članku koristi:
-#   location: Baška
-#   type: Povijest
-#   categories: [Baška, Povijest]
+# Kategorije portala Moj Otok Krk.
 
 lokacije:
   - name: Krk
@@ -22,22 +17,83 @@ lokacije:
     slug: vrbnik
   - name: Baška
     slug: baska
-  # cijeli otok (članci koji se ne odnose na jedno mjesto)
   - name: Otok Krk
     slug: otok-krk
 
 vrste:
   - name: Događanja
     slug: dogadanja
-  - name: Povijest
-    slug: povijest
+  - name: Crna kronika
+    slug: crna-kronika
+  - name: Sport
+    slug: sport
+  - name: Priroda
+    slug: priroda
+  - name: Promet
+    slug: promet
+  - name: Kultura
+    slug: kultura
   - name: Zanimljivosti
     slug: zanimljivosti
+  - name: Povijest
+    slug: povijest
+  - name: Općinske vijesti
+    slug: opcinske-vijesti
+  - name: Društvo
+    slug: drustvo
+  - name: Zaposlenje
+    slug: zaposlenje
+  - name: Aktualno
+    slug: aktualno
+  - name: Pregled tjedna
+    slug: pregled-tjedna
 
-# Serijali – tematske serije članaka (neobavezno). Članak je u serijalu ako mu `categories` sadrži točan naziv, npr.
-#   categories: [Baška, Povijest, NAZIV SERIJALA]
-# Primjer:
-# serijali:
-#   - name: POVIJEST KRKA
-#     slug: povijest-krka
-#     opis: Serijal o povijesti otoka Krka.
+serijali:
+  - name: POVIJEST KRK
+    slug: povijest-krk
+    opis: Serijal o povijesti otoka Krka – mjesta, ljudi i priče iz prošlosti.
+
+izdvojeno_grupe:
+  - [Krk]
+  - [Malinska, Njivice]
+  - [Punat, Baška]
+  - [Dobrinj, Šilo, Vrbnik]
+  - [Otok Krk]
+
+naslovnica_blokovi:
+  - naslov: Vijesti
+    id: vijesti
+    ostale: true
+    vise: /vijesti/
+  - naslov: Poslovi općine
+    id: poslovi-opcine
+    vrste: [Općinske vijesti]
+    vise: /?kategorija=opcinske-vijesti
+  - naslov: Zanimljivosti
+    id: zanimljivosti
+    vrste: [Zanimljivosti]
+    vise: /?kategorija=zanimljivosti
+  - naslov: Događanja
+    id: dogadanja
+    vrste: [Događanja]
+    vise: /dogadaji/
+  - naslov: Sport
+    id: sport
+    vrste: [Sport]
+    vise: /?kategorija=sport
+  - naslov: Crna kronika
+    id: crna-kronika
+    vrste: [Crna kronika]
+    vise: /?kategorija=crna-kronika
+  - naslov: Kultura
+    id: kultura
+    vrste: [Kultura]
+    vise: /?kategorija=kultura
+  - naslov: Društvo
+    id: drustvo
+    vrste: [Društvo]
+    vise: /?kategorija=drustvo
+  - naslov: Povijest Krk
+    id: povijest-krk
+    vrste: [Povijest]
+    vise: /povijest/

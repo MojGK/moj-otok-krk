@@ -1,0 +1,17 @@
+{%- comment -%}
+Ostali članci iste serije (front matter `serija: "Naziv"`), od najstarijeg prema najnovijem.
+Poziv u _layouts/post.html: {% include serija.html post=page %}
+{%- endcomment -%}
+{%- if include.post.serija -%}
+{%- assign sr_ostali = site.posts | where: "serija", include.post.serija | reverse -%}
+{%- if sr_ostali.size > 1 %}
+<aside class="serija-box" aria-label="Serija: {{ include.post.serija | escape }}">
+  <h2 class="serija-naslov">Serija: {{ include.post.serija }}</h2>
+  <ol class="serija-lista">
+  {%- for sp in sr_ostali %}
+    <li>{% if sp.url == include.post.url %}<span class="serija-trenutni" aria-current="page">{{ sp.title }}</span>{% else %}<a href="{{ sp.url | relative_url }}">{{ sp.title }}</a>{% endif %} <span class="serija-datum">{% include datum.html date=sp.date short=true %}</span></li>
+  {%- endfor %}
+  </ol>
+</aside>
+{%- endif -%}
+{%- endif -%}

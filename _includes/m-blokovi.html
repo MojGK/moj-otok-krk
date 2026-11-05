@@ -1,0 +1,52 @@
+{%- comment -%}
+Mobilna naslovnica: kategorijski blokovi iz _data/kategorije.yml (naslovnica_blokovi).
+Svaki blok: naslov + "Više", 1 veća vijest i do 3 kompaktne. Glavna vijest (hero) i Zaposlenje se preskaču.
+Poziv: {% include m-blokovi.html lead=lead %}
+{%- endcomment -%}
+{%- assign mb_pokrivene = "," -%}
+{%- for b in site.data.kategorije.naslovnica_blokovi -%}{%- for v in b.vrste -%}{%- assign mb_pokrivene = mb_pokrivene | append: v | append: "," -%}{%- endfor -%}{%- endfor -%}
+<div class="m-blokovi m-only" id="m-blokovi" data-hide-filter>
+{%- for b in site.data.kategorije.naslovnica_blokovi -%}
+  {%- assign mb_n = 0 -%}
+  {%- capture mb_html -%}
+  {%- for p in site.posts -%}
+    {%- if p.type == "Zaposlenje" or p.url == include.lead.url -%}{%- continue -%}{%- endif -%}
+    {%- assign mb_k = "," | append: p.type | append: "," -%}
+    {%- if b.ostale -%}
+      {%- if mb_pokrivene contains mb_k -%}{%- continue -%}{%- endif -%}
+    {%- else -%}
+      {%- unless b.vrste contains p.type -%}{%- continue -%}{%- endunless -%}
+    {%- endif -%}
+    {%- assign mb_n = mb_n | plus: 1 -%}
+    {%- assign mb_loc = site.data.kategorije.lokacije | where: "name", p.location | first -%}
+    {%- assign mb_type = site.data.kategorije.vrste | where: "name", p.type | first -%}
+    {%- if mb_n == 1 %}
+    <a class="mb-veliki" href="{{ p.url | relative_url }}">
+      <span class="mb-img{% unless p.image %} no-img{% endunless %}">{% if p.image %}<img {% include thumb.html img=p.image %}{% if p.image_position %} style="object-position: {{ p.image_position }}"{% endif %} alt="{{ p.image_alt | default: p.title | escape }}" loading="lazy">{% else %}<span class="card-ph">🌊</span>{% endif %}
+        <span class="card-badges">{% include prijelomna-oznaka.html post=p %}{% if mb_type %}<span class="card-badge t-{{ mb_type.slug }}">{{ mb_type.name }}</span>{% endif %}</span></span>
+      <span class="mb-veliki-body">
+        <span class="mb-veliki-title">{{ p.title }}</span>
+        <span class="mb-meta">{% if mb_loc %}📍 {{ mb_loc.name }} · {% endif %}{% include datum.html date=p.date show_time=p.show_time short=true %}</span>
+      </span>
+    </a>
+    {%- else -%}
+    {%- if mb_n == 2 %}
+    <ul class="mb-lista">{% endif %}
+      <li class="mb-mala"><a href="{{ p.url | relative_url }}">
+        <span class="mb-thumb{% unless p.image %} no-img{% endunless %}">{% if p.image %}<img {% include thumb.html img=p.image %}{% if p.image_position %} style="object-position: {{ p.image_position }}"{% endif %} alt="" loading="lazy">{% else %}🌊{% endif %}</span>
+        <span class="mb-mala-body"><span class="mb-mala-title">{% include prijelomna-oznaka.html post=p %}{{ p.title }}</span><span class="mb-meta">{% include datum.html date=p.date show_time=p.show_time short=true %}{% if mb_loc %} · {{ mb_loc.name }}{% endif %}</span></span>
+      </a></li>
+    {%- endif -%}
+    {%- if mb_n >= 4 -%}{%- break -%}{%- endif -%}
+  {%- endfor -%}
+  {%- if mb_n > 1 %}
+    </ul>{% endif -%}
+  {%- endcapture -%}
+  {%- if mb_n > 0 %}
+  <section class="m-blok" id="blok-{{ b.id }}" aria-labelledby="blok-{{ b.id }}-naslov">
+    <div class="mb-head"><h2 id="blok-{{ b.id }}-naslov">{{ b.naslov }}</h2><a class="mb-vise" href="{{ b.vise | relative_url }}">Više <span aria-hidden="true">›</span></a></div>
+    {{ mb_html }}
+  </section>
+  {%- endif -%}
+{%- endfor %}
+</div>

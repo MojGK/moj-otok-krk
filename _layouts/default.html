@@ -2,42 +2,72 @@
 <html lang="hr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
-  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 | escape }}">
-  <meta name="theme-color" content="#0a4f7a">
+  {% seo title=false %}
+  {% feed_meta %}
+  <meta name="theme-color" content="#0a3a5c">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
-<body>
-  <header class="site-header">
+{%- comment -%} Aktivna stavka navigacije (ista logika za gornju i donju navigaciju) {%- endcomment -%}
+{%- assign nav_sec = "" -%}
+{%- if page.url == "/" -%}{%- assign nav_sec = "vijesti" -%}
+{%- elsif page.url == "/dogadaji/" -%}{%- assign nav_sec = "dogadaji" -%}
+{%- elsif page.url == "/kategorije/" -%}{%- assign nav_sec = "kategorije" -%}
+{%- elsif page.url == "/pretraga/" -%}{%- assign nav_sec = "trazi" -%}
+{%- elsif page.url == "/povijest/" -%}{%- assign nav_sec = "povijest" -%}
+{%- elsif page.url == "/zaposlenje/" -%}{%- assign nav_sec = "zaposlenje" -%}
+{%- elsif page.layout == "kategorija" -%}{%- assign nav_sec = "kategorije" -%}
+{%- elsif page.layout == "post" -%}
+  {%- if page.type == "Povijest" or page.categories contains "POVIJEST KRK" -%}{%- assign nav_sec = "povijest" -%}
+  {%- elsif page.type == "Zaposlenje" -%}{%- assign nav_sec = "zaposlenje" -%}
+  {%- elsif page.event_date -%}{%- assign nav_sec = "dogadaji" -%}
+  {%- else -%}{%- assign nav_sec = "vijesti" -%}{%- endif -%}
+{%- endif -%}
+<body class="has-bottom-nav">
+  <a class="skip-link" href="#sadrzaj">Preskoči na sadržaj</a>
+  <header class="site-header" id="site-header">
     <div class="container header-inner">
-      <a href="{{ '/' | relative_url }}" class="logo">
-        <span class="logo-icon">⛵</span>
-        <div>
-          <div class="site-title">MOJ OTOK KRK</div>
-          <p class="tagline">Osobni blog · Događaji · Povijest · Priče s otoka</p>
-        </div>
+      <a href="{{ '/' | relative_url }}" class="logo" aria-label="{{ site.title }} – naslovnica">
+        <span class="logo-icon" aria-hidden="true">🌊</span>
+        <span class="logo-text">
+          <span class="site-title">{{ site.title }}</span>
+          <span class="tagline">{{ site.tagline | default: site.description }}</span>
+        </span>
       </a>
-      <form class="search" action="{{ '/pretraga/' | relative_url }}" method="get" role="search" autocomplete="off">
+      <nav class="main-nav" id="glavni-izbornik" aria-label="Glavna navigacija">
+        {%- for item in site.nav %}
+          {%- assign nav_cur = false -%}
+          {%- if page.url == item.url -%}{%- assign nav_cur = true -%}{%- endif -%}
+          {%- if item.url == "/dogadaji/" and nav_sec == "dogadaji" -%}{%- assign nav_cur = true -%}{%- endif -%}
+          {%- if item.url == "/povijest/" and nav_sec == "povijest" -%}{%- assign nav_cur = true -%}{%- endif -%}
+          {%- if item.url == "/kategorije/" and nav_sec == "kategorije" -%}{%- assign nav_cur = true -%}{%- endif -%}
+          {%- if item.url == "/zaposlenje/" and nav_sec == "zaposlenje" -%}{%- assign nav_cur = true -%}{%- endif %}
+        <a href="{{ item.url | relative_url }}"{% if nav_cur %} class="current"{% if page.url == item.url %} aria-current="page"{% endif %}{% endif %}>{{ item.title }}</a>
+        {%- endfor %}
+      </nav>
+      <form class="search" id="header-search" action="{{ '/pretraga/' | relative_url }}" method="get" role="search" autocomplete="off">
         <label for="search-input" class="visually-hidden">Pretraži članke</label>
         <input id="search-input" type="search" name="q" placeholder="Pretraži članke…" aria-autocomplete="list" aria-controls="search-results">
         <button type="submit" aria-label="Traži">🔍</button>
         <div id="search-results" class="search-results" role="listbox" hidden></div>
       </form>
+      <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="glavni-izbornik" aria-label="Otvori izbornik">
+        <span class="menu-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
     </div>
-    <div class="nav-bar">
-      <div class="container">
-        <nav class="main-nav">
-          {% for item in site.nav %}
-            {%- assign nav_cur = false -%}
-            {%- if page.url == item.url -%}{%- assign nav_cur = true -%}{%- endif -%}
-            {%- if item.url == "/dogadaji/" and page.event_date -%}{%- assign nav_cur = true -%}{%- endif -%}
-            {%- if item.url == "/povijest/" and page.layout == "post" -%}{%- if page.type == "Povijest" or page.categories contains "Povijest" -%}{%- assign nav_cur = true -%}{%- endif -%}{%- endif %}
-            <a href="{{ item.url | relative_url }}"{% if nav_cur %} class="current"{% if page.url == item.url %} aria-current="page"{% endif %}{% endif %}>{{ item.title }}</a>
-          {% endfor %}
-        </nav>
+    <nav class="m-chips" aria-label="Rubrike">
+      <div class="container m-chips-inner">
+        {%- for b in site.data.kategorije.naslovnica_blokovi %}
+        <a class="m-chip" href="{{ '/' | relative_url }}#blok-{{ b.id }}">{{ b.naslov }}</a>
+        {%- endfor %}
+        <a class="m-chip m-chip-zap" href="{{ '/zaposlenje/' | relative_url }}">💼 Zaposlenje</a>
+        <span class="m-chip-sep" aria-hidden="true"></span>
+        {%- for k in site.data.kategorije.lokacije %}
+        <a class="m-chip m-chip-loc" href="{{ '/' | relative_url }}?kategorija={{ k.slug }}">{{ k.name }}</a>
+        {%- endfor %}
       </div>
-    </div>
+    </nav>
     <div class="cat-bar">
       <div class="container cat-bar-inner">
         {% for k in site.data.kategorije.lokacije %}<a href="{{ '/' | relative_url }}#{{ k.slug }}" class="cat-link loc">{{ k.name }}</a>{% endfor %}
@@ -48,8 +78,9 @@
       </div>
     </div>
   </header>
+  {% if page.url == "/" %}{% include prijelomna-traka.html %}{% endif %}
 
-  <main class="container">
+  <main class="container" id="sadrzaj">
     {% if page.layout == 'post' or page.sidebar %}
     <div class="with-sidebar">
       <div class="main-col">
@@ -62,12 +93,73 @@
     {% endif %}
   </main>
 
-  <footer>
-    <div class="container">
-      <p>&copy; {{ 'now' | date: '%Y' }} Moj Otok Krk · Osobni blog</p>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-icon" aria-hidden="true">🌊</span>
+        <div>
+          <strong>{{ site.title }}</strong>
+          <p>{{ site.tagline | default: site.description }}</p>
+        </div>
+      </div>
+      <nav class="footer-nav" aria-label="Podnožje">
+        {%- for item in site.nav %}<a href="{{ item.url | relative_url }}">{{ item.title }}</a>{% endfor %}
+        <a href="{{ '/pretraga/' | relative_url }}">Pretraga</a>
+      </nav>
+      <p class="footer-copy">&copy; {{ 'now' | date: '%Y' }} {{ site.title }} · {{ site.tagline | default: site.description }}</p>
     </div>
   </footer>
+
+  <nav class="bottom-nav" aria-label="Brza navigacija">
+    <a href="{{ '/' | relative_url }}"{% if nav_sec == "vijesti" %} class="active" aria-current="page"{% endif %}>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h13v14H6a2 2 0 0 1-2-2V5z"/><path d="M17 9h3v8a2 2 0 0 1-2 2"/><path d="M7 9h7M7 12.5h7M7 16h4"/></svg>
+      <span>Vijesti</span>
+    </a>
+    <a href="{{ '/dogadaji/' | relative_url }}"{% if nav_sec == "dogadaji" %} class="active" aria-current="page"{% endif %}>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>
+      <span>Događanja</span>
+    </a>
+    <a href="{{ '/kategorije/' | relative_url }}"{% if nav_sec == "kategorije" %} class="active" aria-current="page"{% endif %}>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5"/></svg>
+      <span>Kategorije</span>
+    </a>
+    <a href="{{ '/pretraga/' | relative_url }}"{% if nav_sec == "trazi" %} class="active" aria-current="page"{% endif %}>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+      <span>Traži</span>
+    </a>
+    <a href="{{ '/povijest/' | relative_url }}"{% if nav_sec == "povijest" %} class="active" aria-current="page"{% endif %}>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7"/><path d="M4 4v4h4"/><path d="M12 8v4.5l3 2"/></svg>
+      <span>Povijest</span>
+    </a>
+  </nav>
+
+  <script>
+  (function () {
+    var header = document.getElementById('site-header');
+    var btn = document.getElementById('menu-toggle');
+    if (!header || !btn) return;
+    function setOpen(open) {
+      header.classList.toggle('menu-open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.setAttribute('aria-label', open ? 'Zatvori izbornik' : 'Otvori izbornik');
+    }
+    btn.addEventListener('click', function () { setOpen(!header.classList.contains('menu-open')); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && header.classList.contains('menu-open')) { setOpen(false); btn.focus(); }
+    });
+    header.querySelectorAll('.main-nav a, .cat-link').forEach(function (a) {
+      a.addEventListener('click', function () { setOpen(false); });
+    });
+    window.addEventListener('resize', function () { if (window.innerWidth >= 900) setOpen(false); });
+  })();
+  </script>
   <script>window.SITE_BASE = {{ site.baseurl | jsonify }};</script>
   <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/kategorije.js' | relative_url }}" defer></script>
+<script>
+  /* prijelomna vijest: sakrij traku/oznake nakon `prijelomna_do` */
+  (function () { var now = Date.now() / 1000; document.querySelectorAll('[data-prijelomna-do]').forEach(function (e) { if (now > +e.dataset.prijelomnaDo) e.hidden = true; }); })();
+</script>
+  {% include goatcounter.html %}
 </body>
 </html>

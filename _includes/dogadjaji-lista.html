@@ -1,0 +1,69 @@
+{%- comment -%}
+Popis događanja kao kartice (članci vrste Događanja, tjedni pregled). Podaci iz front mattera:
+  dogadjaji:
+    - naziv: "Noć špilja u Lokvama"          # obavezno
+      datum: 2026-11-07                      # obavezno, GGGG-MM-DD
+      datum_do: 2026-11-08                   # neobavezno – zadnji dan višednevnog događaja
+      vrijeme: "17:00"                       # neobavezno – "17:00", "16–22 h"; prazno = „nije objavljeno”
+      mjesto: "DKC „Žaba”, Lokve"            # obavezno
+      organizator: "Općina Lokve"            # neobavezno
+      opis: "Kratka rečenica."               # neobavezno
+      link: /noc-spilja-lokve-2026/          # neobavezno – naš članak (/slug/) ili vanjski URL (https://...)
+      slika: /assets/images/....jpg          # neobavezno
+Poziv u tekstu članka: {% include dogadjaji-lista.html %}  (ili dogadjaji=page.drugi_popis)
+Događaji kojima je prošao datum (datum_do) u pregledniku se označe kao „Prošlo”.
+Živi popis (stranica /dogadaji/): {% include dogadjaji-lista.html dogadjaji=site.data.dogadjanja.dogadjaji zivo=true %}
+  – prošli se izbacuju pri izradi i skrivaju u pregledniku, poredano po datumu, uz filter po mjestu.
+{%- endcomment -%}
+{%- assign dl_lista = include.dogadjaji | default: page.dogadjaji -%}
+{%- if include.zivo -%}{%- include zivi-popis.html lista=dl_lista polje="datum" -%}{%- assign dl_lista = zp_lista -%}{%- endif -%}
+{%- if include.zivo and zp_gradovi.size > 1 %}
+<div class="filters zivi-filter" data-zivi-filter role="group" aria-label="Filtriraj po mjestu">
+  <button type="button" class="filter-btn active" data-grad="">Sva mjesta</button>
+  {%- for g in zp_gradovi %}<button type="button" class="filter-btn" data-grad="{{ g | escape }}">{{ g }}</button>{% endfor %}
+</div>
+{%- endif -%}
+{%- assign dl_dani = "nedjelja,ponedjeljak,utorak,srijeda,četvrtak,petak,subota" | split: "," -%}
+{%- if dl_lista and dl_lista.size > 0 %}
+<ul class="oglasi-lista dogadjaji-lista{% if include.zivo %} zivi-popis{% endif %}" data-dogadjaji-lista>
+{%- for d in dl_lista %}
+  {%- assign d_kraj = d.datum_do | default: d.datum | date: "%Y-%m-%d" -%}
+  {%- assign d_wi = d.datum | date: "%w" | plus: 0 -%}
+  {%- assign d_link = d.link | append: "" -%}
+  {%- assign d_vanjski = false -%}{%- if d_link contains "://" -%}{%- assign d_vanjski = true -%}{%- endif %}
+  <li class="oglas-k dog-k" data-do="{{ d_kraj }}" data-grad="{{ d.grad | default: d.mjesto | escape }}">
+    {%- if d.slika %}<img class="dk-slika" src="{{ d.slika | relative_url }}" alt="" loading="lazy">{% endif %}
+    <p class="ok-posl">{{ dl_dani[d_wi] }}, {{ d.datum | date: "%-d. %-m." }}{% if d.datum_do %} – {{ d.datum_do | date: "%-d. %-m." }}{% endif %}</p>
+    <p class="ok-poz">{{ d.naziv }}</p>
+    <ul class="ok-det">
+      <li class="ok-rok"><span class="ok-lbl">📅 Datum</span> <span class="ok-val">{{ d.datum | date: "%-d. %-m. %Y." }}{% if d.datum_do %} – {{ d.datum_do | date: "%-d. %-m. %Y." }}{% endif %}</span></li>
+      <li><span class="ok-lbl">🕒 Vrijeme</span> <span class="ok-val">{% if d.vrijeme %}{{ d.vrijeme }}{% else %}nije objavljeno{% endif %}</span></li>
+      <li><span class="ok-lbl">📍 Mjesto</span> <span class="ok-val">{{ d.mjesto }}</span></li>
+      {%- if d.organizator %}<li><span class="ok-lbl">👥 Organizator</span> <span class="ok-val">{{ d.organizator }}</span></li>{% endif %}
+    </ul>
+    {%- if d.opis %}<p class="ok-opis">{{ d.opis }}</p>{% endif %}
+    {%- if d.link %}
+    <p class="ok-linkovi">{% if d_vanjski %}<a class="ok-btn" href="{{ d.link }}" target="_blank" rel="noopener">Više o događaju <span aria-hidden="true">↗</span></a>{% else %}<a class="ok-btn" href="{{ d.link | relative_url }}">Pročitaj najavu <span aria-hidden="true">→</span></a>{% endif %}</p>
+    {%- endif %}
+  </li>
+{%- endfor %}
+</ul>
+<script>
+(function () {
+  var s = document.currentScript, box = s && s.previousElementSibling;
+  if (!box) return;
+  var d = new Date(), t = d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
+  box.querySelectorAll('[data-do]').forEach(function (li) {
+    if (li.getAttribute('data-do') < t) {
+      if (box.classList.contains('zivi-popis')) { li.remove(); return; }
+      li.classList.add('isteklo');
+      var r = li.querySelector('.ok-rok .ok-val');
+      if (r) r.insertAdjacentHTML('beforeend', ' <span class="ok-ist">Prošlo</span>');
+    }
+  });
+})();
+</script>
+{%- endif %}
+{%- if include.zivo %}
+<p class="no-results" data-zivi-prazno{% if dl_lista.size > 0 %} hidden{% endif %}>{{ include.prazno | default: "Trenutno nema najavljenih događaja." }}</p>
+{%- endif %}

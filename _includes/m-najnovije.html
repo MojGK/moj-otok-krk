@@ -1,0 +1,20 @@
+{%- comment -%} Mobilna naslovnica: "Najnovije" – 5 najnovijih vijesti (bez Zaposlenja i bez glavne vijesti). Poziv: {% include m-najnovije.html lead=lead %} {%- endcomment -%}
+{%- assign mn_n = 0 -%}
+<section class="m-najnovije m-only" id="m-najnovije" data-hide-filter aria-labelledby="m-najnovije-naslov">
+  <div class="mb-head"><h2 id="m-najnovije-naslov">Najnovije</h2></div>
+  <ol class="mn-lista">
+  {%- for p in site.posts -%}
+    {%- if p.type == "Zaposlenje" or p.url == include.lead.url -%}{%- continue -%}{%- endif -%}
+    {%- assign mn_n = mn_n | plus: 1 -%}
+    {%- assign mn_loc = site.data.kategorije.lokacije | where: "name", p.location | first %}
+    <li class="mn-item"><a href="{{ p.url | relative_url }}">
+      <span class="mn-thumb{% unless p.image %} no-img{% endunless %}">{% if p.image %}<img {% include thumb.html img=p.image %}{% if p.image_position %} style="object-position: {{ p.image_position }}"{% endif %} alt="" loading="lazy">{% else %}🌊{% endif %}</span>
+      <span class="mn-body">
+        {% include prijelomna-oznaka.html post=p %}<span class="mn-title">{{ p.title }}</span>
+        <span class="mn-meta">{% include datum.html date=p.date show_time=p.show_time short=true %}{% if mn_loc %} · {{ mn_loc.name }}{% endif %}</span>
+      </span>
+    </a></li>
+    {%- if mn_n >= 5 -%}{%- break -%}{%- endif -%}
+  {%- endfor %}
+  </ol>
+</section>

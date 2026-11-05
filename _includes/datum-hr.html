@@ -1,0 +1,5 @@
+{%- comment -%} Datum riječima: "28. listopada 2026. u 12:00" (vrijeme se ne piše ako je show_time: false ili 00:00). Poziv: {% include datum-hr.html date=post.date show_time=post.show_time %} {%- endcomment -%}
+{%- assign dh_mj = "siječnja,veljače,ožujka,travnja,svibnja,lipnja,srpnja,kolovoza,rujna,listopada,studenoga,prosinca" | split: "," -%}
+{%- assign dh_i = include.date | date: "%-m" | minus: 1 -%}
+{%- assign dh_hms = include.date | date: "%H:%M:%S" -%}
+<time datetime="{{ include.date | date_to_xmlschema }}">{{ include.date | date: "%-d" }}. {{ dh_mj[dh_i] }} {{ include.date | date: "%Y" }}.{% unless include.show_time == false or dh_hms == "00:00:00" %} u {{ include.date | date: "%H:%M" }}{% endunless %}</time>

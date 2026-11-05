@@ -1,0 +1,35 @@
+{%- comment -%}
+Zajednički popis članaka sa straničenjem „VIŠE” (stranice kategorija, mjesta, /vijesti/, /povijest/).
+Poziv: {% include clanci-lista.html posts=niz id="kl" po=10 %}
+- posts: niz članaka (najnoviji prvi), npr. složen s `push`
+- po: koliko članaka po „stranici” (zadano 10)
+Prva vijest je veća, ostale kompaktne (mala slika lijevo). Bez JS-a vide se svi članci;
+assets/js/kategorije.js skriva sve osim prvih N i gumbom „VIŠE” otkriva sljedećih N.
+Svaka stavka ima data-tags=",mjesto,vrsta,serijal," za filtar-čipove (data-kl-filter).
+{%- endcomment -%}
+{%- assign kl_id = include.id | default: "kl" -%}
+{%- assign kl_po = include.po | default: 10 -%}
+<div class="kl" data-kl data-po="{{ kl_po }}" id="{{ kl_id }}">
+<ol class="kl-lista" data-kl-lista>
+{%- for p in include.posts -%}
+  {%- assign kl_loc = site.data.kategorije.lokacije | where: "name", p.location | first -%}
+  {%- assign kl_type = site.data.kategorije.vrste | where: "name", p.type | first -%}
+  {%- capture kl_tags -%},{% if kl_loc %}{{ kl_loc.slug }},{% endif %}{% if kl_type %}{{ kl_type.slug }},{% endif %}{% for s in site.data.kategorije.serijali %}{% if p.categories contains s.name %}{{ s.slug }},{% endif %}{% endfor %}{%- endcapture %}
+  <li class="kl-item{% if forloop.first %} kl-prvi{% endif %}" data-tags="{{ kl_tags }}">
+    <a class="kl-link" href="{{ p.url | relative_url }}">
+      <span class="kl-img{% unless p.image %} no-img{% endunless %}">{% if p.image %}<img {% include thumb.html img=p.image %}{% if p.image_position %} style="object-position: {{ p.image_position }}"{% endif %} alt="" loading="lazy">{% else %}<span class="kl-ph" aria-hidden="true">🌊</span>{% endif %}</span>
+      <span class="kl-body">
+        <span class="kl-badges">{% include prijelomna-oznaka.html post=p %}{% if kl_type %}<span class="kl-badge t-{{ kl_type.slug }}">{{ kl_type.name }}</span>{% endif %}{% if kl_loc %}<span class="kl-loc">📍 {{ kl_loc.name }}</span>{% endif %}</span>
+        <span class="kl-title">{{ p.title }}</span>
+        {%- assign kl_ex = p.excerpt | strip_html | strip -%}
+        {% if kl_ex != "" %}<span class="kl-ex">{{ kl_ex | truncate: 170 }}</span>{% endif %}
+        <span class="kl-meta">{% include datum-hr.html date=p.date show_time=p.show_time %}</span>
+      </span>
+    </a>
+  </li>
+{%- endfor %}
+</ol>
+<p class="kl-status" data-kl-status aria-live="polite" hidden></p>
+<div class="kl-vise-wrap"><button type="button" class="kl-vise" data-kl-vise hidden>VIŠE <span class="kl-vise-n" data-kl-vise-n></span></button></div>
+<p class="kl-prazno" data-kl-prazno hidden>Nema članaka za odabrani filtar.</p>
+</div>

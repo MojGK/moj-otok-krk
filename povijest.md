@@ -4,26 +4,15 @@ title: Povijest
 permalink: /povijest/
 sidebar: true
 ---
-{%- assign pov_n = 0 -%}
-{%- for p in site.posts -%}{%- if p.type == "Povijest" or p.categories contains "Povijest" -%}{%- assign pov_n = pov_n | plus: 1 -%}{%- endif -%}{%- endfor -%}
-<div class="history-page">
+{%- assign pov_posts = "" | split: "" -%}
+{%- for p in site.posts -%}{%- if p.type == "Povijest" or p.categories contains "POVIJEST KRK" -%}{%- assign pov_posts = pov_posts | push: p -%}{%- endif -%}{%- endfor -%}
+<div class="history-page kat-page">
   <h1>Povijest</h1>
-  <p class="intro">Priče iz prošlosti otoka Krka – mjesta, ljudi i događaji. Najnoviji članci prvi.</p>
-  {% if pov_n > 0 %}
-  <div class="posts-grid">
-    {%- for post in site.posts %}
-    {%- unless post.type == "Povijest" or post.categories contains "Povijest" %}{% continue %}{% endunless %}
-    <article class="post-card">
-      {% if post.image %}<a href="{{ post.url | relative_url }}" class="card-thumb"><img src="{{ post.image | relative_url }}" alt="{{ post.image_alt | default: post.title | escape }}" loading="lazy"></a>{% endif %}
-      <div class="content">
-        {% include oznake.html post=post %}
-        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-        <div class="meta">{% include datum.html date=post.date show_time=post.show_time %}</div>
-        <p>{{ post.excerpt | strip_html | truncate: 95 }}</p>
-      </div>
-    </article>
-    {%- endfor %}
-  </div>
+  <p class="kat-broj"><strong>{{ pov_posts.size }}</strong> {% include broj-clanaka.html n=pov_posts.size %} · najnoviji prvi</p>
+  <p class="intro">Priče iz prošlosti otoka Krka – mjesta, ljudi i događaji.
+  Svi nastavci serijala <a href="{{ '/kategorije/povijest-krk/' | relative_url }}">POVIJEST KRK</a>.</p>
+  {% if pov_posts.size > 0 %}
+{% include clanci-lista.html posts=pov_posts id="kl" %}
   {% else %}
   <p class="no-results">Još nema povijesnih članaka.</p>
   {% endif %}

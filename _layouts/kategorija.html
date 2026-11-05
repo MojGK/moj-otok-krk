@@ -1,0 +1,48 @@
+---
+layout: default
+---
+{%- comment -%}
+Stranica jednog mjesta, vrste ili serijala: /kategorije/<slug>/.
+Stub stranice su u kategorije/<slug>.md (front matter: kategorija = točan naziv iz _data/kategorije.yml, grupa = lokacije | vrste | serijali).
+Članak je u kategoriji ako mu je location ili type jednak nazivu ili categories sadrži naziv (kao kat-broj.html).
+Prvih 10 članaka + gumb „VIŠE” (zajednički include clanci-lista.html), filtar-čipovi po vrsti (na stranici mjesta) ili po mjestu (na ostalima).
+{%- endcomment -%}
+{%- assign kt_ime = page.kategorija -%}
+{%- assign kt_k = site.data.kategorije[page.grupa] | where: "name", kt_ime | first -%}
+{%- assign kt_posts = "" | split: "" -%}
+{%- for p in site.posts -%}
+  {%- if p.location == kt_ime or p.type == kt_ime or p.categories contains kt_ime -%}{%- assign kt_posts = kt_posts | push: p -%}{%- endif -%}
+{%- endfor -%}
+{%- if page.grupa == "lokacije" -%}{%- assign kt_facet = site.data.kategorije.vrste -%}{%- assign kt_ikona = "📍 " -%}{%- assign kt_grupa = "Mjesto" -%}{%- assign kt_fnaslov = "Filtriraj po vrsti" -%}
+{%- else -%}{%- assign kt_facet = site.data.kategorije.lokacije -%}{%- assign kt_ikona = "" -%}{%- if page.grupa == "serijali" -%}{%- assign kt_grupa = "Serijal" -%}{%- else -%}{%- assign kt_grupa = "Vrsta" -%}{%- endif -%}{%- assign kt_fnaslov = "Filtriraj po mjestu" -%}{%- endif -%}
+<div class="kat-page" data-grupa="{{ page.grupa }}">
+  <nav class="kat-crumbs" aria-label="Putanja"><a href="{{ '/kategorije/' | relative_url }}">Kategorije</a> <span aria-hidden="true">›</span> <span>{{ kt_grupa }}</span></nav>
+  <header class="kat-head">
+    <h1>{{ kt_ikona }}{{ kt_ime }}</h1>
+    <p class="kat-broj"><strong data-kat-broj>{{ kt_posts.size }}</strong> <span data-kat-rijec>{% include broj-clanaka.html n=kt_posts.size %}</span>{% if kt_posts.size > 0 %} · najnoviji prvi{% endif %}</p>
+    {%- if kt_k.opis %}<p class="kat-opis">{{ kt_k.opis }}</p>{% endif %}
+  </header>
+  {%- if kt_posts.size > 0 -%}
+  {%- capture kt_chips -%}
+    {%- assign kt_nf = 0 -%}
+    {%- for f in kt_facet -%}
+      {%- if f.name == kt_ime -%}{%- continue -%}{%- endif -%}
+      {%- assign kt_fn = 0 -%}
+      {%- for p in kt_posts -%}{%- if p.location == f.name or p.type == f.name -%}{%- assign kt_fn = kt_fn | plus: 1 -%}{%- endif -%}{%- endfor -%}
+      {%- if kt_fn > 0 -%}{%- assign kt_nf = kt_nf | plus: 1 %}
+      <button type="button" class="kat-chip" data-kl-filter="{{ f.slug }}" aria-pressed="false">{{ f.name }} <span>{{ kt_fn }}</span></button>
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endcapture -%}
+  {%- if kt_nf > 1 %}
+  <div class="kat-chips" role="group" aria-label="{{ kt_fnaslov }}" data-kl-chips="kl" hidden>
+    <button type="button" class="kat-chip is-active" data-kl-filter="" aria-pressed="true">Sve <span>{{ kt_posts.size }}</span></button>
+    {{ kt_chips }}
+  </div>
+  {%- endif %}
+  {% include clanci-lista.html posts=kt_posts id="kl" %}
+  {%- else %}
+  <p class="kat-prazno">Još nema članaka u ovoj kategoriji. <a href="{{ '/' | relative_url }}">Na naslovnicu →</a></p>
+  {%- endif %}
+  <p class="kat-natrag"><a href="{{ '/kategorije/' | relative_url }}">← Sve kategorije</a></p>
+</div>

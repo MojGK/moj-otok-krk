@@ -1,0 +1,27 @@
+# Dnevna ponovna izrada GitHub Pages stranice u 05:00 (Europe/Zagreb),
+# da istekli oglasi i prošli događaji (_data/poslovi.yml, _data/dogadjanja.yml) nestanu i bez novog članka.
+# Cron je u UTC-u: 03:00 UTC = 05:00 ljetno vrijeme, 04:00 UTC = 05:00 zimsko vrijeme; korak ispod propusti krivi sat.
+name: Dnevna izrada stranice
+on:
+  schedule:
+    - cron: "0 3 * * *"
+    - cron: "0 4 * * *"
+  workflow_dispatch:
+permissions:
+  pages: write
+  contents: read
+jobs:
+  izrada:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Provjera sata (Zagreb)
+        id: sat
+        run: |
+          h=$(TZ=Europe/Zagreb date +%H)
+          echo "Sat u Zagrebu: $h"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "$h" = "05" ]; then echo "ok=1" >> "$GITHUB_OUTPUT"; fi
+      - name: Zatraži izradu GitHub Pages
+        if: steps.sat.outputs.ok == '1'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" --jq '.status'

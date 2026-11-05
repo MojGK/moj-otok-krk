@@ -19,7 +19,8 @@ sitemap: false
   "type": {{ post.type | jsonify }},
   "type_slug": {{ s_type.slug | jsonify }},
   "categories": {{ post.categories | jsonify }},
-  "image": {% if post.image %}{{ post.image | relative_url | jsonify }}{% else %}null{% endif %}
+  "image": {% if post.image %}{{ post.image | relative_url | jsonify }}{% else %}null{% endif %},
+  "image_position": {{ post.image_position | default: "" | jsonify }}
 }{% unless forloop.last %},{% endunless %}
 {%- endfor -%}
 ]

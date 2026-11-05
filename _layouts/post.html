@@ -13,6 +13,7 @@ layout: default
 
 <article class="post">
   <header class="post-header">
+    {% if page.prijelomna %}<p class="post-prijelomna">{% include prijelomna-oznaka.html post=page vel="velika" %}</p>{% endif %}
     {% include oznake.html post=page %}
     <h1>{{ page.title }}</h1>
     <div class="meta">
@@ -24,9 +25,11 @@ layout: default
     {% if lede != "" and lede != first_para %}<p class="lede">{{ lede }}</p>{% endif %}
   </header>
 
+  {% if page.istaknuti_oglasi %}{% include istaknuti-oglasi.html post=page naslov="Izdvojeni oglasi" %}{% endif %}
+
   {% if page.image %}
   <figure class="post-figure">
-    <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title | escape }}" class="post-image">
+    <img src="{{ page.image | relative_url }}"{% if page.image_position %} style="object-position: {{ page.image_position }}"{% endif %} alt="{{ page.image_alt | default: page.title | escape }}" class="post-image{% if page.image_full %} post-image--full{% endif %}">
     {% if page.image_credit %}<figcaption>{{ page.image_credit | markdownify | remove: '<p>' | remove: '</p>' | strip }}</figcaption>{% endif %}
   </figure>
   {% endif %}
@@ -35,30 +38,13 @@ layout: default
     {{ content }}
   </div>
 
+  {% include serija.html post=page %}
+
   {% if page.source %}
     <p class="source"><em>Izvor: {{ page.source }}</em></p>
   {% endif %}
 </article>
 
-<section class="comments">
-  <h2>Komentari</h2>
-  {%- if site.giscus.repo_id and site.giscus.repo_id != "" %}
-  <script src="https://giscus.app/client.js"
-          data-repo="{{ site.giscus.repo }}"
-          data-repo-id="{{ site.giscus.repo_id }}"
-          data-category="{{ site.giscus.category }}"
-          data-category-id="{{ site.giscus.category_id }}"
-          data-mapping="pathname"
-          data-strict="0"
-          data-reactions-enabled="1"
-          data-emit-metadata="0"
-          data-input-position="bottom"
-          data-theme="light"
-          data-lang="hr"
-          crossorigin="anonymous"
-          async>
-  </script>
-  {%- else %}
-  <p class="comments-placeholder">Komentari će uskoro biti uključeni.</p>
-  {%- endif %}
-</section>
+{% include povezani-clanci.html %}
+
+{% if page.tiktok %}<div class="post-tiktok">{% include tiktok-podrska.html %}</div>{% endif %}
