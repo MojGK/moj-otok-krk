@@ -1,4 +1,4 @@
-# DOGAĐANJA – živi popis generiran iz članaka s event_date (nadolazeći).
+# DOGAĐANJA – živi popis iz članaka s event_date (nadolazeći).
 # Upute: _data/README-zaposlenje-dogadjanja.md
 azurirano: 2026-11-05
 dogadjaji:
@@ -12,7 +12,7 @@ dogadjaji:
     grad: Krk
 ...
     opis: U petak, 6. studenog, od 9 do 11 sati umirovljenici s Marijom Bašić u knjižnici u
-  Krku izrađuju straničnike za knjige. Najviše šest polaznika, prijave su obavezne.
+  Krku izrađuju straničnike za knjige. Najviše šest polaznika, prijave su obavez
 ...
     link: /radionica-stranicnika-umirovljenici-knjiznica-krk/
   - naziv: 'Žene za otok u studenome: „Jako ženska ćakula” s ginekologinjom i radionica snimanja
@@ -24,8 +24,7 @@ dogadjaji:
     grad: Krk
 ...
     opis: Udruga Žene za otok 6. studenoga u 18 sati u Maloj vijećnici u Krku vodi otvoren razgovor
-  o ženskom zdravlju s doc. dr. sc. Lanom Glavan, a 13. studenoga slijedi edukacija
-  Ivane Pr
+  o ženskom zdravlju s doc. dr. sc. Lanom Glavan, a 13. studenoga slijed
 ...
     link: /zene-za-otok-zenska-cakula-reels/
   - naziv: Komedija „Skliske vježbe” otvara Mjesec smijeha u Hotelu Malin
@@ -48,9 +47,9 @@ dogadjaji:
 ...
     grad: Malinska
 ...
-    opis: 'Peti Malinska Outdoor Weekend 7. i 8. studenog donosi sedmi Malinska Trail (14 i
-  24 km), vođeni Hike od 12,5 km i nedjeljne biciklističke ture od 18 i 32 km, uz
-  besplatne programe '
+    opis: Peti Malinska Outdoor Weekend 7. i 8. studenog donosi sedmi Malinska Trail (14 i 24
+  km), vođeni Hike od 12,5 km i nedjeljne biciklističke ture od 18 i 32 km, uz
+...
     link: /malinska-outdoor-weekend-2026/
   - naziv: Predavanje o Göbekli Tepeu u Gradskoj knjižnici Krk
 ...
@@ -61,10 +60,21 @@ dogadjaji:
     grad: Krk
 ...
     opis: U utorak, 10. studenog, u 18 sati Anera Banovec u Gradskoj knjižnici Krk govori o
-  Göbekli Tepeu, jednom od najstarijih poznatih monumentalnih nalazišta na svijetu.
-  Ulaz je slobodan
+  Göbekli Tepeu, jednom od najstarijih poznatih monumentalnih nalazišta na svije
 ...
     link: /gobekli-tepe-predavanje-krk/
+  - naziv: 12. sjednica Općinskog vijeća Malinska-Dubašnica u utorak u 19 sati
+...
+    datum: 2026-11-10
+    vrijeme: "19:00"
+    mjesto: Općinska vijećnica, Lina Bolmarčića 22, Malinska
+...
+    grad: Malinska
+...
+    opis: Općinsko vijeće Malinska-Dubašnica sastaje se u utorak, 10. studenoga, u 19 sati u
+  Općinskoj vijećnici. Na dnevnom redu su proračun, komunalna infrastruktura, b
+...
+    link: /malinska-12-sjednica-opcinskog-vijeca/
   - naziv: Inquizicija pub kviz u Restoranu Marina u Puntu
 ...
     datum: 2026-11-12
@@ -73,9 +83,8 @@ dogadjaji:
 ...
     grad: Punat
 ...
-    opis: U četvrtak, 12. studenoga, u 19 sati u Restoranu Marina u Puntu igra se Inquizicija
-  pub kviz općeg znanja. Ekipe od dvoje do petero, sudjelovanje besplatno, uz prijavu.
-...
+    opis: 'U četvrtak, 12. studenoga, u 19 sati u Restoranu Marina u Puntu igra se Inquizicija
+  pub kviz općeg znanja. Ekipe od dvoje do petero, sudjelovanje besplatno, uz '
     link: /inquizicija-pub-kviz-marina-punat/
   - naziv: Kako snimiti reel koji ljudi pogledaju do kraja – edukacija Ivane Predovan u Krku
 ...
@@ -86,7 +95,7 @@ dogadjaji:
     grad: Krk
 ...
     opis: Udruga Žene za otok u petak, 13. studenoga, u 17 sati u Maloj vijećnici u Krku organizira
-  besplatnu edukaciju Ivane Predovan o snimanju reelsa. Prijava je obavezna.
+  besplatnu edukaciju Ivane Predovan o snimanju reelsa. Prijava je obave
 ...
     link: /kako-snimiti-reel-zene-za-otok/
   - naziv: Komedija „Vojni rok” u Hotelu Malin
@@ -97,10 +106,8 @@ dogadjaji:
 ...
     grad: Malinska
 ...
-    opis: Strogi narednik Kukavica i ročnik Krešica u petak, 13. studenog, u 19.30 dolaze u
-  Hotel Malin – komedija u kojoj publika glasanjem sudjeluje u radnji. Ulaznice 17
-  €.
-...
+    opis: 'Strogi narednik Kukavica i ročnik Krešica u petak, 13. studenog, u 19.30 dolaze u
+  Hotel Malin – komedija u kojoj publika glasanjem sudjeluje u radnji. Ulaznice '
     link: /vojni-rok-hotel-malin/
   - naziv: Besplatnim autobusom iz Krka na plesnu predstavu „Last Shelter” u HNK Zajc, 14. studenoga
 ...
@@ -110,10 +117,8 @@ dogadjaji:
 ...
     grad: Krk
 ...
-    opis: U subotu, 14. studenoga, autobus u 16:30 vozi besplatno iz Krka na plesnu predstavu
-  „Last Shelter” Sergea Aiméa Coulibalyja u HNK Ivana pl. Zajca (početak u 18 sati).
-  Prvo kupite u
-...
+    opis: 'U subotu, 14. studenoga, autobus u 16:30 vozi besplatno iz Krka na plesnu predstavu
+  „Last Shelter” Sergea Aiméa Coulibalyja u HNK Ivana pl. Zajca (početak u 18 '
     link: /last-shelter-hnk-zajc-besplatan-bus-krk/
   - naziv: „Tražim muža” s Jelicom Brestovac zatvara Mjesec smijeha u Hotelu Malin
 ...
@@ -124,9 +129,21 @@ dogadjaji:
     grad: Malinska
 ...
     opis: U petak, 20. studenog, u 19.30 Jelica Brestovac komedijom „Tražim muža” zatvara ovogodišnji
-  Mjesec smijeha u Hotelu Malin. Nakon predstave slijedi druženje uz DJ-a.
+  Mjesec smijeha u Hotelu Malin. Nakon predstave slijedi druženje uz D
 ...
     link: /trazim-muza-hotel-malin/
+  - naziv: Tečaj za trudnice u Domu zdravlja Krk od 23. studenoga
+...
+    datum: 2026-11-23
+    vrijeme: "17:00"
+    mjesto: Knjižnica Doma zdravlja Krk
+...
+    grad: Krk
+...
+    opis: Tečaj pripreme trudnica za porod i majčinstvo počinje u ponedjeljak, 23. studenoga,
+  u 17 sati u knjižnici Doma zdravlja Krk. Prijave telefonom ili e-poštom.
+...
+    link: /tecaj-trudnice-dom-zdravlja-krk/
   - naziv: 'STRUKON – Dan poduzetništva u Puntu 3.0: 27. studenoga u Marini Punat'
     datum: 2026-11-27
     vrijeme: "09:00"
@@ -135,8 +152,7 @@ dogadjaji:
     grad: Punat
 ...
     opis: Osma strukovna konferencija STRUKON održat će se u petak, 27. studenoga od 9 sati
-  u Marini Punat – o Zakonu o strancima, transparentnosti plaća, Fiskalizaciji 2.0,
-  porezima za 2027
+  u Marini Punat – o Zakonu o strancima, transparentnosti plaća, Fiskalizaciji 2
 ...
     link: /strukon-dan-poduzetnistva-punat-2026/
   - naziv: Perpetuum Jazzile stiže na Advent u Malinskoj, 16. prosinca u Bogovićima
@@ -149,7 +165,6 @@ dogadjaji:
     grad: Malinska
 ...
     opis: Svjetski poznata vokalna skupina Perpetuum Jazzile nastupit će u srijedu, 16. prosinca
-  u 20 sati, u školskoj sportskoj dvorani u Bogovićima. Ulaznice su na Eventimu te
-  na Petrolovi
+  u 20 sati, u školskoj sportskoj dvorani u Bogovićima. Ulaznice su na Even
 ...
     link: /perpetuum-jazzile-advent-malinska/
