@@ -5,7 +5,7 @@ date: 2026-11-06 14:21:00 +0100
 location: Punat
 type: Općinske vijesti
 categories: [Punat, Općinske vijesti]
-excerpt: Općina Punat raspisala je natječaj za prodaju 9 nekretnina (k.o. Punat). Početna cijena 190 €/m², jamčevina 10 %. Rok za ponude i otvaranje: 16. studenoga u 13:00.
+excerpt: "Općina Punat raspisala je natječaj za prodaju 9 nekretnina (k.o. Punat). Početna cijena 190 €/m², jamčevina 10 %. Rok za ponude i otvaranje: 16. studenoga u 13:00."
 image: /assets/images/punat-prodaja-nekretnina-ilustracija.jpg
 image_alt: "Ilustracija: karte parcela i pero na stolu"
 image_credit: "Ilustracija (generirana), nije dokument ni fotografija nekretnine"
