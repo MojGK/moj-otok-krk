@@ -1,6 +1,6 @@
 # DOGAĐANJA – živi popis iz članaka s event_date (nadolazeći).
 # Upute: _data/README-zaposlenje-dogadjanja.md
-azurirano: 2026-11-05
+azurirano: 2026-11-06
 dogadjaji:
   - naziv: Radionica izrade straničnika za umirovljenike u Gradskoj knjižnici Krk
 ...
@@ -36,7 +36,7 @@ dogadjaji:
     grad: Malinska
 ...
     opis: Irena Grdinić i Mario Lipovšek Battifiaca u petak, 6. studenog, u 19.30 vraćaju se
-  u Hotel Malin kao bračni par Đurđa i Franko. Ulaznice su 20 €.
+  u Hotel Malin kao bračni par Đurđa i Franko. Ulaznice su
 ...
     link: /skliske-vjezbe-hotel-malin/
   - naziv: 'Malinska Outdoor Weekend: trail, hiking i bicikl 7. i 8. studenog'
@@ -51,6 +51,18 @@ dogadjaji:
   km), vođeni Hike od 12,5 km i nedjeljne biciklističke ture od 18 i 32 km, uz
 ...
     link: /malinska-outdoor-weekend-2026/
+  - naziv: „Mačak u šeširu” u subotu u 10 sati u Kinu Krk
+...
+    datum: 2026-11-07
+    vrijeme: "10:00"
+    mjesto: Kino Krk, Trg bana Josipa Jelačića 2
+...
+    grad: Krk
+...
+    opis: U subotu, 7. studenoga, u 10 sati u Kinu Krk prikazuje se sinkronizirani animirani
+  film „Mačak u šeširu”. Ulaznice na Mojekarte od
+...
+    link: /macak-u-sesiru-kino-krk/
   - naziv: Predavanje o Göbekli Tepeu u Gradskoj knjižnici Krk
 ...
     datum: 2026-11-10
@@ -75,6 +87,17 @@ dogadjaji:
   Općinskoj vijećnici. Na dnevnom redu su proračun, komunalna infrastruktura, b
 ...
     link: /malinska-12-sjednica-opcinskog-vijeca/
+  - naziv: 'Punat: 108. godišnjica završetka Prvoga svjetskog rata kod spomenika Anđelu'
+    datum: 2026-11-11
+    vrijeme: "11:15"
+    mjesto: Spomenik Anđelu, Punat
+...
+    grad: Punat
+...
+    opis: U srijedu, 11. studenoga, u Puntu kod spomenika Anđelu obilježava se 108. godišnjica
+  završetka Prvoga svjetskog rata. Okupljanje je do 11:15; organizira Udruga
+...
+    link: /punat-108-godisnjica-prvog-svjetskog-rata/
   - naziv: Inquizicija pub kviz u Restoranu Marina u Puntu
 ...
     datum: 2026-11-12
@@ -83,8 +106,9 @@ dogadjaji:
 ...
     grad: Punat
 ...
-    opis: 'U četvrtak, 12. studenoga, u 19 sati u Restoranu Marina u Puntu igra se Inquizicija
-  pub kviz općeg znanja. Ekipe od dvoje do petero, sudjelovanje besplatno, uz '
+    opis: U četvrtak, 12. studenoga, u 19 sati u Restoranu Marina u Puntu igra se Inquizicija
+  pub kviz općeg znanja. Ekipe od dvoje do petero, sudjelovanje besplatno, uz
+...
     link: /inquizicija-pub-kviz-marina-punat/
   - naziv: Kako snimiti reel koji ljudi pogledaju do kraja – edukacija Ivane Predovan u Krku
 ...
@@ -106,8 +130,9 @@ dogadjaji:
 ...
     grad: Malinska
 ...
-    opis: 'Strogi narednik Kukavica i ročnik Krešica u petak, 13. studenog, u 19.30 dolaze u
-  Hotel Malin – komedija u kojoj publika glasanjem sudjeluje u radnji. Ulaznice '
+    opis: Strogi narednik Kukavica i ročnik Krešica u petak, 13. studenog, u 19.30 dolaze u
+  Hotel Malin – komedija u kojoj publika glasanjem sudjeluje u radnji. Ulaznice
+...
     link: /vojni-rok-hotel-malin/
   - naziv: Besplatnim autobusom iz Krka na plesnu predstavu „Last Shelter” u HNK Zajc, 14. studenoga
 ...
@@ -117,8 +142,9 @@ dogadjaji:
 ...
     grad: Krk
 ...
-    opis: 'U subotu, 14. studenoga, autobus u 16:30 vozi besplatno iz Krka na plesnu predstavu
-  „Last Shelter” Sergea Aiméa Coulibalyja u HNK Ivana pl. Zajca (početak u 18 '
+    opis: U subotu, 14. studenoga, autobus u 16:30 vozi besplatno iz Krka na plesnu predstavu
+  „Last Shelter” Sergea Aiméa Coulibalyja u HNK Ivana pl. Zajca (početak u 18
+...
     link: /last-shelter-hnk-zajc-besplatan-bus-krk/
   - naziv: „Tražim muža” s Jelicom Brestovac zatvara Mjesec smijeha u Hotelu Malin
 ...
