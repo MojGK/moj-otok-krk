@@ -5,7 +5,7 @@ date: 2026-11-06 14:22:00 +0100
 location: Punat
 type: Općinske vijesti
 categories: [Punat, Općinske vijesti]
-excerpt: Općina Punat raspisala je natječaj za zakup kioska i ugostiteljskih terasa. Rok za ponude 16. studenoga do 13:00; javno otvaranje 17. studenoga u 9:00 u Maloj sali Narodnog doma.
+excerpt: "Općina Punat raspisala je natječaj za zakup kioska i ugostiteljskih terasa. Rok za ponude 16. studenoga do 13:00; javno otvaranje 17. studenoga u 9:00 u Maloj sali Narodnog doma."
 image: /assets/images/punat-zakup-terase-ilustracija.jpg
 image_alt: "Ilustracija: prazna terasa uz more sa složenim stolicama"
 image_credit: "Ilustracija (generirana), nije fotografija konkretne lokacije"

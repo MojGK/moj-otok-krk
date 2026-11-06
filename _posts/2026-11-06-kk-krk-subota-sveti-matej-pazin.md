@@ -8,7 +8,7 @@ categories: [Krk, Događanja]
 event_date: 2026-11-07 13:45:00 +0100
 event_end: 2026-11-07 19:00:00 +0100
 event_place: Dvorana srednje škole, Krk
-excerpt: U subotu, 7. studenoga, u dvorani srednje škole KK Krk igra dvije utakmice – mlađi kadeti u 13:45 protiv Svetog Mateja, seniori u 17:00 protiv Pazina.
+excerpt: "U subotu, 7. studenoga, u dvorani srednje škole KK Krk igra dvije utakmice – mlađi kadeti u 13:45 protiv Svetog Mateja, seniori u 17:00 protiv Pazina."
 image: /assets/images/kk-krk-subota-7-11.jpg
 image_alt: "Plakat KK Krk: košarkaška subota 7. 11. u dvorani SŠ Krk"
 image_credit: "Plakat: KK Krk, via [Bodulija.net](https://bodulija.net/subota-je-dan-za-kosarku/)"
