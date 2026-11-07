@@ -1,44 +1,15 @@
 # DOGAĐANJA – živi popis iz članaka s event_date (nadolazeći).
 # Upute: _data/README-zaposlenje-dogadjanja.md
-azurirano: 2026-11-06
+azurirano: 2026-11-07
 dogadjaji:
-  - naziv: Radionica izrade straničnika za umirovljenike u Gradskoj knjižnici Krk
-...
-    datum: 2026-11-06
-    datum_do: 2026-11-06
-    vrijeme: "09:00"
-    mjesto: Gradska knjižnica Krk
-...
-    grad: Krk
-...
-    opis: U petak, 6. studenog, od 9 do 11 sati umirovljenici s Marijom Bašić u knjižnici u
-  Krku izrađuju straničnike za knjige. Najviše šest polaznika, prijave su obavez
-...
-    link: /radionica-stranicnika-umirovljenici-knjiznica-krk/
-  - naziv: 'Žene za otok u studenome: „Jako ženska ćakula” s ginekologinjom i radionica snimanja
-  reelsa'
-    datum: 2026-11-06
+  - naziv: 'Misec hrvaskoga libra na Kornić: Irena Plejić Premec i vlč. Zvonimir Badurina Dudić'
+    datum: 2026-11-07
+    datum_do: 2026-11-07
     vrijeme: "18:00"
-    mjesto: Mala vijećnica, Krk
-...
+    mjesto: Etno kuća (Muzej), Kamenica 16, Kornić
     grad: Krk
-...
-    opis: Udruga Žene za otok 6. studenoga u 18 sati u Maloj vijećnici u Krku vodi otvoren razgovor
-  o ženskom zdravlju s doc. dr. sc. Lanom Glavan, a 13. studenoga slijed
-...
-    link: /zene-za-otok-zenska-cakula-reels/
-  - naziv: Komedija „Skliske vježbe” otvara Mjesec smijeha u Hotelu Malin
-...
-    datum: 2026-11-06
-    vrijeme: "19:30"
-    mjesto: Hotel Malin, Malinska
-...
-    grad: Malinska
-...
-    opis: Irena Grdinić i Mario Lipovšek Battifiaca u petak, 6. studenog, u 19.30 vraćaju se
-  u Hotel Malin kao bračni par Đurđa i Franko. Ulaznice su
-...
-    link: /skliske-vjezbe-hotel-malin/
+    opis: Katedra Čakavskog sabora Kornić obilježava Mjesec hrvatske knjige predstavljanjem knjiga Irene Plejić Premec i vlč. Zvonimira Badurine Dudića.
+    link: /misec-hrvaskoga-libra-na-kornic/
   - naziv: 'Malinska Outdoor Weekend: trail, hiking i bicikl 7. i 8. studenog'
     datum: 2026-11-07
     datum_do: 2026-11-08
