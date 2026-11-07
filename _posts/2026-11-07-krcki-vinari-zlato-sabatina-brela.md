@@ -20,11 +20,11 @@ Prema Novom listu, zlatne diplome osvojili su:
 - **Krešimir Radovičić** – žlahtina II
 - **PZ Vrbnik** – rosé cabernet sauvignon
 
-Pehar za **najbolje mlado bijelo vino** pripao je vinariji **Pavlomir iz Novog Vinodolskog** (Žlahtina Grand Cru 2026.) – to je nagrada izvan otoka, iako je riječ o žlahtini.
+Pehar za najbolje mlado bijelo vino osvojila je vinarija Pavlomir iz Novog Vinodolskog (Žlahtina Grand Cru 2026.), koja nije s otoka.
 
 Za kvalitetu mladih vina ukupno je podijeljeno 184 diplome, od toga 57 zlatnih (Slobodna Dalmacija). Na ocjenjivanje je stiglo 479 uzoraka.
 
-Službeni popis svih diploma po proizvođačima nisam pronašao objavljen, pa su imena krčkih dobitnika preuzeta iz Novog lista.
+Imena krčkih dobitnika i nagrađena vina navedeni su prema Novom listu.
 
 ## Izvori
 
