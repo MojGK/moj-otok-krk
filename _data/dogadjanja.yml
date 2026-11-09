@@ -2,222 +2,125 @@
 # Upute: _data/README-zaposlenje-dogadjanja.md
 azurirano: 2026-11-09
 dogadjaji:
-  - naziv: '2. kolo 23. Zimske lige Kvarnera „Igor Malešević” u Klimnu'
-    datum: 2026-11-15
-    datum_do: 2026-11-15
-    vrijeme: "11:00"
-    mjesto: Riva, Klimno
-    grad: Dobrinj
-    opis: Glavna utrka u 11 sati; Mala liga oko 10:30. Organizatori TK Rival i udruga Kivna, uz TZ Općine Dobrinj. Najavljeno i zimsko kupanje.
-    link: /zimska-liga-kvarnera-klimno-2-kolo/
-  - naziv: '„Misec hrvaskoga libra” na Korniću: Irena Plejić Premec i vlč. Zvonimir Badurina Dudić'
-    datum: 2026-11-07
-    datum_do: 2026-11-07
+  - naziv: "(Mala) retrospektiva Ivana Vukušića u Galeriji Decumanus"
+    datum: 2026-10-23
+    datum_do: 2026-11-12
     vrijeme: "18:00"
-    mjesto: Etno kuća (Muzej), Kamenica 16, Kornić
+    mjesto: "Galerija Decumanus, Krk"
     grad: Krk
-    opis: Katedra Čakavskog sabora Kornić obilježava Mjesec hrvatske knjige predstavljanjem knjiga Irene Plejić Premec i vlč. Zvonimira Badurine Dudića.
-    link: /misec-hrvaskoga-libra-na-kornic/
-  - naziv: 'Malinska Outdoor Weekend: trail, hiking i bicikl 7. i 8. studenog'
-    datum: 2026-11-07
-    datum_do: 2026-11-08
-    vrijeme: "09:00"
-    mjesto: Hotel Malin (subota) i riva kod DUBoaka (nedjelja), Malinska
-...
-    grad: Malinska
-...
-    opis: Peti Malinska Outdoor Weekend 7. i 8. studenog donosi sedmi Malinska Trail (14 i 24
-  km), vođeni Hike od 12,5 km i nedjeljne biciklističke ture od 18 i 32 km, uz
-...
-    link: /malinska-outdoor-weekend-2026/
-  - naziv: „Mačak u šeširu” u subotu u 10 sati u Kinu Krk
-...
-    datum: 2026-11-07
+    opis: "(Mala) retrospektiva kipara i slikara Ivana Vukušića (1922. – 1981.) otvorena je u Galeriji Decumanus i može se pogledati do 12. studenog. Ulaz je slobodan."
+    link: /ivan-vukusic-mala-retrospektiva-decumanus/
+  - naziv: "Dani otvorenih vrata novog vatrogasnog doma u Malinskoj, 2.–15. studenog"
+    datum: 2026-11-02
+    datum_do: 2026-11-15
     vrijeme: "10:00"
-    mjesto: Kino Krk, Trg bana Josipa Jelačića 2
-...
-    grad: Krk
-...
-    opis: U subotu, 7. studenoga, u 10 sati u Kinu Krk prikazuje se sinkronizirani animirani
-  film „Mačak u šeširu”. Ulaznice na Mojekarte od
-...
-    link: /macak-u-sesiru-kino-krk/
-  - naziv: 'Košarkaška subota: mlađi kadeti vs Sveti Matej u 13:45, seniori vs Pazin u 17:00'
-    datum: 2026-11-07
-    datum_do: 2026-11-07
-    vrijeme: "13:45"
-    mjesto: Dvorana srednje škole, Krk
-...
-    grad: Krk
-...
-    opis: U subotu, 7. studenoga, u dvorani srednje škole KK Krk igra dvije utakmice – mlađi
-  kadeti u 13:45 protiv Svetog Mateja, seniori u 17:00 protiv Pazina.
-...
-    link: /kk-krk-subota-sveti-matej-pazin/
-  - naziv: Predavanje o Göbekli Tepeu u Gradskoj knjižnici Krk
-...
+    mjesto: "Vatrogasni dom DVD-a Malinska-Dubašnica, Poslovna zona Barušići"
+    grad: Malinska
+    opis: "Od 2. do 15. studenog, svaki dan od 10 do 17 sati, novi dom DVD-a Malinska-Dubašnica u Barušićima otvoren je za sve mještane, posjetitelje i obitelji."
+    link: /dani-otvorenih-vrata-vatrogasni-dom-malinska/
+  - naziv: "Predavanje o Göbekli Tepeu u Gradskoj knjižnici Krk"
     datum: 2026-11-10
     vrijeme: "18:00"
-    mjesto: Gradska knjižnica Krk, Kvarnerska ulica
-...
+    mjesto: "Gradska knjižnica Krk, Kvarnerska ulica"
     grad: Krk
-...
-    opis: U utorak, 10. studenog, u 18 sati Anera Banovec u Gradskoj knjižnici Krk govori o
-  Göbekli Tepeu, jednom od najstarijih poznatih monumentalnih nalazišta na svije
-...
+    opis: "U utorak, 10. studenog, u 18 sati Anera Banovec u Gradskoj knjižnici Krk govori o Göbekli Tepeu, jednom od najstarijih poznatih monumentalnih nalazišta na svijetu. Ulaz je slobodan."
     link: /gobekli-tepe-predavanje-krk/
-  - naziv: 12. sjednica Općinskog vijeća Malinska-Dubašnica u utorak u 19 sati
-...
+  - naziv: "12. sjednica Općinskog vijeća Malinska-Dubašnica u utorak u 19 sati"
     datum: 2026-11-10
     vrijeme: "19:00"
-    mjesto: Općinska vijećnica, Lina Bolmarčića 22, Malinska
-...
+    mjesto: "Općinska vijećnica, Lina Bolmarčića 22, Malinska"
     grad: Malinska
-...
-    opis: Općinsko vijeće Malinska-Dubašnica sastaje se u utorak, 10. studenoga, u 19 sati u
-  Općinskoj vijećnici. Na dnevnom redu su proračun, komunalna infrastruktura, b
-...
+    opis: "Općinsko vijeće Malinska-Dubašnica sastaje se u utorak, 10. studenoga, u 19 sati u Općinskoj vijećnici. Na dnevnom redu su proračun, komunalna infrastruktura, božićnica i imovina."
     link: /malinska-12-sjednica-opcinskog-vijeca/
-  - naziv: 'Punat: 108. godišnjica završetka Prvoga svjetskog rata kod spomenika Anđelu'
+  - naziv: "Punat: 108. godišnjica završetka Prvoga svjetskog rata kod spomenika Anđelu"
     datum: 2026-11-11
     vrijeme: "11:15"
-    mjesto: Spomenik Anđelu, Punat
-...
+    mjesto: "Spomenik Anđelu, Punat"
     grad: Punat
-...
-    opis: U srijedu, 11. studenoga, u Puntu kod spomenika Anđelu obilježava se 108. godišnjica
-  završetka Prvoga svjetskog rata. Okupljanje je do 11:15; organizira Udruga
-...
+    opis: "U srijedu, 11. studenoga, u Puntu kod spomenika Anđelu obilježava se 108. godišnjica završetka Prvoga svjetskog rata. Okupljanje je do 11:15; organizira Udruga antifašista otoka Krka."
     link: /punat-108-godisnjica-prvog-svjetskog-rata/
-  - naziv: 10. sjednica Općinskog vijeća Punat u četvrtak u 14 sati
-...
+  - naziv: "10. sjednica Općinskog vijeća Punat u četvrtak u 14 sati"
     datum: 2026-11-12
     vrijeme: "14:00"
-    mjesto: Mala sala Narodnog doma, Punat
-...
+    mjesto: "Mala sala Narodnog doma, Punat"
     grad: Punat
-...
-    opis: Općinsko vijeće Punat sastaje se u četvrtak, 12. studenoga, u 14 sati u Maloj sali
-  Narodnog doma. Građani mogu nazočiti uz najavu najkasnije 24 sata unaprijed.
-...
+    opis: "Općinsko vijeće Punat sastaje se u četvrtak, 12. studenoga, u 14 sati u Maloj sali Narodnog doma. Građani mogu nazočiti uz najavu najkasnije 24 sata unaprijed."
     link: /punat-10-sjednica-opcinskog-vijeca/
-  - naziv: Inquizicija pub kviz u Restoranu Marina u Puntu
-...
+  - naziv: "Inquizicija pub kviz u Restoranu Marina u Puntu"
     datum: 2026-11-12
     vrijeme: "19:00"
-    mjesto: Restoran Marina (Puntica), Punat
-...
+    mjesto: "Restoran Marina (Puntica), Punat"
     grad: Punat
-...
-    opis: U četvrtak, 12. studenoga, u 19 sati u Restoranu Marina u Puntu igra se Inquizicija
-  pub kviz općeg znanja. Ekipe od dvoje do petero, sudjelovanje besplatno, uz
-...
+    opis: "U četvrtak, 12. studenoga, u 19 sati u Restoranu Marina u Puntu igra se Inquizicija pub kviz općeg znanja. Ekipe od dvoje do petero, sudjelovanje besplatno, uz prijavu."
     link: /inquizicija-pub-kviz-marina-punat/
-  - naziv: Kako snimiti reel koji ljudi pogledaju do kraja – edukacija Ivane Predovan u Krku
-...
+  - naziv: "Kako snimiti reel koji ljudi pogledaju do kraja – edukacija Ivane Predovan u Krku"
     datum: 2026-11-13
     vrijeme: "17:00"
-    mjesto: Mala vijećnica, Krk
-...
+    mjesto: "Mala vijećnica, Krk"
     grad: Krk
-...
-    opis: Udruga Žene za otok u petak, 13. studenoga, u 17 sati u Maloj vijećnici u Krku organizira
-  besplatnu edukaciju Ivane Predovan o snimanju reelsa. Prijava je obave
-...
+    opis: "Udruga Žene za otok u petak, 13. studenoga, u 17 sati u Maloj vijećnici u Krku organizira besplatnu edukaciju Ivane Predovan o snimanju reelsa. Prijava je obavezna."
     link: /kako-snimiti-reel-zene-za-otok/
-  - naziv: Komedija „Vojni rok” u Hotelu Malin
-...
+  - naziv: "Komedija „Vojni rok” u Hotelu Malin"
     datum: 2026-11-13
     vrijeme: "19:30"
-    mjesto: Hotel Malin, Malinska
-...
+    mjesto: "Hotel Malin, Malinska"
     grad: Malinska
-...
-    opis: Strogi narednik Kukavica i ročnik Krešica u petak, 13. studenog, u 19.30 dolaze u
-  Hotel Malin – komedija u kojoj publika glasanjem sudjeluje u radnji. Ulaznice
-...
+    opis: "Strogi narednik Kukavica i ročnik Krešica u petak, 13. studenog, u 19.30 dolaze u Hotel Malin – komedija u kojoj publika glasanjem sudjeluje u radnji. Ulaznice 17 €."
     link: /vojni-rok-hotel-malin/
-  - naziv: Besplatnim autobusom iz Krka na plesnu predstavu „Last Shelter” u HNK Zajc, 14. studenoga
-...
+  - naziv: "Besplatnim autobusom iz Krka na plesnu predstavu „Last Shelter” u HNK Zajc, 14. studenoga"
     datum: 2026-11-14
     vrijeme: "16:30"
-    mjesto: Polazak s Autobusnog kolodvora Krk; predstava u HNK Ivana pl. Zajca, Rijeka
-...
+    mjesto: "Polazak s Autobusnog kolodvora Krk; predstava u HNK Ivana pl. Zajca, Rijeka"
     grad: Krk
-...
-    opis: U subotu, 14. studenoga, autobus u 16:30 vozi besplatno iz Krka na plesnu predstavu
-  „Last Shelter” Sergea Aiméa Coulibalyja u HNK Ivana pl. Zajca (početak u 18
-...
+    opis: "U subotu, 14. studenoga, autobus u 16:30 vozi besplatno iz Krka na plesnu predstavu „Last Shelter” Sergea Aiméa Coulibalyja u HNK Ivana pl. Zajca (početak u 18 sati). Prvo kupite ulaznicu, zatim rezervirajte mjesto u autobusu."
     link: /last-shelter-hnk-zajc-besplatan-bus-krk/
-  - naziv: „Tražim muža” s Jelicom Brestovac zatvara Mjesec smijeha u Hotelu Malin
-...
+  - naziv: "Klimno u nedjelju 15. 11. domaćin 2. kola Zimske lige Kvarnera"
+    datum: 2026-11-15
+    vrijeme: "11:00"
+    mjesto: "Riva, Klimno"
+    grad: Dobrinj
+    opis: "Drugo kolo 23. Zimske lige Kvarnera „Igor Malešević” održava se u nedjelju, 15. studenoga, u Klimnu. Glavna utrka starta u 11 sati na rivi; Mala liga oko 10:30. Najavljeno je i zimsko kupanje."
+    link: /zimska-liga-kvarnera-klimno-2-kolo/
+  - naziv: "„Tražim muža” s Jelicom Brestovac zatvara Mjesec smijeha u Hotelu Malin"
     datum: 2026-11-20
     vrijeme: "19:30"
-    mjesto: Hotel Malin, Malinska
-...
+    mjesto: "Hotel Malin, Malinska"
     grad: Malinska
-...
-    opis: U petak, 20. studenog, u 19.30 Jelica Brestovac komedijom „Tražim muža” zatvara ovogodišnji
-  Mjesec smijeha u Hotelu Malin. Nakon predstave slijedi druženje uz D
-...
+    opis: "U petak, 20. studenog, u 19.30 Jelica Brestovac komedijom „Tražim muža” zatvara ovogodišnji Mjesec smijeha u Hotelu Malin. Nakon predstave slijedi druženje uz DJ-a."
     link: /trazim-muza-hotel-malin/
-  - naziv: Klapa Vejanke 21. studenoga slave 10 godina – koncert „Naše pjesme, naši snovi”
-...
+  - naziv: "Klapa Vejanke 21. studenoga slave 10 godina – koncert „Naše pjesme, naši snovi”"
     datum: 2026-11-21
     vrijeme: "19:00"
-    mjesto: Sportska dvorana OŠ „Fran Krsto Frankopan” / MŠ Krk
-...
+    mjesto: "Sportska dvorana OŠ „Fran Krsto Frankopan” / MŠ Krk"
     grad: Krk
-...
-    opis: Ženska klapa Vejanke u subotu, 21. studenoga, u 19 sati u školskoj sportskoj dvorani
-  u Krku obljetničkim koncertom obilježava 10 godina. Ulaz je slobodan; gosti
-...
+    opis: "Ženska klapa Vejanke u subotu, 21. studenoga, u 19 sati u školskoj sportskoj dvorani u Krku obljetničkim koncertom obilježava 10 godina. Ulaz je slobodan; gosti klapa Skalin."
     link: /vejanke-10-godina-koncert/
-  - naziv: Tečaj za trudnice u Domu zdravlja Krk od 23. studenoga
-...
+  - naziv: "Tečaj za trudnice u Domu zdravlja Krk od 23. studenoga"
     datum: 2026-11-23
     vrijeme: "17:00"
-    mjesto: Knjižnica Doma zdravlja Krk
-...
+    mjesto: "Knjižnica Doma zdravlja Krk"
     grad: Krk
-...
-    opis: Tečaj pripreme trudnica za porod i majčinstvo počinje u ponedjeljak, 23. studenoga,
-  u 17 sati u knjižnici Doma zdravlja Krk. Prijave telefonom ili e-poštom.
-...
+    opis: "Tečaj pripreme trudnica za porod i majčinstvo počinje u ponedjeljak, 23. studenoga, u 17 sati u knjižnici Doma zdravlja Krk. Prijave telefonom ili e-poštom."
     link: /tecaj-trudnice-dom-zdravlja-krk/
-  - naziv: 'STRUKON – Dan poduzetništva u Puntu 3.0: 27. studenoga u Marini Punat'
+  - naziv: "STRUKON – Dan poduzetništva u Puntu 3.0: 27. studenoga u Marini Punat"
     datum: 2026-11-27
     vrijeme: "09:00"
-    mjesto: Marina Punat
-...
+    mjesto: "Marina Punat"
     grad: Punat
-...
-    opis: Osma strukovna konferencija STRUKON održat će se u petak, 27. studenoga od 9 sati
-  u Marini Punat – o Zakonu o strancima, transparentnosti plaća, Fiskalizaciji 2
-...
+    opis: "Osma strukovna konferencija STRUKON održat će se u petak, 27. studenoga od 9 sati u Marini Punat – o Zakonu o strancima, transparentnosti plaća, Fiskalizaciji 2.0, porezima za 2027. i AI alatima. Ulaz je slobodan, uz prijavu."
     link: /strukon-dan-poduzetnistva-punat-2026/
-  - naziv: 'Advent u Krku 2026.: lampice 29. studenoga u 17 sati, program do Nove godine'
+  - naziv: "Advent u Krku 2026.: lampice 29. studenoga u 17 sati, program do Nove godine"
     datum: 2026-11-29
     datum_do: 2026-12-31
     vrijeme: "17:00"
-    mjesto: Polukupola pored Velog parka, Krk
-...
+    mjesto: "Polukupola pored Velog parka, Krk"
     grad: Krk
-...
-    opis: Šesto izdanje Adventa u Krku počinje 29. studenoga u 17 sati paljenjem lampica uz
-  DJ-a Lucu Montecchija. Program traje kroz prosinac do dočeka Nove godine 31. 1
-...
+    opis: "Šesto izdanje Adventa u Krku počinje 29. studenoga u 17 sati paljenjem lampica uz DJ-a Lucu Montecchija. Program traje kroz prosinac do dočeka Nove godine 31. 12."
     link: /advent-u-krku-2026/
-  - naziv: Perpetuum Jazzile stiže na Advent u Malinskoj, 16. prosinca u Bogovićima
-...
+  - naziv: "Perpetuum Jazzile stiže na Advent u Malinskoj, 16. prosinca u Bogovićima"
     datum: 2026-12-16
-    datum_do: 2026-12-16
     vrijeme: "20:00"
-    mjesto: Školska sportska dvorana, Bogovići, Malinska
-...
+    mjesto: "Školska sportska dvorana, Bogovići, Malinska"
     grad: Malinska
-...
-    opis: Svjetski poznata vokalna skupina Perpetuum Jazzile nastupit će u srijedu, 16. prosinca
-  u 20 sati, u školskoj sportskoj dvorani u Bogovićima. Ulaznice su na Even
-...
+    opis: "Svjetski poznata vokalna skupina Perpetuum Jazzile nastupit će u srijedu, 16. prosinca u 20 sati, u školskoj sportskoj dvorani u Bogovićima. Ulaznice su na Eventimu te na Petrolovim i Croduxovim postajama."
     link: /perpetuum-jazzile-advent-malinska/
