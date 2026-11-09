@@ -1,7 +1,15 @@
 # DOGAĐANJA – živi popis iz članaka s event_date (nadolazeći).
 # Upute: _data/README-zaposlenje-dogadjanja.md
-azurirano: 2026-11-07
+azurirano: 2026-11-09
 dogadjaji:
+  - naziv: '2. kolo 23. Zimske lige Kvarnera „Igor Malešević” u Klimnu'
+    datum: 2026-11-15
+    datum_do: 2026-11-15
+    vrijeme: "11:00"
+    mjesto: Riva, Klimno
+    grad: Dobrinj
+    opis: Glavna utrka u 11 sati; Mala liga oko 10:30. Organizatori TK Rival i udruga Kivna, uz TZ Općine Dobrinj. Najavljeno i zimsko kupanje.
+    link: /zimska-liga-kvarnera-klimno-2-kolo/
   - naziv: '„Misec hrvaskoga libra” na Korniću: Irena Plejić Premec i vlč. Zvonimir Badurina Dudić'
     datum: 2026-11-07
     datum_do: 2026-11-07
