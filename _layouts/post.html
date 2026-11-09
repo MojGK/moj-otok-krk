@@ -41,7 +41,7 @@ layout: default
   {% include serija.html post=page %}
 
   {% if page.source %}
-    <p class="source"><em>Izvor: {{ page.source }}</em></p>
+    <p class="source"><em>Izvor: {{ page.source | markdownify | remove: '<p>' | remove: '</p>' | strip }}</em></p>
   {% endif %}
 </article>
 

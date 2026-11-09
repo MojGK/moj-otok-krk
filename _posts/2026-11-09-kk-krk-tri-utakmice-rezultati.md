@@ -12,7 +12,7 @@ image_credit: "Ilustracija (generirana), nije fotografija utakmica"
 source: "[otok-krk.org](https://otok-krk.org/krk/tri-utakmice-dvije-pobjede-i-jedan-poraz-za-kosarkase-krka)"
 ---
 
-Košarkaši **KK Krka** odigrali su tri utakmice u različitim uzrastima: dvije pobjede mlađih sastava i poraz seniora. Subotnje utakmice mlađih kadeta i seniora bile su unaprijed [najavljene](/kk-krk-subota-sveti-matej-pazin/).
+Košarkaši **KK Krka** odigrali su tri utakmice u različitim uzrastima: dvije pobjede mlađih sastava i poraz seniora. Subotnje utakmice mlađih kadeta i seniora bile su unaprijed [najavljene]({{ '/kk-krk-subota-sveti-matej-pazin/' | relative_url }}).
 
 ## Dječaci, 5. 11. – Kraljevica
 

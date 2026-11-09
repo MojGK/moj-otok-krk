@@ -32,7 +32,8 @@ Seniori dolaze nakon dva poraza (Kastav 80:53, Pula 48:90) i, kako piše klub, i
 
 ## Rezultati
 
-[Rezultati](/kk-krk-tri-utakmice-rezultati/): mlađi kadeti 72:32, seniori 81:90 (uz gostujuću pobjedu dječaka u Kraljevici 56:29).
+[Rezultati]({{ '/kk-krk-tri-utakmice-rezultati/' | relative_url }}): mlađi kadeti 72:32, seniori 81:90 (uz gostujuću pobjedu dječaka u Kraljevici 56:29).
+
 ## Izvor
 
 - Bodulija.net (6. 11. 2026.), prema objavi KK Krk

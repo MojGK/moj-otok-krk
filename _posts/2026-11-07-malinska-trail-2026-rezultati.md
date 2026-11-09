@@ -12,7 +12,7 @@ image_credit: "Ilustracija (generirana), nije fotografija utrke"
 source: "[Novi list](https://www.novilist.hr/rijeka-regija/otoci/gotovo-300-trkaca-unatoc-kisi-na-sedmom-malinska-trailu/); [službeni rezultati (race result)](https://my.raceresult.com/383288/results); [AK Rika](https://rika.hr/malinska-trail/); [Bodulija.net](https://bodulija.net/stotine-outdoor-entuzijasta-preplavile-dubasnicu-na-petom-malinska-outdoor-weekendu/)"
 ---
 
-Sedmi **Malinska Trail** održan je u **subotu, 7. studenoga 2026.**, u sklopu [Malinska Outdoor Weekenda](/malinska-outdoor-weekend-2026/). Unatoč kiši, na start je, prema Novom listu, stalo **gotovo 300 trkača** na dvije staze: **Malinska (24 km)** i **Dubašnica (14 km)**. Start i cilj bili su u atriju Hotela Malin, a organizator je **AK Rika** iz Kastva, kojem je provedbu povjerila Turistička zajednica općine Malinska-Dubašnica.
+Sedmi **Malinska Trail** održan je u **subotu, 7. studenoga 2026.**, u sklopu [Malinska Outdoor Weekenda]({{ '/malinska-outdoor-weekend-2026/' | relative_url }}). Unatoč kiši, na start je, prema Novom listu, stalo **gotovo 300 trkača** na dvije staze: **Malinska (24 km)** i **Dubašnica (14 km)**. Start i cilj bili su u atriju Hotela Malin, a organizator je **AK Rika** iz Kastva, kojem je provedbu povjerila Turistička zajednica općine Malinska-Dubašnica.
 
 ## Malinska, 24 km
 
