@@ -8,18 +8,18 @@ categories: [Punat, Događanja]
 event_date: 2026-11-15 19:00:00 +0100
 event_end: 2026-11-30 20:00:00 +0100
 event_place: "Narodni dom, Punat (otvorenje); program na više lokacija do 30. 11."
-excerpt: "Općina Punat od 15. do 30. studenoga obilježava svoj dan, blagdan svetog Andrije (Andrinju). Proslava počinje u nedjelju, 15. studenoga, u 19 sati u Narodnom domu predstavom „Luka Modrić – Moja igra”; u 20:30 na video zidu prati se utakmica Hrvatska – Češka."
+excerpt: "Općina Punat od 15. do 30. studenoga obilježava Andrinju. Proslava počinje u nedjelju, 15. studenoga, u 19 sati u Narodnom domu predstavom za cijelu obitelj „Luka Modrić – Moja igra” u izvedbi Boss Teatra; nakon predstave na video zidu prati se utakmica Hrvatska – Češka."
 image: /assets/images/andrinja-2026-plakat.jpg
 image_alt: "Službeni plakat Andrinje 2026., proslave Dana Općine Punat od 15. do 30. studenoga"
 image_credit: "Plakat: Općina Punat, preuzeto sa [stranice Općine](https://www.punat.hr/node/2584)"
-source: "[Općina Punat](https://www.punat.hr/node/2584)"
+source: "[Općina Punat – program Andrinje](https://www.punat.hr/node/2584); [Općina Punat – predstava „Luka Modrić – Moja igra”](https://www.punat.hr/node/2585)"
 ---
 
 Općina Punat od **15. do 30. studenoga 2026.** obilježava svoj dan, blagdan svetog Andrije, odnosno Andrinju, nizom kulturnih, sportskih i društvenih događanja.
 
 ## Otvorenje, 15. studenoga
 
-Proslava počinje u **nedjelju, 15. studenoga**, u Narodnom domu. U **19:00** izvodi se predstava „Luka Modrić – Moja igra”, a u **20:30** na video zidu prati se utakmica Hrvatska – Češka.
+Proslava počinje u **nedjelju, 15. studenoga**, u Narodnom domu. U **19:00** izvodi se predstava za cijelu obitelj „Luka Modrić – Moja igra” u izvedbi **Boss Teatra**. Režija je Arije Rizvić, a tekst Valentine i Luke Mavretića, prema naknadnoj objavi Općine Punat. Nakon predstave, u **20:30**, na video zidu prati se utakmica Hrvatska – Češka.
 
 ## Program do blagdana
 
@@ -36,10 +36,11 @@ Središnji dan proslave je **ponedjeljak, 30. studenoga**. U **16:00** na Starom
 ## Praktično
 
 - **15.–30. 11. 2026.**
-- otvorenje: **nedjelja, 15. 11., 19:00**, Narodni dom (predstava); utakmica na video zidu u 20:30
+- otvorenje: **nedjelja, 15. 11., 19:00**, Narodni dom – predstava „Luka Modrić – Moja igra” (Boss Teatar, za cijelu obitelj); utakmica na video zidu u 20:30
 - svečana sjednica: **petak, 27. 11., 18:00**, Narodni dom
 - blagdan svetog Andrije: **ponedjeljak, 30. 11.**, od 16:00 (Staro groblje; misa u 16:30)
 
 ## Izvori
 
-- Općina Punat, 10. 11. 2026.
+- Općina Punat, program Andrinje 2026., 10. 11. 2026.
+- Općina Punat, najava predstave „Luka Modrić – Moja igra”, 10. 11. 2026.
