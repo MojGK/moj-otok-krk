@@ -3,8 +3,8 @@ layout: post
 title: "59. kolegij: odvodnja na Ježevcu, igralište u centru i suglasnost za pripremu Adventa"
 date: 2026-11-10 07:47:00 +0100
 location: Krk
-type: Zanimljivosti
-categories: [Krk, Zanimljivosti]
+type: Općinske vijesti
+categories: [Krk, Općinske vijesti]
 excerpt: "Na 59. kolegiju gradonačelnika Darija Vasilića, 9. studenoga u Maloj vijećnici, Grad je prihvatio radove oborinske odvodnje na Ježevcu, zakup za igralište ispred Erste Banke i dao suglasnost TZ-u za pripremu Adventa od 10. 11. 2026. do 10. 1. 2027."
 image: /assets/images/kolegij-krk-59-ilustracija.jpg
 image_alt: "Ilustracija: stol sastanka, rešetka odvodnje i krovovi adventskih kućica"
