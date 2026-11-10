@@ -96,6 +96,14 @@ dogadjaji:
     grad: Dobrinj
     opis: "Drugo kolo 23. Zimske lige Kvarnera „Igor Malešević” u Klimnu: Mala liga u 10:30 (400 i 800 m), glavna trail-utrka od 7 km u 11:00 na rivi. Cesta od restorana Žal prema VSG Resortu zatvorena je od 10:30 do 12:00."
     link: /zimska-liga-kvarnera-klimno-2-kolo/
+  - naziv: "Andrinja 2026.: program proslave Dana Općine Punat od 15. do 30. studenoga"
+    datum: 2026-11-15
+    datum_do: 2026-11-30
+    vrijeme: "19:00"
+    mjesto: "Narodni dom, Punat (otvorenje); program na više lokacija"
+    grad: Punat
+    opis: "Općina Punat od 15. do 30. studenoga obilježava Andrinju, dan Općine i blagdan svetog Andrije. Proslava počinje 15. studenoga u 19 sati u Narodnom domu predstavom „Luka Modrić – Moja igra”; u 20:30 na video zidu prati se utakmica Hrvatska – Češka."
+    link: /andrinja-2026-dan-opcine-punat/
   - naziv: "Koktel-večera Peaches & Cream u restoranu Vila Rova u Malinskoj 20. studenoga"
     datum: 2026-11-20
     mjesto: "Restoran Vila Rova, Malinska"
@@ -130,6 +138,13 @@ dogadjaji:
     grad: Punat
     opis: "Osma strukovna konferencija STRUKON održat će se u petak, 27. studenoga od 9 sati u Marini Punat – o Zakonu o strancima, transparentnosti plaća, Fiskalizaciji 2.0, porezima za 2027. i AI alatima. Ulaz je slobodan, uz prijavu."
     link: /strukon-dan-poduzetnistva-punat-2026/
+  - naziv: "Svečana sjednica Općinskog vijeća Punat na Andrinju, 27. studenoga"
+    datum: 2026-11-27
+    vrijeme: "18:00"
+    mjesto: "Narodni dom, Punat"
+    grad: Punat
+    opis: "U petak, 27. studenoga, u 18 sati u Narodnom domu održava se svečana sjednica Općinskog vijeća Općine Punat, u sklopu programa Andrinje 2026."
+    link: /andrinja-2026-dan-opcine-punat/
   - naziv: "Advent u Krku 2026.: lampice 29. studenoga u 17 sati, program do Nove godine"
     datum: 2026-11-29
     datum_do: 2026-12-31
@@ -138,6 +153,13 @@ dogadjaji:
     grad: Krk
     opis: "Šesto izdanje Adventa u Krku počinje 29. studenoga u 17 sati paljenjem lampica uz DJ-a Lucu Montecchija. Program traje kroz prosinac do dočeka Nove godine 31. 12."
     link: /advent-u-krku-2026/
+  - naziv: "Andrinja 2026.: blagdan svetog Andrije u Puntu, 30. studenoga"
+    datum: 2026-11-30
+    vrijeme: "16:00"
+    mjesto: "Staro groblje; crkva Presvetog Trojstva, Punat"
+    grad: Punat
+    opis: "U ponedjeljak, 30. studenoga, u 16 sati na Starom groblju moli se molitva odrješenja za pokojne, a u 16:30 slijedi svečana misa u crkvi Presvetog Trojstva. Nakon mise su akademija i druženje ispred crkve uz frite i kroštule."
+    link: /andrinja-2026-dan-opcine-punat/
   - naziv: "Perpetuum Jazzile stiže na Advent u Malinskoj, 16. prosinca u Bogovićima"
     datum: 2026-12-16
     vrijeme: "20:00"
