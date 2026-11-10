@@ -1,6 +1,6 @@
 # DOGAĐANJA – živi popis iz članaka s event_date (nadolazeći).
 # Upute: _data/README-zaposlenje-dogadjanja.md
-azurirano: 2026-11-09
+azurirano: 2026-11-10
 dogadjaji:
   - naziv: "(Mala) retrospektiva Ivana Vukušića u Galeriji Decumanus"
     datum: 2026-10-23
@@ -39,6 +39,13 @@ dogadjaji:
     grad: Punat
     opis: "U srijedu, 11. studenoga, u Puntu kod spomenika Anđelu obilježava se 108. godišnjica završetka Prvoga svjetskog rata. Okupljanje je do 11:15; organizira Udruga antifašista otoka Krka."
     link: /punat-108-godisnjica-prvog-svjetskog-rata/
+  - naziv: "Predavanje Udruge Nada u Šilu o podršci ženama oboljelima od raka dojke"
+    datum: 2026-11-11
+    vrijeme: "18:00"
+    mjesto: "Galerija Pećine, Šilo"
+    grad: Šilo
+    opis: "Udruga žena operiranih dojki Nada – Rijeka u srijedu, 11. studenoga, u 18 sati u galeriji Pećine u Šilu organizira predavanje „Psihosocijalna pomoć i podrška ženama oboljelima od raka dojke i njihovim obiteljima”. Predaje psihoterapeutkinja Sanja Hajdinjak."
+    link: /predavanje-udruge-nada-silo/
   - naziv: "10. sjednica Općinskog vijeća Punat u četvrtak u 14 sati"
     datum: 2026-11-12
     vrijeme: "14:00"
@@ -79,7 +86,7 @@ dogadjaji:
     vrijeme: "11:00"
     mjesto: "Riva, Klimno"
     grad: Dobrinj
-    opis: "Drugo kolo 23. Zimske lige Kvarnera „Igor Malešević” održava se u nedjelju, 15. studenoga, u Klimnu. Glavna utrka starta u 11 sati na rivi; Mala liga oko 10:30. Najavljeno je i zimsko kupanje."
+    opis: "Drugo kolo 23. Zimske lige Kvarnera „Igor Malešević” u Klimnu: Mala liga u 10:30 (400 i 800 m), glavna trail-utrka od 7 km u 11:00 na rivi. Cesta od restorana Žal prema VSG Resortu zatvorena je od 10:30 do 12:00."
     link: /zimska-liga-kvarnera-klimno-2-kolo/
   - naziv: "„Tražim muža” s Jelicom Brestovac zatvara Mjesec smijeha u Hotelu Malin"
     datum: 2026-11-20
