@@ -1,6 +1,6 @@
 # DOGAĐANJA – živi popis iz članaka s event_date (nadolazeći).
 # Upute: _data/README-zaposlenje-dogadjanja.md
-azurirano: 2026-11-10
+azurirano: 2026-11-11
 dogadjaji:
   - naziv: "(Mala) retrospektiva Ivana Vukušića u Galeriji Decumanus"
     datum: 2026-10-23
@@ -104,6 +104,13 @@ dogadjaji:
     grad: Punat
     opis: "Općina Punat od 15. do 30. studenoga obilježava Andrinju. Proslava počinje 15. studenoga u 19 sati u Narodnom domu predstavom za cijelu obitelj „Luka Modrić – Moja igra” u izvedbi Boss Teatra; u 20:30 na video zidu prati se utakmica Hrvatska – Češka."
     link: /andrinja-2026-dan-opcine-punat/
+  - naziv: "Predstava „Trening” Boom! teatra u Infinity Sportu u Krku, 15. studenoga"
+    datum: 2026-11-15
+    vrijeme: "20:00"
+    mjesto: "Infinity Sport – Fitness centar Krk"
+    grad: Krk
+    opis: "U nedjelju, 15. studenoga, u 20 sati u Infinity Sportu – Fitness centru Krk izvodi se predstava „Trening” zagrebačkog Boom! teatra. Zbog ograničenog kapaciteta rezervacija je obvezna, na info-pultu ili telefonom (broj u najavi)."
+    link: /predstava-trening-infinity-sport-krk/
   - naziv: "Koktel-večera Peaches & Cream u restoranu Vila Rova u Malinskoj 20. studenoga"
     datum: 2026-11-20
     mjesto: "Restoran Vila Rova, Malinska"
